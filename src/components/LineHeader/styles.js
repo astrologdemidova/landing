@@ -8,7 +8,7 @@ export const LineHeaderWrapper = styled.div`
             case 'pink':
                 return "background-color: rgb(250, 161, 194);"
             case 'white':
-                return "background-color: rgb(255, 255, 255);"
+                return "background-color: none;"
             case 'blue':
                 return `
                     background-color: #080a63;
@@ -17,7 +17,7 @@ export const LineHeaderWrapper = styled.div`
                     background-size: cover;
                 `
             default:
-                return "background-color: rgb(255, 255, 255);"
+                return "background-color: none;"
         }
     }}
     ${props => {
@@ -25,7 +25,7 @@ export const LineHeaderWrapper = styled.div`
             case 'pink':
                 return "color: #FFFFFF;"
             case 'white':
-                return "color: #000000;"
+                return "color: #1d2147;"
             case 'blue':
                 return "color: #FFFFFF;"
             default:

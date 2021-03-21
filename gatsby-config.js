@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "astrologdemidova",
+    siteUrl: "http://astrologdemidova.ru/",
   },
   plugins: [
     "gatsby-plugin-netlify-cms",

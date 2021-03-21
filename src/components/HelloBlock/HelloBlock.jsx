@@ -1,36 +1,59 @@
 import * as React from "react"
 import {
     HelloBlockStyled,
-    HeaderStyled,
     HelloText,
-    HelloPicture
+    HelloPicture,
 } from "./styles"
-import helloBlock from "../../images/2.webp"
+import helloBlock from "../../images/photo_2020-09-30_191.webp"
 import { CustomButton } from "../CustomButton"
+import { CustomMarker } from "../CustomMarker"
 
 export const HelloBlock = () => {
     return (
         <HelloBlockStyled>
-            <HeaderStyled>
-                <a href='#'>об александре б.</a>
-                <a href='#'>программа</a>
-                <a href='#'>купить</a>
-                <a href='#'>отзывы</a>
-            </HeaderStyled>
+            <HelloPicture>
+                <img src={helloBlock} alt="Астролог Демидова Яна" />
+            </HelloPicture>
 
             <HelloText>
-                <h1>Демидова Яна</h1>
-                <h2>Астролог</h2>
-
-                <h4>МАРАФОН ПРОХОДИТ В TELEGRAM</h4>
-                <CustomButton>
-                    участвовать
-                </CustomButton>
+                <ul>
+                    <li>
+                        <div>
+                            <CustomMarker type='pink' />
+                        </div>
+                        <p>
+                            Я САША, <strong>РОДОМ ИЗ РЫБИНСКА</strong>, ИЗ САМОЙ ОБЫЧНОЙ СЕМЬИ. 
+                            2 ГОДА НАЗАД СНИМАЛА КВАРТИРКУ <strong>С УЖАСНЫМ РЕМОНТОМ</strong> 
+                            И ПОЛУЧАЛА 15.000₽ ЗА СВОЮ РАБОТУ. СЕЙЧАС Я <strong>ЗАРАБАТЫВАЮ МИЛЛИОНЫ</strong>
+                            И ПРОЖИВАЮ САМУЮ <strong>ЛУЧШУЮ ЖИЗНЬ</strong> В ТОПОВЫХ МЕСТАХ НАШЕГО МИРА
+                        </p>
+                    </li>
+                    <li>
+                        <div>
+                            <CustomMarker type='pink' />
+                        </div>
+                        <p>
+                            У МЕНЯ УСПЕШНЫЙ БИЗНЕС, ЛЮБИМАЯ КОМАНДА СОТРУДНИКОВ, 
+                            ПРЕКРАСНЫЕ ОТНОШЕНИЯ, НО ГЛАВНОЕ - <strong>Я СЧАСТЛИВА КАЖДЫЙ ДЕНЬ</strong>! 
+                            Я ЗНАЮ, ЧТО ТЫ ТОЖЕ ЭТОГО <strong>ХОЧЕШЬ И МОЖЕШЬ</strong>!
+                        </p>
+                    </li>
+                    <li>
+                        <div>
+                            <CustomMarker type='pink' />
+                        </div>
+                        <p>
+                            Я ПОТРАТИЛА <strong>2.000.000₽</strong> НА ПРОКАЧКУ СВОЕЙ ДЕНЕЖНОЙ ЭНЕРГИИ
+                            И В СВОЕМ МАРАФОНЕ <strong>СОБРАЛА САМОЕ ЛУЧШЕЕ</strong>!
+                        </p>
+                    </li>
+                </ul>
+                <p>
+                    У ТЕБЯ ВСЕ ПОЛУЧИТСЯ!<br/>
+                    С ЛЮБОВЬЮ, АЛЕКСАНДРА Б.
+                </p>
+                <CustomButton>купить</CustomButton>
             </HelloText>
-
-            <HelloPicture>
-                <img src={helloBlock} alt="Астролог Демидова Яна"/>
-            </HelloPicture>
         </HelloBlockStyled>
     )
 }

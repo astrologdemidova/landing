@@ -17,4 +17,14 @@ export const ButtonStyled = styled.button`
     line-height: 1.55;
     height: 65px;
     cursor: pointer;
+    animation: 1.5s infinite alternate lightningBtn;
+    @keyframes lightningBtn {
+        from {
+            box-shadow: 0px 0px 10px 5px rgba(253, 117, 180, 0.3);
+        }
+
+        to {
+            box-shadow: 0px 0px 10px 10px rgba(253, 117, 180, 0.3);
+        }
+    }
 `

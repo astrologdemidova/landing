@@ -1,39 +1,67 @@
 import * as React from "react"
-import { CustomButton } from "../components/CustomButton"
-import { CustomFooter } from "../components/CustomFooter"
-import { HelloBlock } from "../components/HelloBlock"
-import { LineHeader } from "../components/LineHeader"
 import "../common-style/style.css"
+import { CustomFooter } from "../components/CustomFooter"
+import { HeadBlock } from "../components/HeadBlock"
+import { LineHeader } from "../components/LineHeader"
+import { CustomMenu } from "../components/CustomMenu"
+import { HelloBlock } from "../components/HelloBlock"
+import { DescriptionCardBlock } from "../components/DescriptionCardBlock"
+import { ReasonsBlock } from "../components/ReasonsBlock"
+import { MarathonBlock } from "../components/MarathonBlock"
+import { AccordionBlock } from "../components/AccordionBlock/AccordionBlock"
 // markup
 const IndexPage = () => {
   return (
     <>
-      <HelloBlock />
+      <CustomMenu />
+      <HeadBlock />
       <LineHeader bgColor='pink'>
         ОСТАВЬ ЗАЯВКУ И УЗНАЙ О ПРОДАЖАХ ПЕРВЫМ
       </LineHeader>
 
       <LineHeader bgColor='white'>
-        ОСТАЛИСЬ ВОПРОСЫ? ВОЗНИКЛИ ПРОБЛЕМЫ ПРИ ОПЛАТЕ ?
+        ПРИВЕТ! ДАВАЙ ЗНАКОМИТЬСЯ
       </LineHeader>
 
-      <LineHeader bgColor='pink'>
+      <HelloBlock />
+      
+      <LineHeader bgColor='white' />
+      <LineHeader bgColor='white'>
+        ЧТО ТЕБЯ ЖДЕТ НА МАРАФОНЕ
+      </LineHeader>
+
+      <DescriptionCardBlock />
+
+      <LineHeader bgColor='white' />
+      <LineHeader bgColor='blue'>
         АБСОЛЮТНО НОВЫЙ ДЕНЕЖНЫЙ МАРАФОН
         АБСОЛЮТНО НОВЫЙ ЗВУК МЕДИТАЦИЙ
         АБСОЛЮТНО НОВЫЙ РЕЗУЛЬТАТ
       </LineHeader>
 
       <LineHeader bgColor='white'>
+        ВАМ НУЖЕН МАРАФОН, ЕСЛИ ВЫ
+      </LineHeader>
+
+      <ReasonsBlock />
+
+      <LineHeader bgColor='white' />
+      <LineHeader bgColor='white'>
+        НА МАРАФОНЕ БУДЕТ
+      </LineHeader>
+
+      <MarathonBlock />
+
+      <LineHeader bgColor='white' />
+      <LineHeader bgColor='white'>
+        ПРОГРАММА АB.MONEY
+      </LineHeader>
+
+      <AccordionBlock />
+      
+      <LineHeader bgColor='white'>
         ОСТАЛИСЬ ВОПРОСЫ? ВОЗНИКЛИ ПРОБЛЕМЫ ПРИ ОПЛАТЕ ?
       </LineHeader>
-
-      <LineHeader bgColor='blue'>
-        hello World!!!!11
-      </LineHeader>
-
-      <CustomButton>
-        Попасть на марафон
-      </CustomButton>
 
       <CustomFooter />
     </>

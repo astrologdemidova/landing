@@ -1,47 +1,50 @@
 import styled from "styled-components";
 
-export const HeaderStyled = styled.header`
-    display: inline-flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    a {
-        color: white;
-        font-size: 18px;
-        text-transform: uppercase;
-    }
-`
-
 export const HelloBlockStyled = styled.div`
     display: flex;
-    background-color: #080a63;
+    justify-content: center;
+    position: relative;
 `
 
 export const HelloText = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    max-width: 560px;
     width: 100%;
-    h1 {
-        font-size: 50px;
-        color: #ffffff;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
     }
-    h2 {
-        font-size: 36px;
-        color: #f75995;
+    li {
+        display: flex;
+        padding: 7px 5px;
+        p {
+            color: #1d2147;
+            font-size: 16px;
+            font-style: italic;
+            font-family: 'FuturaPT',Arial,sans-serif;
+            line-height: 1.55;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+        }
     }
-    h4 {
-        font-size: 20px;
-        color: #ffffff;
+    p {
+        color: #1d2147;
+        font-weight: 700;
+        padding-left: 38px;
+        padding-bottom: 30px;
     }
 `
 
 export const HelloPicture = styled.div`
-    max-width: 520px;
+    max-width: 396px;
     width: 100%;
+    padding-right: 120px;
     img {
         display: block;
         width: 100%;
