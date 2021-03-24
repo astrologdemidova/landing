@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ReasonsWrapper = styled.div`
+export const GiftsWrapper = styled.div`
     text-align: center;
     @media all and (max-width: 768px) {
         box-sizing: border-box;
@@ -8,7 +8,7 @@ export const ReasonsWrapper = styled.div`
     }
 `
 
-export const ReasonsList = styled.div`
+export const GiftsList = styled.div`
     display: inline-block;
     p {
         text-align: left;
@@ -18,11 +18,6 @@ export const ReasonsList = styled.div`
             font-size: 24px;
             padding-left: 7px;
             padding-right: 7px;
-        }
-    }
-    @media all and (max-width: 768px) {
-        p {
-            font-size: 17px;
         }
     }
 `

@@ -22,6 +22,10 @@ export const CardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    @media all and (max-width: 768px) {
+        box-sizing: border-box;
+        padding: 15px;
+    }
 `
 
 export const CardSeparate = styled.div`

@@ -5,6 +5,10 @@ export const AccordionWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media all and (max-width: 768px) {
+        box-sizing: border-box;
+        padding: 15px;
+    }
 `
 
 export const CardWrapper = styled.div`

@@ -21,6 +21,10 @@ export const ButtonMenu = styled.div`
         background: #ffffff;
         margin: 2px;
     }
+    @media all and (max-width: 768px) {
+        top: 15px;
+        right: 15px;
+    }
 `
 
 export const MenuWrapperStyled = styled.div`

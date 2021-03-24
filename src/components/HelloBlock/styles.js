@@ -4,6 +4,11 @@ export const HelloBlockStyled = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
+    @media all and (max-width: 768px) {
+        box-sizing: border-box;
+        padding: 15px;
+        flex-direction: column;
+    }
 `
 
 export const HelloText = styled.div`
@@ -48,5 +53,9 @@ export const HelloPicture = styled.div`
     img {
         display: block;
         width: 100%;
+    }
+    @media all and (max-width: 768px) {
+        box-sizing: border-box;
+        padding: 15px;
     }
 `

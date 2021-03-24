@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const MarathonWrapper = styled.div`
     text-align: center;
+    
 `
 
 export const MarathonList = styled.div`
@@ -11,6 +12,10 @@ export const MarathonList = styled.div`
     align-items: center;
     max-width: 1280px;
     width: 100%;
+    @media all and (max-width: 768px) {
+        box-sizing: border-box;
+        padding: 15px;
+    }
 `
 
 export const CardStyled = styled.div`

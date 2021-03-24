@@ -5,6 +5,7 @@ import {
     HelloText,
     HelloPicture,
     BackgroundHelloBlock,
+    BackgroundHelloBlockResponsive,
 } from "./styles"
 import helloBlock from "../../images/2.webp"
 import { CustomButton } from "../CustomButton"
@@ -13,8 +14,6 @@ import { CustomMarker } from "../CustomMarker"
 export const HeadBlock = () => {
     return (
         <HeadBlockStyled>
-
-
             <HelloText>
                 <div>
                     <HeaderStyled>
@@ -51,6 +50,7 @@ export const HeadBlock = () => {
                 </CustomButton>
                 <BackgroundHelloBlock />
             </HelloText>
+                <BackgroundHelloBlockResponsive />
 
             <HelloPicture>
                 <img src={helloBlock} alt="Астролог Демидова Яна" />

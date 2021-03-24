@@ -32,18 +32,28 @@ export const LineHeaderWrapper = styled.div`
                 return "color: #000000;"
         }
     }}
+    @media all and (max-width: 768px) {
+        box-sizing: border-box;
+        padding: 15px;
+    }
 `
 
 export const TextStyled = styled.p`
     display: inline-block;
-    font-size: 30px;
+    font-size: ${props => props.smallFont ? '20px' : '30px'};
     font-family: 'FuturaPT',Arial,sans-serif;
+    font-weight: ${props => props.smallFont ? '400' : '700'};
     line-height: 1.55;
-    font-weight: 700;
     text-align: center;
+    text-transform: uppercase;
     padding-top: 40px;
     padding-bottom: 40px;
     margin: 0;
     max-width: 768px;
     width: 100%;
+    @media all and (max-width: 768px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: ${props => props.smallFont ? '17px' : '20px'};
+    }
 `
