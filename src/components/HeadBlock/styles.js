@@ -90,7 +90,7 @@ export const HelloText = styled.div`
 export const HelloPicture = styled.div`
     max-width: 520px;
     width: 100%;
-    img {
+    img, video {
         display: block;
         width: 100%;
     }
@@ -101,6 +101,12 @@ export const HelloPicture = styled.div`
         right: 0;
         bottom: 0;
         z-index: -1;
+        overflow: hidden;
+        img, video {
+            object-fit: cover;
+            height: 100%;
+            width: unset;
+        }
     }
 `
 

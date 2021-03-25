@@ -7,7 +7,8 @@ import {
     BackgroundHelloBlock,
     BackgroundHelloBlockResponsive,
 } from "./styles"
-import helloBlock from "../../images/2.webp"
+import helloBlock from "../../images/IMG_9489.webp"
+import videoBlock from "../../images/ezgif.com-gif-maker.gif"
 import { CustomButton } from "../CustomButton"
 import { CustomMarker } from "../CustomMarker"
 
@@ -17,29 +18,33 @@ export const HeadBlock = () => {
             <HelloText>
                 <div>
                     <HeaderStyled>
-                        <a href='#'>об александре б.</a>
+                        <a href='#'>об яне д.</a>
                         <a href='#'>программа</a>
-                        <a href='#'>купить</a>
+                        <a href='#' className='Prodamus-startPay'>купить</a>
                         <a href='#'>отзывы</a>
                     </HeaderStyled>
-                    <h1>Демидова Яна</h1>
-                    <h2>Астролог</h2>
+                    <h1>«Изобилие»</h1>
+                    <h2>Старт 12 апреля</h2>
                     <ul>
                         <li>
-                            <CustomMarker type='pink'/>
-                            7 ДНЕЙ ПРОКАЧКИ ДЕНЕЖНОЙ ЭНЕРГИИ
+                            <CustomMarker type='pink' />
+                            мощнейшие ритуалы на привлечение денег и удачи
                         </li>
                         <li>
-                            <CustomMarker type='pink'/>
-                            7 АБСОЛЮТНО НОВЫХ ПРАКТИК В 3D ЗВУКЕ
+                            <CustomMarker type='pink' />
+                            7 дней практик, устраняющих препятствия на пути к деньгам
                         </li>
                         <li>
-                            <CustomMarker type='pink'/>
-                            МАСТЕРМАИНД ОТ АЛЕКСАНДРЫ Б
+                            <CustomMarker type='pink' />
+                            секретная техника по определению предназначения и талантов
                         </li>
                         <li>
-                            <CustomMarker type='pink'/>
-                            СПЕЦИАЛЬНЫЙ УРОК ПО ЭНЕРГЕТИЧЕСКИМ ПРАКТИКАМ
+                            <CustomMarker type='pink' />
+                            Определение вашей финансовой ниши с помощью астрологии
+                        </li>
+                        <li>
+                            <CustomMarker type='pink' />
+                            онлайн - разборы ваших ситуаций Яной лично
                         </li>
                     </ul>
                 </div>
@@ -50,10 +55,15 @@ export const HeadBlock = () => {
                 </CustomButton>
                 <BackgroundHelloBlock />
             </HelloText>
-                <BackgroundHelloBlockResponsive />
+            <BackgroundHelloBlockResponsive />
 
             <HelloPicture>
-                <img src={helloBlock} alt="Астролог Демидова Яна" />
+                {/* <video width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto" poster={helloBlock}>
+                    <source src={videoBlock} type="video/mp4" />
+                    <source src="daisy-stock-webm-video.webm" type="video/webm" />
+                </video> */}
+                {/* <img src={helloBlock} alt="Астролог Демидова Яна" /> */}
+                <img src={videoBlock} alt="Астролог Демидова Яна" />
             </HelloPicture>
         </HeadBlockStyled>
     )

@@ -16,6 +16,14 @@ import { GiftsBlock } from "../components/GiftsBlock"
 import { TariffBlock } from "../components/TariffBlock"
 // markup
 const IndexPage = () => {
+  React.useEffect(() => {
+    // <script type="text/javascript" src="https://pay.demidova.payform.ru/widget.js" async></script>
+    const scriptTag = document.createElement('script');
+    scriptTag.type = 'text/javascript'
+    scriptTag.async = true
+    scriptTag.src = 'https://demidova.prodamus.me/widget.js'
+    document.body.append(scriptTag)
+  }, [])
   return (
     <>
       <CustomMenu />
