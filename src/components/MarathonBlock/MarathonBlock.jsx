@@ -1,8 +1,9 @@
 import React from "react"
-import { MarathonWrapper, MarathonList, CardStyled } from './styles.js'
+import { MarathonWrapper, MarathonList, CardStyled, EmojiPicStyled } from './styles.js'
 import { CustomButton } from "../CustomButton"
 import { LineHeader } from "../LineHeader"
 import { Link } from 'react-scroll'
+import EmojiPic from "../../images/E069EDEC-1100-42AB-854E-4D54B1A376BA.png"
 
 const Card = ({children, revert}) => {
     return (
@@ -51,6 +52,7 @@ export const MarathonBlock = () => {
                 <Link to="tariff" smooth={true} duration={700} delay={100} href=''>
                     <CustomButton>
                         попасть на марафон
+                        <EmojiPicStyled src={EmojiPic} alt=''/>
                     </CustomButton>
                 </Link>    
             </div>

@@ -1,7 +1,8 @@
 import React from "react"
-import { ReasonsWrapper, ReasonsList } from './styles.js'
+import { ReasonsWrapper, ReasonsList, EmojiPicStyled } from './styles.js'
 import { CustomButton } from "../CustomButton"
 import { Link } from 'react-scroll'
+import EmojiPic from "../../images/CA5F2355-55E0-48AC-A200-1E591F7F73C1.png"
 
 export const ReasonsBlock = () => {
     return (
@@ -23,6 +24,7 @@ export const ReasonsBlock = () => {
                 <Link to="tariff" smooth={true} duration={700} delay={100} href=''>
                     <CustomButton>
                         хочу это изменить
+                        <EmojiPicStyled src={EmojiPic} alt=''/>
                     </CustomButton>
                 </Link>
             </div>

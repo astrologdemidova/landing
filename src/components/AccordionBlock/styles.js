@@ -81,7 +81,7 @@ export const CardContent = styled.div`
     p {
         color: #1d2147;
         font-weight: 300;
-        span {
+        /* span {
             display: inline-block;
             width: 10px;
             height: 10px;
@@ -89,6 +89,6 @@ export const CardContent = styled.div`
             border: 2px solid black;
             transform: rotate(45deg);
             margin-right: 10px;
-        }
+        } */
     }
 `

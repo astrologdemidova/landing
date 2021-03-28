@@ -47,3 +47,11 @@ export const CardStyled = styled.div`
         background: ${props => props.revert ? '#5238fa' : '#f75995'};
     } */
 `
+
+export const EmojiPicStyled = styled.img`
+    position: absolute;
+    bottom: 50px;
+    right: -50px;
+    width: 100px;
+    transform: rotate(-5deg);
+`

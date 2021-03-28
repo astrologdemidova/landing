@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const GiftsWrapper = styled.div`
+    position: relative;
     text-align: center;
     @media all and (max-width: 768px) {
         box-sizing: border-box;
@@ -22,6 +23,7 @@ export const GiftsList = styled.div`
     }
     @media all and (max-width: 768px) {
         p {
+            font-size: 18px;
             span {
                 img {
                     width: 30px;
@@ -29,4 +31,12 @@ export const GiftsList = styled.div`
             }
         }
     }
+`
+
+export const EmojiPicStyled = styled.img`
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 100px;
+    transform: rotate(20deg);
 `

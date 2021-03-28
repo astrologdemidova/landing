@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { CustomMarker } from "../CustomMarker";
 import { 
     AccordionWrapper,
     CardWrapper,
@@ -98,7 +99,8 @@ export const AccordionBlock = () => {
                     <CardContent isOpen={activeTabs.includes(index)}>
                         {item.description.map((str, ind) => (
                             <p key={ind}>
-                                <span></span>
+                                {/* <span></span> */}
+                                <CustomMarker type='pink' />
                                 {str}
                             </p>
                         ))}

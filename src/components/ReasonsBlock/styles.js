@@ -26,3 +26,11 @@ export const ReasonsList = styled.div`
         }
     }
 `
+
+export const EmojiPicStyled = styled.img`
+    position: absolute;
+    bottom: -10px;
+    right: -50px;
+    width: 100px;
+    transform: rotate(20deg);
+`

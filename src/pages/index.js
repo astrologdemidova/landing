@@ -43,10 +43,10 @@ const IndexPage = () => {
         Откровенно обо мне :
       </LineHeader>
 
-      
+
       <HelloBlock />
 
-      
+
       {/* <LineHeader bgColor='white' />
       <Element name='description'></Element>
       <LineHeader bgColor='white'>
@@ -133,8 +133,8 @@ const IndexPage = () => {
         <Moment date={moment('2021-03-28 18:00:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment>
       </LineHeader>
       <LineHeader bgColor='white'>
-        ТАРИФЫ<br/>
-        <span style={{color: '#f75995', fontSize: '26px'}}>Продажи закрыты</span>
+        ТАРИФЫ<br />
+        <span style={{ color: '#f75995', fontSize: '26px' }}>Продажи закрыты</span>
       </LineHeader>
 
       <TariffBlock />
@@ -143,16 +143,21 @@ const IndexPage = () => {
         ОСТАЛИСЬ ВОПРОСЫ? ВОЗНИКЛИ ПРОБЛЕМЫ ПРИ ОПЛАТЕ ?
       </LineHeader>
       <LineHeader bgColor='white' smallFont={true}>
-        НАПИШИТЕ НАМ В ТЕЛЕГРАМ И МЫ С РАДОСТЬЮ ОТВЕТИМ НА ВСЕ ВАШИ ВОПРОСЫ И ПОМОЖЕМ ВАМ ОПРЕДЕЛИТЬСЯ С ТАРИФОМ!
+        НАПИШИТЕ НАМ И МЫ С РАДОСТЬЮ ОТВЕТИМ НА ВСЕ ВАШИ ВОПРОСЫ И ПОМОЖЕМ ВАМ ОПРЕДЕЛИТЬСЯ С ТАРИФОМ!
       </LineHeader>
       <LineHeader bgColor='white'>
-        <CustomButton onClick={() => setShowPopup(prev => !prev)}>
+        {/* <CustomButton onClick={() => setShowPopup(prev => !prev)}>
           ЗАДАТЬ ВОПРОС
-        </CustomButton>
+        </CustomButton> */}
+        <a href={'https://wa.me/message/JSDOINY2LABTP1'} target="_blank">
+          <CustomButton>
+            ЗАДАТЬ ВОПРОС
+          </CustomButton>
+        </a>
       </LineHeader>
 
       <CustomFooter />
-      {showPopup ? <SendForm showPopup={setShowPopup}/> : null}
+      {showPopup ? <SendForm showPopup={setShowPopup} /> : null}
     </>
   )
 }

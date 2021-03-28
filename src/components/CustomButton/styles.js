@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 // #d44e81 shadow of buttons
 export const ButtonStyled = styled.button`
+    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
