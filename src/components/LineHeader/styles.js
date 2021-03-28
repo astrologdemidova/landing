@@ -9,7 +9,7 @@ export const LineHeaderWrapper = styled.div`
             case 'pink':
                 return "background-color: rgb(250, 161, 194);"
             case 'white':
-                return "background-color: none;"
+                return "background-color: none; padding-bottom: 0!important;"
             case 'blue':
                 return 'background-color: #a20893;'
             default:
