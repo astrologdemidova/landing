@@ -59,7 +59,7 @@ export const TariffBlock = () => {
                 '▪️ Обратная связь лично от меня',
             ],
             listDescriptionExclusive: [],
-            link: 'https://payform.ru/6l7Peb/'
+            link: 'https://payform.ru/i97QD1/'
         },
         {
             id: '1113',
@@ -87,7 +87,7 @@ export const TariffBlock = () => {
                 '▪️ Обратная связь лично от меня',
             ],
             listDescriptionExclusive: [],
-            link: 'https://payform.ru/7o7PeL/'
+            link: 'https://payform.ru/ih7QD9/'
         },
         {
             id: '1114',
@@ -115,7 +115,7 @@ export const TariffBlock = () => {
                 '▪️ Ужин со мной в Москве',
                 '▪️ Обратная связь лично от меня',
             ],
-            link: 'https://payform.ru/857PeZ/'
+            link: 'https://payform.ru/ir7QDj/'
         }
     ]
     return (
