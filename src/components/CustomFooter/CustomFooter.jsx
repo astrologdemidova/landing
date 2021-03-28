@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { FooterStyled, FooterText, FooterLink, FooterSeparite, FooterLinkReact } from "./styles"
 
-export const CustomFooter = () => {
+export const CustomFooter = ({setShowPopup}) => {
     return (
         <FooterStyled>
             <FooterSeparite />
@@ -48,6 +48,12 @@ export const CustomFooter = () => {
                     #webreznov__studio
                 </FooterLink>
             </FooterText>
+            <FooterText>
+                <FooterLink style={{color: '#1d0404'}} onClick={() => setShowPopup(prev => !prev)}>
+                    test
+                </FooterLink>
+            </FooterText>
+
         </FooterStyled>
     )
 }
