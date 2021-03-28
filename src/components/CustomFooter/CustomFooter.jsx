@@ -48,11 +48,6 @@ export const CustomFooter = () => {
                     #webreznov__studio
                 </FooterLink>
             </FooterText>
-            <FooterText>
-                <a href='https://payform.ru/j77PR8/' target='_blank' style={{ color: '#0d0d0d', cursor: 'none' }}>
-                    no click
-                </a>
-            </FooterText>
         </FooterStyled>
     )
 }

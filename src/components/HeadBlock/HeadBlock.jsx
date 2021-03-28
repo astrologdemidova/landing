@@ -51,9 +51,14 @@ export const HeadBlock = () => {
                 </div>
 
                 <h4>МАРАФОН ПРОХОДИТ В TELEGRAM</h4>
-                <CustomButton>
-                    участвовать
-                </CustomButton>
+                
+                <div style={{width: '100%', textAlign: 'center'}}>
+                    <CustomButton>
+                        <Link to="tariff" smooth={true} duration={700} delay={100} href=''>
+                        участвовать
+                        </Link>
+                    </CustomButton>
+                </div>
                 <BackgroundHelloBlock />
             </HelloText>
             <BackgroundHelloBlockResponsive />

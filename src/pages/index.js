@@ -1,5 +1,7 @@
 import * as React from "react"
 import "../common-style/style.css"
+import Moment from 'react-moment';
+import moment from 'moment';
 import { CustomFooter } from "../components/CustomFooter"
 import { HeadBlock } from "../components/HeadBlock"
 import { LineHeader } from "../components/LineHeader"
@@ -105,7 +107,7 @@ const IndexPage = () => {
       <LineHeader bgColor='white'>
         ОТЗЫВЫ
       </LineHeader>
-      <LineHeader bgColor='white' />
+      {/* <LineHeader bgColor='white' /> */}
 
       <ReviewsBlock />
 
@@ -126,7 +128,9 @@ const IndexPage = () => {
 
       <Element name='tariff'></Element>
       <LineHeader bgColor='white'>
-        до поднятия цен: 22:00:45
+        до поднятия цен:&nbsp;
+        {/* <Moment date={moment().add(4, 'm')} format={"hh:mm:ss"} durationFromNow interval={1000}/> */}
+        <Moment date={moment('2021-03-28 18:00:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment>
       </LineHeader>
       <LineHeader bgColor='white'>
         ТАРИФЫ<br/>

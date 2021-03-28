@@ -30,7 +30,7 @@ export const LineHeaderWrapper = styled.div`
     }}
     @media all and (max-width: 768px) {
         box-sizing: border-box;
-        padding: 15px;
+        padding: 15px 15px 0;
     }
 `
 
