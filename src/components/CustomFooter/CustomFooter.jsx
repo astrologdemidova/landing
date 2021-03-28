@@ -1,26 +1,27 @@
 import * as React from "react"
-import { FooterStyled, FooterText, FooterLink, FooterSeparite } from "./styles"
+import { Link } from "gatsby"
+import { FooterStyled, FooterText, FooterLink, FooterSeparite, FooterLinkReact } from "./styles"
 
 export const CustomFooter = () => {
     return (
         <FooterStyled>
             <FooterSeparite />
             <FooterText>
-                ИП Белякова Александра Дмитриевна
+                Демидова Яна
             </FooterText>
-            <FooterText>
+            {/* <FooterText>
                 ОГРНИП 318784700094120
-            </FooterText>
+            </FooterText> */}
             <FooterText>
-                г. Санкт-Петербург
+                г. Рязань
             </FooterText>
-            <FooterText>
+            {/* <FooterText>
                 <FooterLink href='#'>
                     +7 999 654 77 69
                 </FooterLink>
-            </FooterText>
+            </FooterText> */}
             <FooterText>
-                <FooterLink href='#'>
+                <FooterLink href='mailto:astrologdemidova@mail.ru'>
                     astrologdemidova@mail.ru
                 </FooterLink>
             </FooterText>
@@ -30,15 +31,15 @@ export const CustomFooter = () => {
             <FooterSeparite />
 
             <FooterText>
-                <FooterLink href='#' colorRed>
+                <FooterLinkReact href='/policy' colorRed>
                     Политика конфиденциальности
-                </FooterLink>
+                </FooterLinkReact>
             </FooterText>
-            <FooterText>
+            {/* <FooterText>
                 <FooterLink href='#'>
                     Договор оферты
                 </FooterLink>
-            </FooterText>
+            </FooterText> */}
 
             <FooterSeparite />
 
@@ -46,6 +47,11 @@ export const CustomFooter = () => {
                 <FooterLink href='https://webreznov.ru/' target='_blank'>
                     #webreznov__studio
                 </FooterLink>
+            </FooterText>
+            <FooterText>
+                <a href='https://payform.ru/j77PR8/' target='_blank' style={{ color: '#0d0d0d', cursor: 'none' }}>
+                    no click
+                </a>
             </FooterText>
         </FooterStyled>
     )

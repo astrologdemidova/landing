@@ -22,7 +22,7 @@ export const ReasonsList = styled.div`
     }
     @media all and (max-width: 768px) {
         p {
-            font-size: 17px;
+            font-size: 15px;
         }
     }
 `

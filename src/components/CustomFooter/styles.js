@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "gatsby"
 
 export const FooterStyled = styled.footer`
     background-color: #0d0d0d;
@@ -17,6 +18,14 @@ export const FooterText = styled.p`
 `
 
 export const FooterLink = styled.a`
+    text-decoration: none;
+    color: ${props => props.colorRed ? '#ff8562' : '#ffffff'};
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.55;
+`
+export const FooterLinkReact = styled(Link)`
     text-decoration: none;
     color: ${props => props.colorRed ? '#ff8562' : '#ffffff'};
     text-align: center;

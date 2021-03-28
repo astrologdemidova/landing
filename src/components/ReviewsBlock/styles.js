@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ReviewsBlockWrapper = styled.div`
     display: flex;
+    justify-content: center;
     max-width: 1160px;
     width: 100%;
     margin: 0 auto;

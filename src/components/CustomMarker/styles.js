@@ -7,7 +7,7 @@ export const CustomMarkerPinkStyled = styled.div`
     margin-right: 20px;
     background: rgba(255, 255, 255, 0.8);
     border: 4px solid rgb(253, 117, 180);
-    border-radius: 30px;
+    /* border-radius: 30px; */
     box-shadow: 0px 0px 6px 3px rgba(253, 117, 180, 0.8);
     animation: 0.5s infinite alternate lightning;
     @keyframes lightning {
@@ -28,7 +28,7 @@ export const CustomMarkerBlueStyled = styled.div`
     margin-right: 20px;
     background: rgba(77, 67, 244, 0.8);
     border: 4px solid rgb(77, 67, 244);
-    border-radius: 30px;
+    /* border-radius: 30px; */
     box-shadow: 0px 0px 6px 3px rgba(77, 67, 244, 0.8);
     animation: 0.9s infinite alternate lightningBlue;
     @keyframes lightningBlue {

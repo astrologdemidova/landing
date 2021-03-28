@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// убрать паддинг для мобилок
 export const LineHeaderWrapper = styled.div`
     text-align: center;
     
@@ -10,12 +11,7 @@ export const LineHeaderWrapper = styled.div`
             case 'white':
                 return "background-color: none;"
             case 'blue':
-                return `
-                    background-color: #080a63;
-                    background-image: url("https://thumb.tildacdn.com/tild3735-3131-4930-b939-316463626631/-/format/webp/2020-09-30_101813.jpg");
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                `
+                return 'background-color: #a20893;'
             default:
                 return "background-color: none;"
         }
@@ -52,8 +48,8 @@ export const TextStyled = styled.p`
     max-width: 768px;
     width: 100%;
     @media all and (max-width: 768px) {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         font-size: ${props => props.smallFont ? '17px' : '20px'};
     }
 `

@@ -1,6 +1,7 @@
 import React from "react"
 import { ReasonsWrapper, ReasonsList } from './styles.js'
 import { CustomButton } from "../CustomButton"
+import { Link } from 'react-scroll'
 
 export const ReasonsBlock = () => {
     return (
@@ -18,10 +19,12 @@ export const ReasonsBlock = () => {
                 <p><span>*</span>СЧИТАЕТЕ СЕБЯ <strong>ЛЕНИВЫМ</strong> ИЛИ НЕ ДОСТАТОЧНО СМЕЛЫМ</p>
                 <p><span>*</span><strong>БОИТЕСЬ</strong> ПОДНЯТЬ ЦЕНЫ <strong>НА СВОИ УСЛУГИ</strong></p>
             </ReasonsList>
-            <div>
-                <CustomButton>
-                    хочу это изменить
-                </CustomButton>
+            <div style={{paddingTop: '30px'}}>
+                <Link to="tariff" smooth={true} duration={700} delay={100} href=''>
+                    <CustomButton>
+                        хочу это изменить
+                    </CustomButton>
+                </Link>
             </div>
         </ReasonsWrapper>
     )

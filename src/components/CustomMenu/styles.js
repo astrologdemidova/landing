@@ -59,11 +59,28 @@ export const MenuStyled = styled.div`
             right: 0;
         }
     }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        font-size: 24px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+    a {
+        text-decoration: none;
+        color: #1d2147;
+    }
 `
 
 export const CloseButton = styled.div`
-    width: 20px;
-    height: 20px;
-    background: red;
+    position: absolute;
+    top: 0;
+    right: 10px;
     cursor: pointer;
+    font-size: 50px;
+    font-weight: 200;
+    transform: rotate(45deg);
 `

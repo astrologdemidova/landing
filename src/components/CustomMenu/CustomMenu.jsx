@@ -1,29 +1,33 @@
 import React, {useEffect, useState} from "react"
 import { MenuWrapperStyled, ButtonMenu, MenuStyled, CloseButton } from "./styles"
+import { Link } from 'react-scroll'
 
 const MenuWrapper = ({toOpenMenu}) => {
     return (
         <MenuWrapperStyled onClick={() => toOpenMenu(false)}>
             <MenuStyled>
-                <CloseButton onClick={() => toOpenMenu(false)}/>
+                <CloseButton onClick={() => toOpenMenu(false)}>
+                    {/* <div></div>
+                    <div></div> */}+
+                </CloseButton>
                 <ul>
                     <li>
-                        <a href='#'>ТАРИФЫ</a>
+                        <Link to="tariff" smooth={true} duration={700} delay={100} href='' onClick={() => toOpenMenu(false)}>ТАРИФЫ</Link>
+                    </li>
+                    {/* <li>
+                        <Link to="description" smooth={true} duration={700} delay={100} href='' onClick={() => toOpenMenu(false)}>ЧТО ТЕБЯ ЖДЁТ НА МАРАФОНЕ</Link>
+                    </li> */}
+                    <li>
+                        <Link to="reason" smooth={true} duration={700} delay={100} href='' onClick={() => toOpenMenu(false)}>ДЛЯ КОГО МАРАФОН</Link>
                     </li>
                     <li>
-                        <a href='#'>ЧТО ТЕБЯ ЖДЁТ НА МАРАФОНЕ</a>
+                        <Link to="program" smooth={true} duration={700} delay={100} href='' onClick={() => toOpenMenu(false)}>программа</Link>
                     </li>
                     <li>
-                        <a href='#'>ДЛЯ КОГО МАРАФОН</a>
+                        <Link to="result" smooth={true} duration={700} delay={100} href='' onClick={() => toOpenMenu(false)}>КАКОЙ ИТОГ</Link>
                     </li>
                     <li>
-                        <a href='#'>ПРОГРАММА AB.MONEY</a>
-                    </li>
-                    <li>
-                        <a href='#'>КАКОЙ ИТОГ</a>
-                    </li>
-                    <li>
-                        <a href='#'>ОТЗЫВЫ</a>
+                        <Link to="review" smooth={true} duration={700} delay={100} href='' onClick={() => toOpenMenu(false)}>ОТЗЫВЫ</Link>
                     </li>
                 </ul>
             </MenuStyled>

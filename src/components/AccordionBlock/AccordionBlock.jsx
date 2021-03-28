@@ -10,47 +10,65 @@ export const AccordionBlock = () => {
     const [activeTabs, setActiveTabs] = useState([]);
     const [data, setData] = useState([
         {
-            title: 'ДЕНЬ 1: ЛЕГЕНДАРНАЯ ДЕНЕЖНАЯ МЕДИТАЦИЯ',
+            title: 'День 1. Первый мощный рывок на новый финансовый уровень.',
             description: [
-                'Испытаете на себе медитацию, которая изменит вашу жизнь и откроет поток денежной энергии',
-                'Сделаете задания и поймёте, сколько денег вам нужно на самом деле',
-                'Начнёте визуализировать свои будущие покупки'
+                'знакомлю вас со своей медиацией Изобилия',
+                'чистка финансового канала',
+                'освобождаем пространство для новых возможностей'
             ],
             isOpen: false,
         },
         {
-            title: 'ДЕНЬ 2: ОГРАНИЧИВАЮЩИЕ УБЕЖДЕНИЯ',
+            title: 'День 2. Ускоряем трансформации с помощью ритуала и освобождаем пространство для нового.',
             description: [
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.',
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.',
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.'
+                'ставим цели на год',
+                'пишем план по достижению целей',
+                'привыкаем к большим деньгам'
             ],
             isOpen: false,
         },
         {
-            title: 'ДЕНЬ 3: СТОП-СЛОВА И ДЕНЕЖНЫЕ "НЕТ"',
+            title: 'День 3. Прокачка мышления миллионера + денежный ритуал.',
             description: [
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.',
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.',
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.'
+                'упражнение на миллион',
+                'мощнейший финансовый ритуал',
+                'знакомимся с главным секретом Изобилия'
             ],
             isOpen: false,
         },
         {
-            title: 'ДЕНЬ 4: ПРОРАБОТКА ОКРУЖЕНИЯ',
+            title: 'День 4. Второй мощный рывок на новый финансовый уровень. Избавляемся от негативных установок.',
             description: [
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.',
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.',
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.'
+                'Избавляемся от негативных установок',
+                'Упражнение не для слабонервных: переходим на новый уровень дохода в реальности',
+                'Знакомство с очень благополучной и успешной версией вас самих'
             ],
             isOpen: false,
         },
         {
-            title: 'ДЕНЬ 5: ЖИЗНЬ В ИЗОБИЛИИ',
+            title: 'День 5. Выстраиваем цели и планы на будущее.',
             description: [
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.',
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.',
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, suscipit.'
+                'Повышаем уровень комфорта',
+                'Знакомимся со своей идеальной жизнью и намечаем путь к этой цели',
+                'перепрошиваем негативные установки в сознании'
+            ],
+            isOpen: false,
+        },
+        {
+            title: 'День 6. Знакомство с мечтой. Делаем шаг к мечте.',
+            description: [
+                'эфир «30 законов благополучия»',
+                'моя техника карты желаний',
+                'знакомимся с мечтой и делаем к ней шаг'
+            ],
+            isOpen: false,
+        },
+        {
+            title: 'День 7. Выход на новый уровень комфорта.',
+            description: [
+                'знакомство с самим собой, своими талантами и потенциалом',
+                'прорабатываем своё окружение',
+                'розыгрыш моей консультации за 120к'
             ],
             isOpen: false,
         },
@@ -70,9 +88,12 @@ export const AccordionBlock = () => {
         <AccordionWrapper>
             {data.map((item, index) => (
                 <CardWrapper key={item.title}>
-                    <CardHeader onClick={() => clickHandler(index)}>
+                    <CardHeader onClick={() => clickHandler(index)} isOpen={activeTabs.includes(index)}>
                         {item.title}
-                        <span></span>
+                        <span>
+                            <div></div>
+                            <div></div>
+                        </span>
                     </CardHeader>
                     <CardContent isOpen={activeTabs.includes(index)}>
                         {item.description.map((str, ind) => (

@@ -23,27 +23,35 @@ export const HelloText = styled.div`
         margin: 0;
         padding: 0;
     }
-    li {
-        display: flex;
-        padding: 7px 5px;
-        p {
-            color: #1d2147;
-            font-size: 16px;
-            font-style: italic;
-            font-family: 'FuturaPT',Arial,sans-serif;
-            line-height: 1.55;
-            font-weight: 500;
-            text-transform: uppercase;
-            margin: 0;
-            padding: 0;
-        }
-    }
     p {
         color: #1d2147;
         font-weight: 700;
         padding-left: 38px;
         padding-bottom: 30px;
     }
+`
+export const ShowTextStyled = styled.li`
+    display: ${props => props.toShow ? 'flex' : 'none'};
+    padding: 7px 5px;
+    p {
+        color: #1d2147;
+        font-size: 16px;
+        font-style: italic;
+        font-family: 'FuturaPT',Arial,sans-serif;
+        line-height: 1.55;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+    }
+`
+
+export const ShowMoreBtn = styled.a`
+    text-decoration: none;
+    color: #1d2147;
+    font-weight: 200;
+    font-size: 14px;
+    cursor: pointer;
+    padding-left: 38px;
 `
 
 export const HelloPicture = styled.div`

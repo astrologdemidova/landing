@@ -13,6 +13,7 @@ export const AccordionWrapper = styled.div`
 
 export const CardWrapper = styled.div`
     border-top: 3px solid #5238fa;
+    border-top: 3px solid #D44E81;
     max-width: 1160px;
     width: 100%;
 `
@@ -32,13 +33,32 @@ export const CardHeader = styled.div`
         width: 40px;
         height: 40px;
         border-radius: 40px;
-        background: #5238fa;
+        /* background: #5238fa; */
+        background: #D44E81;
         color: #ffffff;
+        transition: all 0.2s ease-in;
+        transform: ${props => props.isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+        div {
+            position: absolute;
+            top: 13px;
+            left: 14px;
+            width: 2px;
+            height: 16px;
+            background: #eeeeee;
+            transform: rotate(-45deg);
+            &:last-of-type {
+                left: 25px;
+                transform: rotate(45deg);
+            }
+        }
     }
     &:hover {
         span {
             background: #eee;
             color: #000000;
+            div {
+                background: #111111;
+            }
         }
     }
 `
@@ -65,7 +85,7 @@ export const CardContent = styled.div`
             display: inline-block;
             width: 10px;
             height: 10px;
-            background: #0078d7;
+            background: #6a45ab;
             border: 2px solid black;
             transform: rotate(45deg);
             margin-right: 10px;

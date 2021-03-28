@@ -6,3 +6,11 @@ body {
     background: #f8f8ff;
     font-family: 'Open Sans', Arial, sans-serif;
 }
+
+a {
+    text-decoration: none;
+}
+
+.policy-page {
+    padding: 50px 30px;
+}

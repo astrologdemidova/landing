@@ -27,14 +27,15 @@ export const CardStyled = styled.div`
     padding: 30px;
     margin: 20px;
     box-sizing: border-box;
-    background: ${props => props.revert ? '#f75995' : '#5238fa'};
+    /* background: ${props => props.revert ? '#f75995' : '#5238fa'}; */
+    background: #d63c8a;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.55;
     font-weight: 700;
     text-align: left;
     text-transform: uppercase;
-    &:after {
+    /* &:after {
         content: '';
         position: absolute;
         top: -13px;
@@ -44,5 +45,5 @@ export const CardStyled = styled.div`
         z-index: -1;
         border-radius: 30px;
         background: ${props => props.revert ? '#5238fa' : '#f75995'};
-    }
+    } */
 `

@@ -8,20 +8,21 @@ import {
     BackgroundHelloBlockResponsive,
 } from "./styles"
 import helloBlock from "../../images/IMG_9489.webp"
-import videoBlock from "../../images/ezgif.com-gif-maker.gif"
+// import videoBlock from "../../images/ezgif.com-gif-maker.gif"
 import { CustomButton } from "../CustomButton"
 import { CustomMarker } from "../CustomMarker"
+import { Link } from 'react-scroll'
 
 export const HeadBlock = () => {
     return (
         <HeadBlockStyled>
             <HelloText>
-                <div>
+                <div style={{padding: '20px'}}>
                     <HeaderStyled>
-                        <a href='#'>об яне д.</a>
-                        <a href='#'>программа</a>
-                        <a href='#' className='Prodamus-startPay'>купить</a>
-                        <a href='#'>отзывы</a>
+                        <Link to="about" smooth={true} duration={700} delay={100} href=''>о яне</Link>
+                        <Link to="program" smooth={true} duration={700} delay={100} href=''>программа</Link>
+                        <Link to="tariff" smooth={true} duration={700} delay={100} href=''>купить</Link>
+                        <Link to="review" smooth={true} duration={700} delay={100} href=''>отзывы</Link>
                     </HeaderStyled>
                     <h1>«Изобилие»</h1>
                     <h2>Старт 12 апреля</h2>
@@ -62,8 +63,8 @@ export const HeadBlock = () => {
                     <source src={videoBlock} type="video/mp4" />
                     <source src="daisy-stock-webm-video.webm" type="video/webm" />
                 </video> */}
-                {/* <img src={helloBlock} alt="Астролог Демидова Яна" /> */}
-                <img src={videoBlock} alt="Астролог Демидова Яна" />
+                <img src={helloBlock} alt="Астролог Демидова Яна" />
+                {/* <img src={videoBlock} alt="Астролог Демидова Яна" /> */}
             </HelloPicture>
         </HeadBlockStyled>
     )

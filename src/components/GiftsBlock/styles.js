@@ -20,4 +20,13 @@ export const GiftsList = styled.div`
             padding-right: 7px;
         }
     }
+    @media all and (max-width: 768px) {
+        p {
+            span {
+                img {
+                    width: 30px;
+                }
+            }
+        }
+    }
 `

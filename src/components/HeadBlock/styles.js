@@ -5,7 +5,7 @@ export const HeadBlockStyled = styled.div`
     display: flex;
     background-color: rgba(8, 10, 99, 0.55);
     position: relative;
-    @media all and (max-width: 768px) {
+    @media all and (max-width: 991px) {
         min-height: 115vh;
     }
 `
@@ -23,9 +23,10 @@ export const HeaderStyled = styled.header`
         text-transform: uppercase;
         text-decoration: none;
         margin-right: 40px;
+        white-space: nowrap;
     }
-
-    @media all and (max-width: 768px) {
+    
+    @media all and (max-width: 991px) {
         display: none;
     }
 `
@@ -57,6 +58,7 @@ export const HelloText = styled.div`
         font-size: 20px;
         color: #ffffff;
         text-transform: uppercase;
+        text-align: center;
     }
     ul {
         list-style-type: none;
@@ -73,9 +75,19 @@ export const HelloText = styled.div`
         font-weight: 500;
         text-transform: uppercase;
     }
-    @media all and (max-width: 768px) {
+    @media all and (max-width: 991px) {
+        h1, h2 {
+            font-size: 34px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        li {
+            font-size: 18px;
+        }
+    }
+    @media all and (max-width: 991px) {
         box-sizing: border-box;
-        padding: 15px;
+        padding: 15px 15px 45px;
         h1, h2 {
             font-size: 34px;
             margin-top: 10px;
@@ -94,7 +106,7 @@ export const HelloPicture = styled.div`
         display: block;
         width: 100%;
     }
-    @media all and (max-width: 768px) {
+    @media all and (max-width: 991px) {
         position: absolute;
         top: 0;
         left: 0;
@@ -102,10 +114,12 @@ export const HelloPicture = styled.div`
         bottom: 0;
         z-index: -1;
         overflow: hidden;
+        max-width: 991px;
+        width: unset;
         img, video {
             object-fit: cover;
             height: 100%;
-            width: unset;
+            width: 100%;
         }
     }
 `
@@ -123,14 +137,14 @@ export const BackgroundHelloBlock = styled.div`
     background-attachment: scroll;
     background-size: cover;
 
-    @media all and (max-width: 768px) {
+    @media all and (max-width: 991px) {
         display: none;
     }
 `
 
 export const BackgroundHelloBlockResponsive = styled.div`
     display: none;
-    @media all and (max-width: 768px) {
+    @media all and (max-width: 991px) {
         display: block;
         position: absolute;
         top: 0;
@@ -143,7 +157,8 @@ export const BackgroundHelloBlockResponsive = styled.div`
         background-position: center center;
         background-attachment: scroll;
         background-size: cover;
-        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(8,19,101,1) 80%);
+        /* background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(8,19,101,1) 95%); */
+        background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(255,255,255,1) 99%);
     }
 `
 
