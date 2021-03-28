@@ -146,14 +146,14 @@ const IndexPage = () => {
         НАПИШИТЕ НАМ И МЫ С РАДОСТЬЮ ОТВЕТИМ НА ВСЕ ВАШИ ВОПРОСЫ И ПОМОЖЕМ ВАМ ОПРЕДЕЛИТЬСЯ С ТАРИФОМ!
       </LineHeader>
       <LineHeader bgColor='white'>
-        {/* <CustomButton onClick={() => setShowPopup(prev => !prev)}>
+        <CustomButton onClick={() => setShowPopup(prev => !prev)}>
           ЗАДАТЬ ВОПРОС
-        </CustomButton> */}
-        <a href={'https://wa.me/message/JSDOINY2LABTP1'} target="_blank">
+        </CustomButton>
+        {/* <a href={'https://wa.me/message/JSDOINY2LABTP1'} target="_blank">
           <CustomButton>
             ЗАДАТЬ ВОПРОС
           </CustomButton>
-        </a>
+        </a> */}
       </LineHeader>
 
       <CustomFooter />
