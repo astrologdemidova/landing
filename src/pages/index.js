@@ -130,7 +130,7 @@ const IndexPage = () => {
       <LineHeader bgColor='white'>
         до поднятия цен:&nbsp;
         {/* <Moment date={moment().add(4, 'm')} format={"hh:mm:ss"} durationFromNow interval={1000}/> */}
-        <Moment date={moment('2021-03-29 10:00:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment>
+        <Moment date={moment('2021-03-30 10:00:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment>
       </LineHeader>
       <LineHeader bgColor='white'>
         ТАРИФЫ<br />
