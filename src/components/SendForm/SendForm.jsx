@@ -10,7 +10,7 @@ export const SendForm = ({ showPopup }) => {
     const [password, setPassword] = useState("");
     const toSendForm = (e) => {
         e.preventDefault();
-        Axios.post("https://webreznov-audio.herokuapp.com/api/text-mail-test", {
+        Axios.post("https://send-mail-astrolog.herokuapp.com/api/text-mail", {
             email: login,
             phone: password,
         })
