@@ -32,11 +32,18 @@ const Card = ({ item }) => {
 }
 
 export const TariffBlock = () => {
+    // 11111 https://payform.ru/888g2k/
+    // 15555 https://payform.ru/8a8g2m/
+    // 99999 https://payform.ru/8e8g2q/
+    
+    // 12 222 https://payform.ru/8t8g2F/
+    // 16 666 https://payform.ru/8w8g2I/
+    // 111 111 https://payform.ru/938g2M/
     const data = [
         {
             id: '1112',
             title: 'Magic mini:',
-            coast: 'от 13 333 ₽',
+            coast: 'от 11 111 ₽',
             strikePrice: '15 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -59,12 +66,12 @@ export const TariffBlock = () => {
                 '▪️ Обратная связь лично от меня',
             ],
             listDescriptionExclusive: [],
-            link: 'https://payform.ru/457RO9/'
+            link: 'https://payform.ru/888g2k/'
         },
         {
             id: '1113',
             title: 'Magic',
-            coast: 'от 17 777 ₽',
+            coast: 'от 15 555 ₽',
             strikePrice: '19 999 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -87,12 +94,12 @@ export const TariffBlock = () => {
                 '▪️ Обратная связь лично от меня',
             ],
             listDescriptionExclusive: [],
-            link: 'https://payform.ru/4f7ROj/'
+            link: 'https://payform.ru/8a8g2m/'
         },
         {
             id: '1114',
             title: 'Magic VIP (ОБРАТНАЯ СВЯЗЬ ПО ДОМАШНИМ ЗАДАНИЯМ ОТ ЯНЫ)',
-            coast: 'от 122 222 ₽',
+            coast: 'от 99 999 ₽',
             strikePrice: '155 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -115,7 +122,7 @@ export const TariffBlock = () => {
                 '▪️ Ужин со мной в Москве',
                 '▪️ Обратная связь лично от меня',
             ],
-            link: 'https://payform.ru/4n7ROr/'
+            link: 'https://payform.ru/8e8g2q/'
         }
     ]
     return (
