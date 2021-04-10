@@ -213,7 +213,7 @@ export const TariffBlock = () => {
     ]
     return (
         <TariffBlockWrapper>
-            {data.map((item) => <Card key={item.id} item={item} />)}
+            {data2.map((item) => <Card key={item.id} item={item} />)}
         </TariffBlockWrapper>
     )
 }
