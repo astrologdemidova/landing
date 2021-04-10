@@ -127,10 +127,10 @@ const IndexPage = () => {
       <GiftsBlock />
 
       <Element name='tariff'></Element>
-      {/*<LineHeader bgColor='white'>
+      <LineHeader bgColor='white'>
         до поднятия цен:&nbsp;
-        <Moment date={moment('2021-03-30 10:00:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment>
-      </LineHeader>*/}
+        <Moment date={moment('2021-04-10 18:00:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment>
+      </LineHeader>
       <LineHeader bgColor='white'>
         ТАРИФЫ<br />
         <span style={{ color: '#f75995', fontSize: '26px' }}>Продажи закрыты</span>
