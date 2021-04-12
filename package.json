@@ -8,7 +8,6 @@
     "gatsby"
   ],
   "scripts": {
-    "mailserver": "node server/index.js",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
@@ -16,10 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
     "gatsby": "^3.0.1",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
     "gatsby-plugin-google-analytics": "^3.1.0",
@@ -34,7 +30,6 @@
     "gatsby-transformer-remark": "^3.1.0",
     "gatsby-transformer-sharp": "^3.1.0",
     "netlify-cms-app": "^2.14.29",
-    "nodemailer": "^6.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
