@@ -23,6 +23,12 @@ const Shop = () => {
                     rel="stylesheet"
                     type="text/css"
                 />
+                <style type="text/css">{`
+                    body {
+                        paddnig: 0;
+                        margin: 0;
+                    }
+                `}</style>
             </Helmet>
             <CatalogWrapper />
         </>
