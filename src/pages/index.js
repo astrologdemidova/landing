@@ -7,7 +7,7 @@ import { HeadBlock } from "../components/HeadBlock"
 import { LineHeader } from "../components/LineHeader"
 import { CustomMenu } from "../components/CustomMenu"
 import { HelloBlock } from "../components/HelloBlock"
-import { DescriptionCardBlock } from "../components/DescriptionCardBlock"
+// import { DescriptionCardBlock } from "../components/DescriptionCardBlock"
 import { ReasonsBlock } from "../components/ReasonsBlock"
 import { MarathonBlock } from "../components/MarathonBlock"
 import { AccordionBlock } from "../components/AccordionBlock"
@@ -20,23 +20,12 @@ import { SendForm } from "../components/SendForm"
 import { Element } from 'react-scroll'
 // markup
 const IndexPage = () => {
-  // React.useEffect(() => {
-  //   // <script type="text/javascript" src="https://pay.demidova.payform.ru/widget.js" async></script>
-  //   const scriptTag = document.createElement('script');
-  //   scriptTag.type = 'text/javascript'
-  //   scriptTag.async = true
-  //   scriptTag.src = 'https://demidova.prodamus.me/widget.js'
-  //   document.body.append(scriptTag)
-  // }, [])
   const [showPopup, setShowPopup] = React.useState(false);
   return (
     <>
       <CustomMenu />
 
       <HeadBlock />
-      {/* <LineHeader bgColor='pink'>
-        ОСТАВЬ ЗАЯВКУ И УЗНАЙ О ПРОДАЖАХ ПЕРВЫМ
-      </LineHeader> */}
 
       <Element name='about'></Element>
       <LineHeader bgColor='white'>
@@ -45,15 +34,6 @@ const IndexPage = () => {
 
 
       <HelloBlock />
-
-
-      {/* <LineHeader bgColor='white' />
-      <Element name='description'></Element>
-      <LineHeader bgColor='white'>
-        ЧТО ТЕБЯ ЖДЕТ НА МАРАФОНЕ
-      </LineHeader> */}
-
-      {/* <DescriptionCardBlock /> */}
 
       <LineHeader bgColor='white' />
       <LineHeader bgColor='blue'>
@@ -82,15 +62,6 @@ const IndexPage = () => {
 
       <AccordionBlock />
 
-      {/* <LineHeader bgColor='white' />
-      <LineHeader bgColor='white' smallFont={true}>
-        <strong>ДЛЯ </strong>ДОСТИЖЕНИЯ <strong>МАКСИМАЛЬНОГО РЕЗУЛЬТАТА</strong>
-        ВАЖНО <strong>ВЫПОЛНЯТЬ ЗАДАНИЯ ПО АВТОРСКОЙ МЕТОДИКЕ</strong>
-        В УСТАНОВЛЕННЫЕ ИСПОЛНИТЕЛЕМ СРОКИ! <strong>НАРУШИВШИХ </strong>
-        ДАННОЕ <strong>ОБЯЗАТЕЛЬСТВО, МЫ ИМЕЕМ ПРАВО ИСКЛЮЧИТЬ ИЗ </strong>
-        ОБЩЕГО <strong>ЧАТА </strong>ЕДИНОМЫШЛЕННИКОВ<strong>.</strong>
-      </LineHeader> */}
-
       <LineHeader bgColor='white' />
       <Element name='result'></Element>
       <LineHeader bgColor='blue'>
@@ -107,19 +78,8 @@ const IndexPage = () => {
       <LineHeader bgColor='white'>
         ОТЗЫВЫ
       </LineHeader>
-      {/* <LineHeader bgColor='white' /> */}
 
       <ReviewsBlock />
-
-      {/* <LineHeader bgColor='white'>
-        ЕЩЁ БОЛЬШЕ ОТЗЫВОВ МОЖНО ПОСМОТРЕТЬ ЗДЕСЬ:
-        <div style={{paddingTop: '15px'}}>
-          <CustomButton>
-            ВДОХНОВИТЬСЯ УСПЕХАМИ
-          </CustomButton>
-        </div>
-      </LineHeader>
-      <LineHeader bgColor='white' /> */}
 
       <LineHeader bgColor='white'>
         призы
@@ -130,7 +90,6 @@ const IndexPage = () => {
       <LineHeader bgColor='white'>
         до поднятия цен:&nbsp;
         <Moment date={moment('2021-04-12 18:30:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment>
-        {/*<Moment date={moment('2021-04-11 18:00:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment>*/}
       </LineHeader>
       <LineHeader bgColor='white'>
         ТАРИФЫ<br />
@@ -149,7 +108,7 @@ const IndexPage = () => {
         {/* <CustomButton onClick={() => setShowPopup(prev => !prev)}>
           ЗАДАТЬ ВОПРОС
         </CustomButton> */}
-        <a href={'https://wa.me/message/JSDOINY2LABTP1'} target="_blank">
+        <a href={'https://wa.me/message/JSDOINY2LABTP1'} rel="noreferrer" target="_blank">
           <CustomButton>
             ЗАДАТЬ ВОПРОС
           </CustomButton>

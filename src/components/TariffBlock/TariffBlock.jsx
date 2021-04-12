@@ -18,7 +18,7 @@ const Card = ({ item }) => {
             {item.listDescriptionOpen.map(el => <p>{el}</p>)}
             {item.listDescriptionClose.map(el => <TextStrike>{el}</TextStrike>)}
             <div>
-                <a href={item.link} target="_blank">
+                <a href={item.link} rel="noreferrer" target="_blank">
                     <CustomButton>
                         оплатить
                     </CustomButton>
