@@ -3,7 +3,7 @@ import BgPicture from '../../../images/catalog/main-bg-home1.jpg';
 
 export const CatalogWrapperStyled = styled.main`
     padding: 20px;
-    /* background: url(${BgPicture}) no-repeat; */
+    background: url(${BgPicture}) no-repeat;
     background-size: cover;
     * {
         font-family: 'Roboto Condensed', sans-serif;
@@ -21,9 +21,6 @@ export const CatalogHeaderContainer = styled.header`
     h2 {
         color: #e69e60;
         font-family: 'Alex Brush', cursive;
-    }
-    h1 {
-        color: #0d0d0d;
     }
 `;
 

@@ -1,21 +1,12 @@
 import styled from "styled-components";
 
 export const CatalogFooterStyled = styled.footer`
-    background-color: #0d0d0d;
     max-width: 992px;
-    /* width: 100%; */
-    /* margin: 0 auto; */
+    width: 100%;
+    margin: 0 auto;
     padding: 35px 15px;
     box-sizing: border-box;
     color: white;
-    display: block;
-    margin-left: -20px;
-    margin-right: -20px;
-    margin-bottom: -20px;
-    @media all and (min-width: 992px) {
-        width: 100%;
-        margin: 0 auto;
-    }
 `;
 
 export const CatalogFooterText = styled.p`
