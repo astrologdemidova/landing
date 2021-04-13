@@ -55,10 +55,11 @@ export const CatalogSubHeaderContainer = styled.header`
     position: relative;
     background: url(${BgPicture}) no-repeat;
     background-size: cover;
+    background-position: 40% 0;
     max-width: 768px;
     width: 100%;
     margin: 40px auto;
-    padding: 145px 15px;
+    padding: 245px 15px 100px;
     box-sizing: border-box;
     color: #f75995;
     text-align: center;
@@ -76,19 +77,34 @@ export const CatalogSubHeaderContainer = styled.header`
         z-index: 10;
         li {
             font-size: 13px;
-            color: #f75995;
+            color: #e5428e;
             font-weight: 600;
             span {
-                color: #d849ca;
+                color: #cb50ce;
             }
         }
     }
     h4 {
         position: relative;
-        color: #a20893;
+        color: #e60670;
         text-align: right;
         font-size: 18px;
         z-index: 10;
+        span {
+            position: relative;
+            color: #ffffff;
+            padding-left: 5px;
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: 9px;
+                left: 12px;
+                width: 4px;
+                height: 2px;
+                box-shadow: 0px 0px 10px 10px rgba(230, 6, 112, 0.3);
+            }
+        }
     }
 `;
 
@@ -99,7 +115,7 @@ export const ListSeparate = styled.li`
 export const WhiteBackground = styled.div`
     border-radius: 11px;
     position: absolute;
-    top: 0;
+    top: -1px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -114,7 +130,7 @@ export const CatalogContainer = styled.div`
     flex-wrap: wrap;
     max-width: 992px;
     width: 100%;
-    background: white;
+    /* background: white; */
     margin: 0 auto;
     padding: 15px;
     box-sizing: border-box;

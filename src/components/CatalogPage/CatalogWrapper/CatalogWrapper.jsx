@@ -188,7 +188,7 @@ export const CatalogWrapper = () => {
                     <li>которые я так долго собирала и создавала по крупицам</li>
                     <ListSeparate />
                 </ul>
-                <h4>С любовью, Яна❤️</h4>
+                <h4>С любовью, Яна<span>❤</span></h4>
                 <WhiteBackground />
             </CatalogSubHeaderContainer>
 
