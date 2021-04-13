@@ -18,11 +18,16 @@ import { GiftsBlock } from "../components/GiftsBlock"
 import { TariffBlock } from "../components/TariffBlock"
 import { SendForm } from "../components/SendForm"
 import { Element } from 'react-scroll'
+import { Helmet } from "react-helmet";
 // markup
 const IndexPage = () => {
   const [showPopup, setShowPopup] = React.useState(false);
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Марафон Изобилие</title>
+      </Helmet>
       <CustomMenu />
 
       <HeadBlock />
@@ -115,7 +120,7 @@ const IndexPage = () => {
         </a>
       </LineHeader>
 
-      <CustomFooter setShowPopup={setShowPopup}/>
+      <CustomFooter setShowPopup={setShowPopup} />
       {showPopup ? <SendForm showPopup={setShowPopup} /> : null}
     </>
   )

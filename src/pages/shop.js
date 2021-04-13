@@ -1,4 +1,5 @@
 import * as React from 'react'
+import "../common-style/style.css"
 import { Helmet } from 'react-helmet'
 import { CatalogWrapper } from '../components/CatalogPage/CatalogWrapper'
 

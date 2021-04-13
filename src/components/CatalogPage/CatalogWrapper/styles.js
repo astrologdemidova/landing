@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BgPicture from '../../../images/catalog/main-bg-home1.jpg';
+import BgPicture from '../../../images/red-min.jpg';
 
 export const CatalogWrapperStyled = styled.main`
     padding: 20px;
@@ -11,20 +11,100 @@ export const CatalogWrapperStyled = styled.main`
 `;
 
 export const CatalogHeaderContainer = styled.header`
+    position: relative;
     max-width: 992px;
     width: 100%;
     margin: 0 auto;
     padding: 15px;
     box-sizing: border-box;
-    color: white;
-    text-align: right;
-    h2 {
-        color: #e69e60;
-        font-family: 'Alex Brush', cursive;
-    }
+    color: #0d0d0d;
+    text-align: center;
     h1 {
-        color: #0d0d0d;
+        color: #6a45ab;
+        position: relative;
+        z-index: 10;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 5px;
     }
+    h2 {
+        position: relative;
+        z-index: 10;
+        color: #6a45ab;
+        font-size: 22px;
+        font-weight: 200;
+        margin-top: 5px;
+        /* font-family: 'Alex Brush', cursive; */
+    }
+    img {
+        position: absolute;
+        top: 60px;
+        right: 1px;
+        width: 110px;
+        z-index: 5;
+        transform: rotate(-30deg);
+    }
+`;
+
+export const ListBlack = styled.li`
+    font-size: 16px!important;
+    color: #0d0d0d!important;
+`;
+
+export const CatalogSubHeaderContainer = styled.header`
+    position: relative;
+    background: url(${BgPicture}) no-repeat;
+    background-size: cover;
+    max-width: 768px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 145px 15px;
+    box-sizing: border-box;
+    color: #f75995;
+    text-align: center;
+
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 10px rgba(162, 8, 147, 0.1);
+
+    ul {
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        z-index: 10;
+        li {
+            font-size: 13px;
+            color: #f75995;
+            font-weight: 600;
+            span {
+                color: #d849ca;
+            }
+        }
+    }
+    h4 {
+        position: relative;
+        color: #a20893;
+        text-align: right;
+        font-size: 18px;
+        z-index: 10;
+    }
+`;
+
+export const ListSeparate = styled.li`
+    padding: 7px 0;
+`;
+
+export const WhiteBackground = styled.div`
+    border-radius: 11px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.7);
 `;
 
 export const CatalogContainer = styled.div`
