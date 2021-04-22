@@ -11,7 +11,7 @@ export const CatalogFooterStyled = styled.footer`
     display: block;
     margin-left: -20px;
     margin-right: -20px;
-    margin-bottom: -20px;
+    margin-bottom: -21px;
     @media all and (min-width: 992px) {
         width: 100%;
         margin: 0 auto;

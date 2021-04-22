@@ -135,3 +135,9 @@ export const CatalogContainer = styled.div`
     padding: 15px;
     box-sizing: border-box;
 `;
+
+export const MenuButtonWrapper = styled.div`
+    width: 100%;
+    text-align: center;
+    margin: 25px 0;
+`;
