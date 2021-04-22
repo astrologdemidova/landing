@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import * as React from 'react';
 import {
     CatalogCardCoast,
@@ -22,6 +23,12 @@ export const CatalogCard = ({imgSrc, nameItem, nameItemSub, coast, description, 
             {show && <CatalogCardDescription>{description.map((item) => <li key={item}>{item}</li>)}</CatalogCardDescription>}
             <CatalogCardShow onClick={clickHandler}>{show ? 'Скрыть' : 'Подробнее'}</CatalogCardShow>
 
+            <div style={{textAlign: 'center', paddingBottom: '40px'}}>
+                <Link to='/review'>
+                    <CatalogCardLinkPay href={linkPay} rel='noopenner' target='_blank'>Отзывы</CatalogCardLinkPay>
+                </Link>
+            </div>
+            
             <div style={{textAlign: 'center'}}>
                 <CatalogCardLinkPay href={linkPay} rel='noopenner' target='_blank'>Заказать</CatalogCardLinkPay>
             </div>

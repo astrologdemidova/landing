@@ -33,7 +33,6 @@ export const CatalogWrapper = () => {
         [contentTypeConsultation, ArrayContentTypeConsultation],
         [contentTypeStones, ArrayContentTypeStones],
     ])
-    React.useEffect(() => console.log('!!!!!', contentType), [contentType])
 
     return (
         <CatalogWrapperStyled>
