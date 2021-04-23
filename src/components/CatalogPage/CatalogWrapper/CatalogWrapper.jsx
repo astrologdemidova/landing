@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { ArrayContentTypeRuny } from './ContentTypeRuny'
+import { ArrayContentTypeRitual } from './ContentTypeRitual'
 import { ArrayContentTypeConsultation } from './ContentTypeConsultation'
-import { ArrayContentTypeStones } from './ContentTypeStones'
+// import { ArrayContentTypeStones } from './ContentTypeStones'
 import { ArrayContentTypeMeditation } from './ContentTypeMeditation'
 import { CatalogCard } from '../CatalogCard'
 import { CatalogFooter } from '../CatalogFooter'
@@ -20,18 +20,18 @@ import {
 import emoji from '../../../images/emoji-schh.png'
 
 export const contentTypeMenu = 'CONTENT_TYPE_MENU'
-export const contentTypeRuny = 'CONTENT_TYPE_RUNY'
+export const contentTypeRitual = 'CONTENT_TYPE_RUNY'
 export const contentTypeMeditation = 'CONTENT_TYPE_MEDITATION'
 export const contentTypeConsultation = 'CONTENT_TYPE_CONSULTATION'
-export const contentTypeStones = 'CONTENT_TYPE_STONES'
+// export const contentTypeStones = 'CONTENT_TYPE_STONES'
 
 export const CatalogWrapper = () => {
     const [contentType, setContentType] = React.useState(contentTypeMenu)
     const data = new Map([
-        [contentTypeRuny, ArrayContentTypeRuny],
+        [contentTypeRitual, ArrayContentTypeRitual],
         [contentTypeMeditation, ArrayContentTypeMeditation],
         [contentTypeConsultation, ArrayContentTypeConsultation],
-        [contentTypeStones, ArrayContentTypeStones],
+        // [contentTypeStones, ArrayContentTypeStones],
     ])
 
     return (
@@ -93,29 +93,34 @@ export const CatalogWrapper = () => {
             {contentType === contentTypeMenu && (
                 <CatalogContainer>
                     <MenuButtonWrapper>
-                        <CustomButton onClick={() => setContentType(contentTypeRuny)}>Ритуалы</CustomButton>
-                    </MenuButtonWrapper>
-                    <MenuButtonWrapper>
                         <CustomButton onClick={() => setContentType(contentTypeMeditation)}>Медитации</CustomButton>
                     </MenuButtonWrapper>
+                    
                     <MenuButtonWrapper>
                         <CustomButton onClick={() => setContentType(contentTypeConsultation)}>Консультации</CustomButton>
                     </MenuButtonWrapper>
+                    
                     <MenuButtonWrapper>
-                        <CustomButton onClick={() => setContentType(contentTypeStones)}>Камни</CustomButton>
+                        <CustomButton onClick={() => setContentType(contentTypeRitual)}>Ритуалы</CustomButton>
                     </MenuButtonWrapper>
+                    
+                    {/* <MenuButtonWrapper>
+                        <CustomButton onClick={() => setContentType(contentTypeStones)}>Камни</CustomButton>
+                    </MenuButtonWrapper> */}
                 </CatalogContainer>
             )}
             <CatalogContainer>
                 {contentType !== contentTypeMenu &&
-                    data.get(contentType).map((item) => (
+                    data.get(contentType).map((item, ind) => (
                         <CatalogCard
-                            key={item.imgSrc}
+                            key={ind + item.imgSrc}
                             imgSrc={item.imgSrc}
                             nameItem={item.nameItem}
                             nameItemSub={item.nameItemSub}
                             coast={item.coast}
+                            coastStrike={item.coastStrike}
                             description={item.description}
+                            faq={item.faq}
                             linkPay={item.linkPay}
                         />
                     ))}

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { CustomMarker } from "../CustomMarker";
 import { 
     AccordionWrapper,
@@ -9,7 +9,8 @@ import {
 
 export const AccordionBlock = () => {
     const [activeTabs, setActiveTabs] = useState([]);
-    const [data, setData] = useState([
+    const [data, setData] = useState();
+    useEffect(() => (setData([
         {
             title: 'День 1. Первый мощный рывок на новый финансовый уровень.',
             description: [
@@ -73,7 +74,7 @@ export const AccordionBlock = () => {
             ],
             isOpen: false,
         },
-    ])
+    ])), [])
 
     const clickHandler = (idItem) => {
         activeTabs.includes(idItem)
@@ -87,7 +88,7 @@ export const AccordionBlock = () => {
     }
     return (
         <AccordionWrapper>
-            {data.map((item, index) => (
+            {data && data.map((item, index) => (
                 <CardWrapper key={item.title}>
                     <CardHeader onClick={() => clickHandler(index)} isOpen={activeTabs.includes(index)}>
                         {item.title}

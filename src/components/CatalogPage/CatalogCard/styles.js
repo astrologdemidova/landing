@@ -1,14 +1,7 @@
 import styled from "styled-components";
+import { CustomButton } from "../../CustomButton";
 
 export const CatalogCardWrapper = styled.div`
-    /* max-width: 31%;
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 30px 0;
-    img {
-        width: 100%;
-    } */
     max-width: 29%;
     width: 100%;
     margin: 20px;
@@ -24,6 +17,13 @@ export const CatalogCardWrapper = styled.div`
 `;
 
 export const CatalogCardCoast = styled.p`
+    font-size: 24px;
+    color: #e69e60;
+    text-align: center;
+`;
+
+export const CatalogCardCoastStrike = styled.p`
+    text-decoration: line-through;
     color: #e69e60;
     text-align: center;
 `;
@@ -53,6 +53,16 @@ export const CatalogCardDescription = styled.ul`
     }
 `;
 
+export const CatalogHeaderFaq = styled.b`
+    display: inline-block;
+    padding-top: 20px;
+    font-size: 13px;
+`;
+export const CatalogQuestionFaq = styled.span`
+    display: inline-block;
+    font-size: 13px;
+`;
+
 export const CatalogCardShow = styled.div`
     cursor: pointer;
     text-align: center;
@@ -60,17 +70,6 @@ export const CatalogCardShow = styled.div`
 `;
 
 export const CatalogCardLinkPay = styled.a`
-    /* display: block;
-    width: 116px;
-    border: 1px solid #888;
-    cursor: pointer;
-    text-align: center;
-    padding: 12px 22px;
-    font-family: 'Roboto Condensed', sans-serif;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #888;
-    margin: 0 auto; */
     position: relative;
     display: inline-flex;
     justify-content: center;
@@ -86,7 +85,6 @@ export const CatalogCardLinkPay = styled.a`
     background-color: #6a45ab;
     color: #ffffff;
     font-size: 15px;
-    /* box-shadow: 0px 0px 10px 10px rgba(253, 117, 180, 0.3);rgb(162 8 147); */
     box-shadow: 0px 0px 10px 10px rgba(162, 8, 147, 0.5);
     line-height: 1.15;
     height: 55px;
@@ -107,3 +105,8 @@ export const CatalogCardLinkPay = styled.a`
     }
 `;
 
+export const ImgCard = styled.img`
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+`;

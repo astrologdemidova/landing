@@ -3,13 +3,8 @@ import { CustomCarousel } from './CustomCarousel'
 import { CatalogFooter } from '../CatalogFooter'
 import {
     CatalogHeaderContainer,
-    CatalogSubHeaderContainer,
     CatalogContainer,
     CatalogReviewStyled,
-    WhiteBackground,
-    ListBlack,
-    ListSeparate,
-    MenuButtonWrapper,
 } from './styles'
 import emoji from '../../../images/emoji-schh.png'
 import { Link } from 'gatsby'

@@ -1,14 +1,8 @@
-import Item1 from '../../../images/catalog/1.png'
-import Item2 from '../../../images/catalog/2.png'
-import Item3 from '../../../images/catalog/3.png'
-import Item4 from '../../../images/catalog/4.png'
-import Item5 from '../../../images/catalog/5.png'
-import Item6 from '../../../images/catalog/6.png'
-import Item7 from '../../../images/catalog/7.png'
+// import Item1 from '../../../images/catalog/1.png'
 
 export const ArrayContentTypeStones = [
     {
-        imgSrc: Item1,
+        imgSrc: null,
         nameItem: 'КАМЕНЬ 1',
         nameItemSub:
             'Руническая программа на быстрые деньги/стабильный доход',
@@ -27,7 +21,7 @@ export const ArrayContentTypeStones = [
         linkPay: 'https://payform.ru/ea8li8/',
     },
     {
-        imgSrc: Item2,
+        imgSrc: null,
         nameItem: 'КАМЕНЬ 2',
         nameItemSub:
             'Рунческая программа на поток клиентов «Магнетизм»',

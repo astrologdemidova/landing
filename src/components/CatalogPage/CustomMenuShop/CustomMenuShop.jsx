@@ -6,7 +6,12 @@ import {
     MenuStyled,
     CloseButton,
 } from './styles'
-import { contentTypeConsultation, contentTypeMeditation, contentTypeRuny, contentTypeStones } from '../CatalogWrapper/CatalogWrapper';
+import { 
+    contentTypeConsultation, 
+    contentTypeMeditation, 
+    contentTypeRitual, 
+    // contentTypeStones 
+} from '../CatalogWrapper/CatalogWrapper';
 
 const MenuWrapper = ({ toOpenMenu, setContentType }) => {
     const clickHandler = (contentType) => {
@@ -19,7 +24,7 @@ const MenuWrapper = ({ toOpenMenu, setContentType }) => {
                 <CloseButton onClick={() => toOpenMenu(false)}>+</CloseButton>
                 <ul>
                     <li>
-                        <CustomButton onClick={() => clickHandler(contentTypeRuny)}>Ритуалы</CustomButton>
+                        <CustomButton onClick={() => clickHandler(contentTypeRitual)}>Ритуалы</CustomButton>
                     </li>
                     <li>
                         <CustomButton onClick={() => clickHandler(contentTypeMeditation)}>Медитации</CustomButton>
@@ -27,9 +32,9 @@ const MenuWrapper = ({ toOpenMenu, setContentType }) => {
                     <li>
                         <CustomButton onClick={() => clickHandler(contentTypeConsultation)}>Консультации</CustomButton>
                     </li>
-                    <li>
+                    {/* <li>
                         <CustomButton onClick={() => clickHandler(contentTypeStones)}>Камни</CustomButton>
-                    </li>
+                    </li> */}
                 </ul>
             </MenuStyled>
         </MenuWrapperStyled>
