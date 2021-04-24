@@ -18,6 +18,7 @@ import {
     MenuButtonWrapper,
 } from './styles'
 import emoji from '../../../images/emoji-schh.png'
+import { CustomCollapse } from '../CustomCollapse'
 
 export const contentTypeMenu = 'CONTENT_TYPE_MENU'
 export const contentTypeRitual = 'CONTENT_TYPE_RUNY'
@@ -26,7 +27,7 @@ export const contentTypeConsultation = 'CONTENT_TYPE_CONSULTATION'
 // export const contentTypeStones = 'CONTENT_TYPE_STONES'
 
 export const CatalogWrapper = () => {
-    const [contentType, setContentType] = React.useState(contentTypeMenu)
+    const [contentType, setContentType] = React.useState(contentTypeMeditation)
     const data = new Map([
         [contentTypeRitual, ArrayContentTypeRitual],
         [contentTypeMeditation, ArrayContentTypeMeditation],
@@ -34,7 +35,24 @@ export const CatalogWrapper = () => {
         // [contentTypeStones, ArrayContentTypeStones],
     ])
 
+    const contentTypeHandler = (contentTypeVar) => {
+        return data.get(contentTypeVar).map((item, ind) => (
+            <CatalogCard
+                key={ind + item.imgSrc}
+                imgSrc={item.imgSrc}
+                nameItem={item.nameItem}
+                nameItemSub={item.nameItemSub}
+                coast={item.coast}
+                coastStrike={item.coastStrike}
+                description={item.description}
+                faq={item.faq}
+                linkPay={item.linkPay}
+            />
+        ))
+    }
+
     return (
+        <>
         <CatalogWrapperStyled>
             <CatalogHeaderContainer>
                 <h1>Магазин волшебства</h1>
@@ -90,44 +108,42 @@ export const CatalogWrapper = () => {
                 <WhiteBackground />
             </CatalogSubHeaderContainer>
 
-            {contentType === contentTypeMenu && (
-                <CatalogContainer>
-                    <MenuButtonWrapper>
-                        <CustomButton onClick={() => setContentType(contentTypeMeditation)}>Медитации</CustomButton>
-                    </MenuButtonWrapper>
-                    
-                    <MenuButtonWrapper>
-                        <CustomButton onClick={() => setContentType(contentTypeConsultation)}>Консультации</CustomButton>
-                    </MenuButtonWrapper>
-                    
-                    <MenuButtonWrapper>
-                        <CustomButton onClick={() => setContentType(contentTypeRitual)}>Ритуалы</CustomButton>
-                    </MenuButtonWrapper>
-                    
-                    {/* <MenuButtonWrapper>
+            {/* {contentType === contentTypeMenu && (
+                
+            )} */}
+
+            <CatalogContainer>
+                <MenuButtonWrapper>
+                    <CustomButton onClick={() => setContentType(contentTypeMeditation)}>Медитации</CustomButton>
+                </MenuButtonWrapper>
+
+                {contentType === contentTypeMeditation && contentTypeHandler(contentType)}
+
+                <MenuButtonWrapper>
+                    <CustomButton onClick={() => setContentType(contentTypeConsultation)}>Консультации</CustomButton>
+                </MenuButtonWrapper>
+
+                {contentType === contentTypeConsultation && contentTypeHandler(contentType)}
+
+                <MenuButtonWrapper>
+                    <CustomButton onClick={() => setContentType(contentTypeRitual)}>Ритуалы</CustomButton>
+                </MenuButtonWrapper>
+
+                {contentType === contentTypeRitual && contentTypeHandler(contentType)}
+
+                {/* <MenuButtonWrapper>
                         <CustomButton onClick={() => setContentType(contentTypeStones)}>Камни</CustomButton>
                     </MenuButtonWrapper> */}
                 </CatalogContainer>
-            )}
-            <CatalogContainer>
-                {contentType !== contentTypeMenu &&
-                    data.get(contentType).map((item, ind) => (
-                        <CatalogCard
-                            key={ind + item.imgSrc}
-                            imgSrc={item.imgSrc}
-                            nameItem={item.nameItem}
-                            nameItemSub={item.nameItemSub}
-                            coast={item.coast}
-                            coastStrike={item.coastStrike}
-                            description={item.description}
-                            faq={item.faq}
-                            linkPay={item.linkPay}
-                        />
-                    ))}
-            </CatalogContainer>
 
+                {/* <CatalogContainer>
+                    {contentType !== contentTypeMenu && contentTypeHandler(contentType)}
+                </CatalogContainer> */}
+
+                <CustomMenuShop setContentType={setContentType} />
+                {contentType !== contentTypeMenu && <CustomCollapse setContentType={setContentType} />}
+            </CatalogWrapperStyled>
             <CatalogFooter />
-            <CustomMenuShop setContentType={setContentType} />
-        </CatalogWrapperStyled>
+        </>
     )
 }

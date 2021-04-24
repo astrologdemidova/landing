@@ -132,7 +132,7 @@ export const CatalogContainer = styled.div`
     width: 100%;
     /* background: white; */
     margin: 0 auto;
-    padding: 15px;
+    padding: 15px 0;
     box-sizing: border-box;
 `;
 

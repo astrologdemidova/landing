@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet'
 import { CatalogWrapper } from '../components/CatalogPage/CatalogWrapper'
 
 const Shop = () => {
+    <script type="text/javascript" src="https://payform.prodamus.me/widget.js" async></script>
+    
     return (
         <>
             <Helmet>

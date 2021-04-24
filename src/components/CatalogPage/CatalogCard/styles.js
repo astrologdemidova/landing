@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { CustomButton } from "../../CustomButton";
 
 export const CatalogCardWrapper = styled.div`
     max-width: 29%;

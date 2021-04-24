@@ -24,14 +24,17 @@ const MenuWrapper = ({ toOpenMenu, setContentType }) => {
                 <CloseButton onClick={() => toOpenMenu(false)}>+</CloseButton>
                 <ul>
                     <li>
-                        <CustomButton onClick={() => clickHandler(contentTypeRitual)}>Ритуалы</CustomButton>
-                    </li>
-                    <li>
                         <CustomButton onClick={() => clickHandler(contentTypeMeditation)}>Медитации</CustomButton>
                     </li>
+                    
                     <li>
                         <CustomButton onClick={() => clickHandler(contentTypeConsultation)}>Консультации</CustomButton>
                     </li>
+                    
+                    <li>
+                        <CustomButton onClick={() => clickHandler(contentTypeRitual)}>Ритуалы</CustomButton>
+                    </li>
+                    
                     {/* <li>
                         <CustomButton onClick={() => clickHandler(contentTypeStones)}>Камни</CustomButton>
                     </li> */}

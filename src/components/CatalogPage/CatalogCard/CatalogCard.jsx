@@ -27,12 +27,17 @@ export const CatalogCard = ({imgSrc, nameItem, nameItemSub, coast, coastStrike, 
         })
     }
 
+    const mapToImgVideo = (source) => {
+        if (source.includes('<iframe')) return <div style={{textAlign: 'center', paddingBottom: '40px'}} dangerouslySetInnerHTML={{__html: source}}></div>
+        return <ImgCard src={source} alt='astrolog demidova price'/>
+    }
+
     return (
         <CatalogCardWrapper>
 
             <CatalogCardTitle>{nameItem}</CatalogCardTitle>
             
-            <CatalogCardSubTitle>{nameItemSub}</CatalogCardSubTitle>
+            {nameItemSub && <CatalogCardSubTitle>{nameItemSub}</CatalogCardSubTitle>}
             
             <CatalogCardCoast>{coast} ₽</CatalogCardCoast>
             
@@ -46,7 +51,7 @@ export const CatalogCard = ({imgSrc, nameItem, nameItemSub, coast, coastStrike, 
 
             <CatalogCardShow onClick={clickHandler}>{show ? 'Скрыть' : 'Подробнее'}</CatalogCardShow>
 
-            {imgSrc && <ImgCard src={imgSrc} alt='astrolog demidova price'/>}
+            {imgSrc && mapToImgVideo(imgSrc)}
 
             <div style={{textAlign: 'center', paddingBottom: '40px'}}>
                 <Link to='/review'>
@@ -54,9 +59,10 @@ export const CatalogCard = ({imgSrc, nameItem, nameItemSub, coast, coastStrike, 
                 </Link>
             </div>
             
-            <div style={{textAlign: 'center'}}>
-                <CatalogCardLinkPay href={linkPay} rel='noopenner' target='_blank'>Заказать</CatalogCardLinkPay>
+            <div style={{textAlign: 'center', paddingBottom: '40px'}}>
+                <CatalogCardLinkPay href={linkPay}  rel='noopenner' target='_blank'>Заказать</CatalogCardLinkPay>
             </div>
+            
         </CatalogCardWrapper>
     )
 }
