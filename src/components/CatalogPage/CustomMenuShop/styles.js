@@ -82,5 +82,18 @@ export const CloseButton = styled.div`
     cursor: pointer;
     font-size: 50px;
     font-weight: 200;
-    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    div {
+        width: 30px;
+        height: 3px;
+        background: #1e1e1e;
+        position: absolute;
+        top: 15px;
+        left: 5px;
+        transform: rotate(45deg);
+    }
+    div:first-of-type {
+        transform: rotate(-45deg);
+    }
 `

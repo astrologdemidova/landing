@@ -21,7 +21,10 @@ const MenuWrapper = ({ toOpenMenu, setContentType }) => {
     return (
         <MenuWrapperStyled onClick={() => toOpenMenu(false)}>
             <MenuStyled>
-                <CloseButton onClick={() => toOpenMenu(false)}>+</CloseButton>
+                <CloseButton onClick={() => toOpenMenu(false)}>
+                    <div></div>
+                    <div></div>
+                </CloseButton>
                 <ul>
                     <li>
                         <CustomButton onClick={() => clickHandler(contentTypeMeditation)}>Медитации</CustomButton>

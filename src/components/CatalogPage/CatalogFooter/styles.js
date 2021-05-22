@@ -48,3 +48,20 @@ export const CatalogFooterWrapper = styled.div`
         align-items: center;
     }
 `;
+
+export const CatalogSocialBlock = styled.div`
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    div {
+        padding: 0 10px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    @media all and (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+`;

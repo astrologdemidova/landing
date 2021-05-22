@@ -2,6 +2,7 @@
 
 export const ArrayContentTypeStones = [
     {
+        id: '3456',
         imgSrc: null,
         nameItem: 'КАМЕНЬ 1',
         nameItemSub:
@@ -21,6 +22,7 @@ export const ArrayContentTypeStones = [
         linkPay: 'https://payform.ru/ea8li8/',
     },
     {
+        id: '3457',
         imgSrc: null,
         nameItem: 'КАМЕНЬ 2',
         nameItemSub:

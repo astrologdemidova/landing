@@ -1,5 +1,7 @@
 import * as React from 'react'
-import { CustomCarousel } from './CustomCarousel'
+import { CustomCarouselMeditations } from './CustomCarouselMeditations'
+import { CustomCarouselConsultations } from './CustomCarouselConsultations'
+import { CustomCarouselRituals } from './CustomCarouselRituals'
 import { CatalogFooter } from '../CatalogFooter'
 import {
     CatalogHeaderContainer,
@@ -8,14 +10,10 @@ import {
 } from './styles'
 import emoji from '../../../images/emoji-schh.png'
 import { Link } from 'gatsby'
+import { contentTypeConsultation, contentTypeMeditation, contentTypeRitual } from '../CatalogWrapper/CatalogWrapper'
 
-export const contentTypeMenu = 'CONTENT_TYPE_MENU'
-export const contentTypeRuny = 'CONTENT_TYPE_RUNY'
-export const contentTypeMeditation = 'CONTENT_TYPE_MEDITATION'
-export const contentTypeConsultation = 'CONTENT_TYPE_CONSULTATION'
-export const contentTypeStones = 'CONTENT_TYPE_STONES'
-
-export const CatalogReview = () => {
+export const CatalogReview = ({entityType}) => {
+    console.log('###########', entityType)
     return (
         <CatalogReviewStyled>
             <span><Link to='/shop'>Назад</Link></span>
@@ -26,7 +24,9 @@ export const CatalogReview = () => {
             </CatalogHeaderContainer>
             
             <CatalogContainer>
-                <CustomCarousel />
+                {entityType === contentTypeMeditation && <CustomCarouselMeditations />}
+                {entityType === contentTypeConsultation && <CustomCarouselConsultations />}
+                {entityType === contentTypeRitual && <CustomCarouselRituals />}
             </CatalogContainer>
 
             <CatalogFooter />

@@ -109,3 +109,49 @@ export const ImgCard = styled.img`
     border-radius: 10px;
     margin-bottom: 30px;
 `;
+
+
+export const PopupCardpayWrapper = styled.div`
+    position: fixed;
+    top: -100px;
+    left: 0;
+    bottom: -100px;
+    right: 0;
+    width: 100%;
+    z-index: 111;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form {
+        /* background: white; */
+        /* padding: 40px 20px; */
+        label {
+            display: inline-block;
+            width: 100%;
+        }
+        input {
+            font-size: 18px;
+            padding-top: 4px;
+            padding-bottom: 7px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        input:focus{
+            border: none;
+        }
+        div {
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+    }
+    @media all and (max-width: 370px) {
+        form {
+            font-size: 12px;
+            div {
+            padding-bottom: 20px;
+        }
+        }
+    }
+`;
