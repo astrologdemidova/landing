@@ -1,16 +1,14 @@
 import * as React from 'react'
 import "../common-style/style.css"
 import { Helmet } from 'react-helmet'
-import { CatalogWrapper } from '../components/CatalogPage/CatalogWrapper'
+import { CatalogWrapper } from '../components/CatalogMeditationPage/CatalogWrapper'
 
 const Shop = () => {
-    // <script type="text/javascript" src="https://payform.prodamus.me/widget.js" async></script>
-    
     return (
         <>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Каталог продуктов</title>
+                <title>Каталог медитаций</title>
                 <link
                     href="https://fonts.googleapis.com/css?family=Alex+Brush"
                     rel="stylesheet"

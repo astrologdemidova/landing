@@ -1,7 +1,7 @@
 import * as React from "react"
 import "../common-style/style.css"
-import Moment from 'react-moment';
-import moment from 'moment';
+// import Moment from 'react-moment';
+// import moment from 'moment';
 import { CustomFooter } from "../components/CustomFooter"
 import { HeadBlock } from "../components/HeadBlock"
 import { LineHeader } from "../components/LineHeader"
