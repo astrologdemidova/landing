@@ -2,20 +2,11 @@ import styled from "styled-components";
 
 export const CatalogFooterStyled = styled.footer`
     background-color: #0d0d0d;
-    max-width: 992px;
-    /* width: 100%; */
-    /* margin: 0 auto; */
+    width: 100%;
     padding: 35px 15px;
     box-sizing: border-box;
     color: white;
     display: block;
-    margin-left: -20px;
-    margin-right: -20px;
-    margin-bottom: -20px;
-    @media all and (min-width: 992px) {
-        width: 100%;
-        margin: 0 auto;
-    }
 `;
 
 export const CatalogFooterText = styled.p`
@@ -55,5 +46,22 @@ export const CatalogFooterWrapper = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+`;
+
+export const CatalogSocialBlock = styled.div`
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    div {
+        padding: 0 10px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    @media all and (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 30px;
     }
 `;

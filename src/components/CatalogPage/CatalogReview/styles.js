@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import BgPicture from '../../../images/red-min.jpg';
 
-export const CatalogWrapperStyled = styled.main`
+export const CatalogReviewStyled = styled.main`
     padding: 20px;
     /* background: url(${BgPicture}) no-repeat; */
     background-size: cover;
@@ -132,7 +132,7 @@ export const CatalogContainer = styled.div`
     width: 100%;
     /* background: white; */
     margin: 0 auto;
-    padding: 15px 0;
+    padding: 15px;
     box-sizing: border-box;
 `;
 

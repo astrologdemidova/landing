@@ -1,16 +1,15 @@
 import * as React from 'react'
-import "../common-style/style.css"
+import "../../common-style/style.css"
 import { Helmet } from 'react-helmet'
-import { CatalogWrapper } from '../components/CatalogPage/CatalogWrapper'
+import { CatalogReview } from '../../components/CatalogPage/CatalogReview'
+import { contentTypeRitual } from '../../components/CatalogPage/CatalogWrapper/CatalogWrapper'
 
-const Shop = () => {
-    // <script type="text/javascript" src="https://payform.prodamus.me/widget.js" async></script>
-    
+const ReviewRituals = () => {
     return (
         <>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Каталог продуктов</title>
+                <title>Отзывы о ритуалах</title>
                 <link
                     href="https://fonts.googleapis.com/css?family=Alex+Brush"
                     rel="stylesheet"
@@ -27,9 +26,10 @@ const Shop = () => {
                     type="text/css"
                 />
             </Helmet>
-            <CatalogWrapper />
+            <h1>Отзывы о ритуалах</h1>
+            <CatalogReview entityType={contentTypeRitual}/>
         </>
     )
 }
 
-export default Shop
+export default ReviewRituals
