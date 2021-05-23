@@ -10,6 +10,7 @@ import { CustomButton } from '../../CustomButton'
 import {
     CatalogHeaderContainer,
     CatalogSubHeaderContainer,
+    DescriptionContainer,
     CatalogContainer,
     CatalogWrapperStyled,
     WhiteBackground,
@@ -19,6 +20,7 @@ import {
 } from './styles'
 import emoji from '../../../images/emoji-schh.png'
 import { CustomCollapse } from '../CustomCollapse'
+import { AboutBlock } from '../AboutBlock/AboutBlock'
 
 export const contentTypeMenu = 'CONTENT_TYPE_MENU'
 export const contentTypeRitual = 'CONTENT_TYPE_RUNY'
@@ -121,9 +123,22 @@ export const CatalogWrapper = () => {
             )} */}
 
                 <CatalogContainer>
+
+                    <div id='anchor'></div>
+
                     <MenuButtonWrapper>
                         <CustomButton onClick={() => setContentType(contentType === contentTypeMeditation ? contentTypeMenu : contentTypeMeditation)}>Медитации</CustomButton>
                     </MenuButtonWrapper>
+
+                    {contentType === contentTypeMeditation &&
+                        <DescriptionContainer>
+                            <ul>
+                                <li>МОИ МЕДИТАЦИИ НЕ ПРО ДУХОВНОСТЬ. ЭТО ЦЕЛЕНАПРАВЛЕННАЯ РАБОТА С ПОДСОЗНАНИЕМ.</li>
+                                <li>ВНУТРИ КАЖДОГО ИЗ НАС УЖЕ ЕСТЬ ВСЕ ОТВЕТЫ : ЧЕМ Я ХОЧУ ЗАНИМАТЬСЯ/В ЧЕМ Я ПРЕУСПЕЮ/ЧТО МНЕ ПРИНЕСЁТ МНОГО ДЕНЕГ И РЕАЛИЗАЦИЮ.</li>
+                                <li>Но логика очень мешает получить нам эти ответы. Поэтому мы с вами достучимся до истины через медитации</li>
+                            </ul>
+                        </DescriptionContainer>
+                    }
 
                     {contentType === contentTypeMeditation && contentTypeHandler(contentType)}
 
@@ -147,6 +162,13 @@ export const CatalogWrapper = () => {
                 {/* <CatalogContainer>
                     {contentType !== contentTypeMenu && contentTypeHandler(contentType)}
                 </CatalogContainer> */}
+
+                <CatalogHeaderContainer>
+                    <img src={emoji} alt="" />
+                    <h1>Обо мне</h1>
+                    <h2>@astrolog_demidova</h2>
+                </CatalogHeaderContainer>
+                <AboutBlock />
 
                 <CustomMenuShop setContentType={setContentType} />
                 {contentType !== contentTypeMenu && <CustomCollapse setContentType={setContentType} />}

@@ -10,6 +10,9 @@ export const CatalogCardWrapper = styled.div`
     background: white;
     box-sizing: border-box;
     box-shadow: 0px 0px 10px 10px rgba(162, 8, 147, 0.1);
+    .installment {
+        font-size: 12px;
+    }
     @media all and (max-width: 991px) {
         max-width: 100%;
     }

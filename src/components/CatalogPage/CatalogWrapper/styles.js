@@ -77,10 +77,12 @@ export const CatalogSubHeaderContainer = styled.header`
         z-index: 10;
         li {
             font-size: 13px;
-            color: #e5428e;
+            /* color: #e5428e; */
+            color: #0d0d0d;
             font-weight: 600;
             span {
-                color: #cb50ce;
+                /* color: #cb50ce; */
+                color: #e60670;
             }
         }
     }
@@ -104,6 +106,17 @@ export const CatalogSubHeaderContainer = styled.header`
                 height: 2px;
                 box-shadow: 0px 0px 10px 10px rgba(230, 6, 112, 0.3);
             }
+        }
+    }
+`;
+
+export const DescriptionContainer = styled(CatalogSubHeaderContainer)`
+    background: none;
+    padding: 24px 15px;
+    ul {
+        li {
+            font-weight: 400;
+            padding-bottom: 20px;
         }
     }
 `;

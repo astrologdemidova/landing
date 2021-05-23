@@ -62,7 +62,8 @@ export const CatalogCard = ({ id, imgSrc, nameItem, nameItemSub, coast, coast2, 
 
             {period2 && <p>Длительность: {period2}</p>}
             {coast2 && <CatalogCardCoast>{coast2} ₽</CatalogCardCoast>}
-            {installment2 && <p>*при оплате доступна рассрочка</p>}
+            {installment2 && id !== '1239' && <p>*при оплате доступна рассрочка</p>}
+            {id === '1239' && <p className='installment'>* при оплате доступна рассрочка до 500 000, при внесении первого платежа от 499 999</p>}
 
             {coastStrike && <CatalogCardCoastStrike>{coastStrike} ₽</CatalogCardCoastStrike>}
 
@@ -119,6 +120,8 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
 
     const [checkBoxValue, setCheckboxValue] = React.useState('2');
 
+    const consultationVIP90days = id === '1239' ? '500000&installments_disabled=228' : coast2;
+
     React.useEffect(() => {
         const getLink = () => {
             if (phone && email) setLinkpay(getPaylink(
@@ -127,7 +130,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                 `${email}`,
                 [
                     {
-                        price: period2 ? (checkBoxValue === '1' ? coast : coast2) : coast,
+                        price: period2 ? (checkBoxValue === '1' ? coast : consultationVIP90days) : coast,
                         name: period2 ? nameItem + ` длительность: ${checkBoxValue === '1' ? period : period2}` : nameItem,
                     },
                 ],
@@ -136,7 +139,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
             // console.log(linkpay);
         };
         getLink();
-    }, [id, coast, coast2, period, period2, nameItem, linkpay, setLinkpay, phone, email, checkBoxValue, linkContent]);
+    }, [id, coast, coast2, period, period2, nameItem, linkpay, setLinkpay, phone, email, checkBoxValue, linkContent, consultationVIP90days]);
 
     return (
         <PopupCardpayWrapper onClick={() => setShowPopup(false)}>
@@ -162,16 +165,17 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         </p>
                     }
                     {coast2 && <CatalogCardCoast>{coast2} ₽</CatalogCardCoast>}
-                    {installment2 && <p>*при оплате доступна рассрочка</p>}
+                    {installment2 && id !== '1239' && <p>*при оплате доступна рассрочка</p>}
+                    {id === '1239' && <p className='installment'>* при оплате доступна рассрочка до 500 000, при внесении первого платежа от 499 999</p>}
 
                     {coastStrike && <CatalogCardCoastStrike>{coastStrike} ₽</CatalogCardCoastStrike>}
                     <div>
                         <label name='phone' htmlFor='phoneClient'>Ваш телефон:</label>
-                        <input name='phone' id='phoneClient' type='phone' value={phone} onChange={(e) => setPhone(e.target.value)} required/>
+                        <input name='phone' id='phoneClient' type='phone' value={phone} onChange={(e) => setPhone(e.target.value)} required />
                     </div>
                     <div>
                         <label name='email' htmlFor='emailClient'>Ваш email:</label>
-                        <input name='email' id='emailClient' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required/>
+                        <input name='email' id='emailClient' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
                     </div>
                     <div style={{ textAlign: 'center' }}>
                         <CatalogCardLinkPay href={phone && email && linkpay} onClick={(e) => (!phone || !email) && e.preventDefault()} rel='noreferrer' target='_blank'>

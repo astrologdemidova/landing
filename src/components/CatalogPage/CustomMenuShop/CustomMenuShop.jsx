@@ -6,10 +6,10 @@ import {
     MenuStyled,
     CloseButton,
 } from './styles'
-import { 
-    contentTypeConsultation, 
-    contentTypeMeditation, 
-    contentTypeRitual, 
+import {
+    contentTypeConsultation,
+    contentTypeMeditation,
+    contentTypeRitual,
     // contentTypeStones 
 } from '../CatalogWrapper/CatalogWrapper';
 import { CatalogFooter } from '../CatalogFooter';
@@ -28,17 +28,17 @@ const MenuWrapper = ({ toOpenMenu, setContentType }) => {
                 </CloseButton>
                 <ul>
                     <li>
-                        <CustomButton onClick={() => clickHandler(contentTypeMeditation)}>Медитации</CustomButton>
+                        <a href='#anchor'><CustomButton onClick={() => clickHandler(contentTypeMeditation)}>Медитации</CustomButton></a>
                     </li>
-                    
+
                     <li>
-                        <CustomButton onClick={() => clickHandler(contentTypeConsultation)}>Консультации</CustomButton>
+                        <a href='#anchor'><CustomButton onClick={() => clickHandler(contentTypeConsultation)}>Консультации</CustomButton></a>
                     </li>
-                    
+
                     <li>
-                        <CustomButton onClick={() => clickHandler(contentTypeRitual)}>Ритуалы</CustomButton>
+                        <a href='#anchor'><CustomButton onClick={() => clickHandler(contentTypeRitual)}>Ритуалы</CustomButton></a>
                     </li>
-                    
+
                     {/* <li>
                         <CustomButton onClick={() => clickHandler(contentTypeStones)}>Камни</CustomButton>
                     </li> */}
@@ -51,7 +51,7 @@ const MenuWrapper = ({ toOpenMenu, setContentType }) => {
     )
 }
 
-export const CustomMenuShop = ({setContentType}) => {
+export const CustomMenuShop = ({ setContentType }) => {
     const [isOpen, toOpenMenu] = useState(false)
 
     useEffect(() => {
@@ -67,7 +67,7 @@ export const CustomMenuShop = ({setContentType}) => {
                 <div></div>
                 <div></div>
             </ButtonMenu>
-            {isOpen ? <MenuWrapper {...{toOpenMenu, setContentType}}/> : null}
+            {isOpen ? <MenuWrapper {...{ toOpenMenu, setContentType }} /> : null}
         </>
     )
 }
