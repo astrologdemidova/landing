@@ -80,7 +80,7 @@ export const AboutBlock = ({setIsAbout}) => {
                 Астролог я не обычный: уже 4 года я эксперт по предназначению и повышению финансового уровня через астрологию и магию. Провела больше 1230 консультаций
             </p>
             {getAboutText()}
-            <div style={{fontWeight: '600'}} onClick={() => setIsAbout(!false)}>Скрыть</div>
+            <div style={{fontWeight: '600'}} onClick={() => setIsAbout(false)}>Скрыть</div>
         </>
     )
 }
