@@ -16,7 +16,7 @@ const carouselConfig = {
     showIndicators: false,
     infiniteLoop: true,
     swipeable: true,
-    // dynamicHeight: true,
+    dynamicHeight: true,
 }
 export const AboutBlock = () => {
     const [showText, setShowText] = React.useState(false);

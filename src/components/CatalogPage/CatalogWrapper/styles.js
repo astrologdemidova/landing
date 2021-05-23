@@ -46,6 +46,19 @@ export const CatalogHeaderContainer = styled.header`
     }
 `;
 
+export const CatalogHeaderContainerPhoto = styled(CatalogHeaderContainer)`
+    padding-top: 0;
+    padding-bottom: 45px;
+    h1 {
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 15px;
+    }
+`;
+
 export const ListBlack = styled.li`
     font-size: 16px!important;
     color: #0d0d0d!important;
@@ -114,6 +127,8 @@ export const AboutContainer = styled(CatalogSubHeaderContainer)`
     background: none;
     max-width: 280px;
     padding: 0;
+    margin-top: 5px;
+    margin-bottom: 15px;
     img {
         display: block;
         width: 100%;

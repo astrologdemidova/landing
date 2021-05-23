@@ -18,6 +18,7 @@ import {
     ListSeparate,
     MenuButtonWrapper,
     AboutContainer,
+    CatalogHeaderContainerPhoto
 } from './styles'
 import emoji from '../../../images/emoji-schh.png'
 import BgPicture from '../../../images/red-min.jpg';
@@ -31,7 +32,7 @@ export const contentTypeConsultation = 'CONTENT_TYPE_CONSULTATION'
 // export const contentTypeStones = 'CONTENT_TYPE_STONES'
 
 export const CatalogWrapper = () => {
-    const [contentType, setContentType] = React.useState(contentTypeMeditation)
+    const [contentType, setContentType] = React.useState(contentTypeMenu)
     const data = new Map([
         [contentTypeRitual, ArrayContentTypeRitual],
         [contentTypeMeditation, ArrayContentTypeMeditation],
@@ -74,7 +75,7 @@ export const CatalogWrapper = () => {
                 <CatalogSubHeaderContainer>
                     <ul>
                         <li>Как бы это грустно не было - скажу сразу :</li>
-                        <ListBlack>волшебства и магии не существует!</ListBlack>
+                        <ListBlack><span>волшебства и магии не существует!</span></ListBlack>
                         <ListSeparate />
                         <li>
                             Все это есть, но не потому что «волшебство», а потому
@@ -129,7 +130,7 @@ export const CatalogWrapper = () => {
                     <div id='anchor'></div>
 
                     <MenuButtonWrapper>
-                        <CustomButton onClick={() => setContentType(contentType === contentTypeMeditation ? contentTypeMenu : contentTypeMeditation)}>Медитации</CustomButton>
+                        <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeMeditation ? contentTypeMenu : contentTypeMeditation)}>Медитации</CustomButton></a>
                     </MenuButtonWrapper>
 
                     {contentType === contentTypeMeditation &&
@@ -145,19 +146,19 @@ export const CatalogWrapper = () => {
                     {contentType === contentTypeMeditation && contentTypeHandler(contentType)}
 
                     <MenuButtonWrapper>
-                        <CustomButton onClick={() => setContentType(contentType === contentTypeConsultation ? contentTypeMenu : contentTypeConsultation)}>Консультации</CustomButton>
+                        <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeConsultation ? contentTypeMenu : contentTypeConsultation)}>Консультации</CustomButton></a>
                     </MenuButtonWrapper>
 
                     {contentType === contentTypeConsultation && contentTypeHandler(contentType)}
 
                     <MenuButtonWrapper>
-                        <CustomButton onClick={() => setContentType(contentType === contentTypeRitual ? contentTypeMenu : contentTypeRitual)}>Ритуалы</CustomButton>
+                        <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeRitual ? contentTypeMenu : contentTypeRitual)}>Ритуалы</CustomButton></a>
                     </MenuButtonWrapper>
 
                     {contentType === contentTypeRitual && contentTypeHandler(contentType)}
 
                     {/* <MenuButtonWrapper>
-                        <CustomButton onClick={() => setContentType(contentTypeStones)}>Камни</CustomButton>
+                        <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeStones ? contentTypeMenu : contentTypeStones)}>Камни</CustomButton></a>
                     </MenuButtonWrapper> */}
                 </CatalogContainer>
 
@@ -166,7 +167,6 @@ export const CatalogWrapper = () => {
                 </CatalogContainer> */}
 
                 <CatalogHeaderContainer>
-                    <img src={emoji} alt="" />
                     <h1>Обо мне</h1>
                     <h2>@astrolog_demidova</h2>
                 </CatalogHeaderContainer>
@@ -175,10 +175,10 @@ export const CatalogWrapper = () => {
                     <img className='red' src={BgPicture} alt="" />
                 </AboutContainer>
 
-                <CatalogHeaderContainer>
+                <CatalogHeaderContainerPhoto>
                     <h1>Яна Демидова.</h1>
-                    <h2>Один из самых высокооплачиваемых астрологов России.</h2>
-                </CatalogHeaderContainer>
+                    <h2>Один из самых высокооплачиваемых<br/>астрологов России.</h2>
+                </CatalogHeaderContainerPhoto>
 
                 <AboutBlock />
 
