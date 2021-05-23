@@ -7,17 +7,23 @@ import {
     CatalogSubHeaderContainer,
     CatalogContainer,
     CatalogWrapperStyled,
+    DescriptionContainer,
+    CatalogHeaderContainerPhoto,
+    AboutContainer,
     WhiteBackground,
     ListBlack,
     ListSeparate,
+    MenuButtonWrapper,
 } from './styles'
 import emoji from '../../../images/emoji-schh.png'
 import BgPicture from '../../../images/red-min.jpg';
 import { AboutBlock } from '../AboutBlock/AboutBlock'
+import { CustomButton } from '../../CustomButton'
 
 export const contentTypeMeditation = 'CONTENT_TYPE_MEDITATION'
 
 export const CatalogWrapper = () => {
+    const [isAbout, setIsAbout] = React.useState(false);
     const data = new Map([
         [contentTypeMeditation, ArrayContentTypeMeditation],
     ])
@@ -55,18 +61,38 @@ export const CatalogWrapper = () => {
                     <img src={emoji} alt="" />
                 </CatalogHeaderContainer>
 
-                <CatalogSubHeaderContainer>
+                <AboutContainer>
                     <img className='red' src={BgPicture} alt="" />
-                </CatalogSubHeaderContainer>
+                </AboutContainer>
 
-                <CatalogHeaderContainer>
+                <CatalogHeaderContainerPhoto>
                     <h1>Яна Демидова.</h1>
-                    <h2>Один из самых высокооплачиваемых астрологов России.</h2>
-                </CatalogHeaderContainer>
+                    <h2>Один из самых высокооплачиваемых<br /> астрологов России.</h2>
+                </CatalogHeaderContainerPhoto>
 
-                <AboutBlock />
+
+                <MenuButtonWrapper style={{marginBottom: '50px'}}>
+                    <CustomButton
+                        onClick={() => setIsAbout(!isAbout)}
+                    >Обо мне</CustomButton>
+                </MenuButtonWrapper>
+
+                {isAbout && <AboutBlock setIsAbout={setIsAbout}/>}
+
+                <MenuButtonWrapper>
+                    <CustomButton>Медитации</CustomButton>
+                </MenuButtonWrapper>
+
+
 
                 <CatalogContainer>
+                    <DescriptionContainer>
+                        <ul>
+                            <li>МОИ МЕДИТАЦИИ НЕ ПРО ДУХОВНОСТЬ. ЭТО ЦЕЛЕНАПРАВЛЕННАЯ РАБОТА С ПОДСОЗНАНИЕМ.</li>
+                            <li>ВНУТРИ КАЖДОГО ИЗ НАС УЖЕ ЕСТЬ ВСЕ ОТВЕТЫ : ЧЕМ Я ХОЧУ ЗАНИМАТЬСЯ/В ЧЕМ Я ПРЕУСПЕЮ/ЧТО МНЕ ПРИНЕСЁТ МНОГО ДЕНЕГ И РЕАЛИЗАЦИЮ.</li>
+                            <li>Но логика очень мешает получить нам эти ответы. Поэтому мы с вами достучимся до истины через медитации</li>
+                        </ul>
+                    </DescriptionContainer>
                     {contentTypeHandler(contentTypeMeditation)}
                 </CatalogContainer>
 

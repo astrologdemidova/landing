@@ -84,9 +84,9 @@ export const CatalogSubHeaderContainer = styled.header`
     box-sizing: border-box;
     box-shadow: 0px 0px 10px 10px rgba(162, 8, 147, 0.1);
 
-    @media all and (max-width: 767px) {
+    /* @media all and (max-width: 767px) {
         max-width: 280px;
-    }
+    } */
     ul {
         position: relative;
         list-style: none;
@@ -134,6 +134,31 @@ export const CatalogSubHeaderContainer = styled.header`
     }
 `;
 
+export const AboutContainer = styled(CatalogSubHeaderContainer)`
+    background: none;
+    max-width: 280px;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    img {
+        display: block;
+        width: 100%;
+    }
+`;
+
+export const CatalogHeaderContainerPhoto = styled(CatalogHeaderContainer)`
+    padding-top: 0;
+    padding-bottom: 25px;
+    h1 {
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 15px;
+    }
+`;
+
 export const ListSeparate = styled.li`
     padding: 7px 0;
 `;
@@ -166,4 +191,16 @@ export const MenuButtonWrapper = styled.div`
     width: 100%;
     text-align: center;
     margin: 25px 0;
+`;
+
+export const DescriptionContainer = styled(CatalogSubHeaderContainer)`
+    background: none;
+    padding: 24px 15px;
+    margin-top: 20px;
+    ul {
+        li {
+            font-weight: 400;
+            padding-bottom: 20px;
+        }
+    }
 `;

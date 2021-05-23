@@ -117,7 +117,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
 
     React.useEffect(() => {
         setCoastSpecial(checkBoxSpecial ? String(Number(coast) + 498) : coast);
-        console.log('!!!!!!!!!!!!', coastSpecial)
+        // console.log('!!!!!!!!!!!!', coastSpecial)
     }, [checkBoxSpecial, setCheckboxSpecial, coastSpecial, setCoastSpecial, coast]);
 
     React.useEffect(() => {
