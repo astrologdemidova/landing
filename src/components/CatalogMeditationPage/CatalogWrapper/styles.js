@@ -23,7 +23,7 @@ export const CatalogHeaderContainer = styled.header`
         color: #6a45ab;
         position: relative;
         z-index: 10;
-        font-size: 32px;
+        font-size: 21px;
         font-weight: 700;
         margin-bottom: 5px;
         @media all and (max-width: 374px) {
@@ -47,10 +47,10 @@ export const CatalogHeaderContainer = styled.header`
         z-index: 5;
         transform: rotate(-30deg);
         @media all and (max-width: 767px) {
-            top: 228px;
+            top: 105px;
         }
         @media all and (max-width: 375px) {
-            top: 270px;
+            top: 130px;
         }
         @media all and (max-width: 374px) {
             top: 228px;
@@ -74,7 +74,7 @@ export const CatalogSubHeaderContainer = styled.header`
     max-width: 768px;
     width: 100%;
     margin: 40px auto;
-    padding: 245px 15px 100px;
+    /* padding: 245px 15px 100px; */
     box-sizing: border-box;
     color: #f75995;
     text-align: center;
@@ -84,6 +84,9 @@ export const CatalogSubHeaderContainer = styled.header`
     box-sizing: border-box;
     box-shadow: 0px 0px 10px 10px rgba(162, 8, 147, 0.1);
 
+    @media all and (max-width: 767px) {
+        max-width: 280px;
+    }
     ul {
         position: relative;
         list-style: none;
@@ -121,6 +124,12 @@ export const CatalogSubHeaderContainer = styled.header`
                 height: 2px;
                 box-shadow: 0px 0px 10px 10px rgba(230, 6, 112, 0.3);
             }
+        }
+    }
+    img {
+        &.red {
+            width: 100%;
+            border-radius: 12px;
         }
     }
 `;

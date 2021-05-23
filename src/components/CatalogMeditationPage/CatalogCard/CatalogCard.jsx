@@ -66,7 +66,7 @@ export const CatalogCard = ({ id, imgSrc, nameItem, nameItemSub, coast, coast2, 
 
             <div style={{ textAlign: 'center', paddingBottom: '40px' }}>
                 <Link to={getReviewUrl(contentType)}>
-                    <CatalogCardLinkPay as='button'>Отзывы</CatalogCardLinkPay>
+                    <CatalogCardLinkPay as='button' $isReview>Отзывы</CatalogCardLinkPay>
                 </Link>
             </div>
 
@@ -106,6 +106,19 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
     const [linkpay, setLinkpay] = React.useState('');
 
     const [checkBoxValue, setCheckboxValue] = React.useState('2');
+    const [checkBoxSpecial, setCheckboxSpecial] = React.useState(true);
+
+    // const coastSpecial = checkBoxSpecial ? String(Number(coast) + 498) : coast;
+    // const coastSpecial = React.useCallback(
+    //     () => checkBoxSpecial ? String(Number(coast) + 498) : coast,
+    //     [checkBoxSpecial, coast],
+    //   );
+    const [coastSpecial, setCoastSpecial] = React.useState(checkBoxSpecial ? String(Number(coast) + 498) : coast);
+
+    React.useEffect(() => {
+        setCoastSpecial(checkBoxSpecial ? String(Number(coast) + 498) : coast);
+        console.log('!!!!!!!!!!!!', coastSpecial)
+    }, [checkBoxSpecial, setCheckboxSpecial, coastSpecial, setCoastSpecial, coast]);
 
     React.useEffect(() => {
         const getLink = () => {
@@ -115,15 +128,19 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                 `${email}`,
                 [
                     {
-                        price: period2 ? (checkBoxValue === '1' ? coast : coast2) : coast,
+                        price: period2 ? (checkBoxValue === '1' ? coast : coast2) : coastSpecial,
                         name: period2 ? nameItem + ` длительность: ${checkBoxValue === '1' ? period : period2}` : nameItem,
                     },
                 ],
-                `${linkContent}`,
+                `${
+                    phone && email && checkBoxSpecial 
+                    ? (id === '4567' ? linkContent + ' и https://disk.yandex.ru/d/RYNelX1eWwSPPg' : linkContent + ' и https://disk.yandex.ru/d/w_e1bBeYWZyeOw')
+                    : linkContent
+                }`,
             ));
         };
         getLink();
-    }, [id, coast, coast2, period, period2, nameItem, linkpay, setLinkpay, phone, email, checkBoxValue, linkContent]);
+    }, [id, coast, coast2, period, period2, nameItem, linkpay, setLinkpay, phone, email, checkBoxValue, linkContent, checkBoxSpecial, coastSpecial, setCoastSpecial]);
 
     return (
         <PopupCardpayWrapper onClick={() => setShowPopup(false)}>
@@ -139,7 +156,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                             Длительность: {period}
                         </p>
                     }
-                    <CatalogCardCoast>{coast} ₽</CatalogCardCoast>
+                    <CatalogCardCoast>{checkBoxSpecial && phone && email ? coastSpecial : coast} ₽</CatalogCardCoast>
                     {installment && <p>*при оплате доступна рассрочка</p>}
 
                     {period2 &&
@@ -154,12 +171,19 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                     {coastStrike && <CatalogCardCoastStrike>{coastStrike} ₽</CatalogCardCoastStrike>}
                     <div>
                         <label name='phone' htmlFor='phoneClient'>Ваш телефон:</label>
-                        <input name='phone' id='phoneClient' type='phone' value={phone} onChange={(e) => setPhone(e.target.value)} required/>
+                        <input name='phone' id='phoneClient' type='phone' value={phone} onChange={(e) => setPhone(e.target.value)} required />
                     </div>
                     <div>
                         <label name='email' htmlFor='emailClient'>Ваш email:</label>
-                        <input name='email' id='emailClient' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required/>
+                        <input name='email' id='emailClient' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
                     </div>
+
+                    {phone && email &&
+                        <div>
+                            Специальное предложение!<br />
+                            <input type='checkbox' id='special' defaultChecked={checkBoxSpecial} onChange={() => setCheckboxSpecial(!checkBoxSpecial)} style={{ width: '18px', height: '18px' }} />
+                            <label htmlFor='special' style={{ display: 'inline-block', width: 'auto' }}>Вторая медитация со скидкой 50%</label>
+                        </div>}
                     <div style={{ textAlign: 'center' }}>
                         <CatalogCardLinkPay href={phone && email && linkpay} onClick={(e) => (!phone || !email) && e.preventDefault()} rel='noreferrer' target='_blank'>
                             {buttonName}

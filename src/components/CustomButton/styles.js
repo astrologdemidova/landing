@@ -10,7 +10,7 @@ export const ButtonStyled = styled.button`
     outline: none;
     border-radius: 30px;
     border-color: transparent;
-    max-width: 275px;
+    max-width: ${props => props.$isReview ? '169px' : '275px'};
     width: 100%;
     text-transform: uppercase;
     text-decoration: none;
@@ -20,7 +20,7 @@ export const ButtonStyled = styled.button`
     /* box-shadow: 0px 0px 10px 10px rgba(253, 117, 180, 0.3);rgb(162 8 147); */
     box-shadow: 0px 0px 10px 10px rgba(162, 8, 147, 0.5);
     line-height: 1.55;
-    height: 65px;
+    height: ${props => props.$isReview ? '40px' : '65px'};
     cursor: pointer;
     animation: 1.5s infinite alternate lightningBtn;
     a {

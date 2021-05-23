@@ -40,6 +40,7 @@ export const ReviewsBlockWrapper = styled.div`
         }
     }
     .slider .slide {
+        display: flex;
         justify-content: center;
         align-items: center;
     }
