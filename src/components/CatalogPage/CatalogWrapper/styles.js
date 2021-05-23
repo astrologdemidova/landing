@@ -112,7 +112,7 @@ export const CatalogSubHeaderContainer = styled.header`
 
 export const AboutContainer = styled(CatalogSubHeaderContainer)`
     background: none;
-    max-width: 200px;
+    max-width: 280px;
     padding: 0;
     img {
         display: block;
