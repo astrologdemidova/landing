@@ -12,6 +12,7 @@ import {
     ListSeparate,
 } from './styles'
 import emoji from '../../../images/emoji-schh.png'
+import { AboutBlock } from '../AboutBlock/AboutBlock'
 
 export const contentTypeMeditation = 'CONTENT_TYPE_MEDITATION'
 
@@ -106,6 +107,13 @@ export const CatalogWrapper = () => {
                     {contentTypeHandler(contentTypeMeditation)}
 
                 </CatalogContainer>
+
+                <CatalogHeaderContainer>
+                    <img className="secondTop" src={emoji} alt="astrolog demidova" />
+                    <h1>Обо мне</h1>
+                    <h2>@astrolog_demidova</h2>
+                </CatalogHeaderContainer>
+                <AboutBlock />
 
             </CatalogWrapperStyled>
             <CatalogFooter />

@@ -55,6 +55,9 @@ export const CatalogHeaderContainer = styled.header`
         @media all and (max-width: 374px) {
             top: 228px;
         }
+        &.secondTop {
+            top: 20px;
+        }
     }
 `;
 
@@ -89,10 +92,12 @@ export const CatalogSubHeaderContainer = styled.header`
         z-index: 10;
         li {
             font-size: 13px;
-            color: #e5428e;
+            /* color: #e5428e; */
+            color: #0d0d0d;
             font-weight: 600;
             span {
-                color: #cb50ce;
+                /* color: #cb50ce; */
+                color: #e60670;
             }
         }
     }
