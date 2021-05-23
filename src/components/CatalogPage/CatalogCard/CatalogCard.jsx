@@ -79,7 +79,7 @@ export const CatalogCard = ({ id, imgSrc, nameItem, nameItemSub, coast, coast2, 
 
             <div style={{ textAlign: 'center', paddingBottom: '40px' }}>
                 <Link to={getReviewUrl(contentType)}>
-                    <CatalogCardLinkPay as='button'>Отзывы</CatalogCardLinkPay>
+                    <CatalogCardLinkPay as='button' $isReview>Отзывы</CatalogCardLinkPay>
                 </Link>
             </div>
 

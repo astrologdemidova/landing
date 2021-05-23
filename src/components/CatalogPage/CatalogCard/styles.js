@@ -80,7 +80,7 @@ export const CatalogCardLinkPay = styled.a`
     outline: none;
     border-radius: 30px;
     border-color: transparent;
-    max-width: 275px;
+    max-width: ${props => props.$isReview ? '169px' : '275px'};
     width: 100%;
     text-transform: uppercase;
     text-decoration: none;
@@ -89,7 +89,7 @@ export const CatalogCardLinkPay = styled.a`
     font-size: 15px;
     box-shadow: 0px 0px 10px 10px rgba(162, 8, 147, 0.5);
     line-height: 1.15;
-    height: 55px;
+    height: ${props => props.$isReview ? '40px' : '55px'};
     cursor: pointer;
     animation: 1.5s infinite alternate lightningBtn;
     a {

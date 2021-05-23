@@ -39,4 +39,9 @@ export const ReviewsBlockWrapper = styled.div`
             margin: 0 auto 6px;
         }
     }
+    .slider .slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `

@@ -17,8 +17,10 @@ import {
     ListBlack,
     ListSeparate,
     MenuButtonWrapper,
+    AboutContainer,
 } from './styles'
 import emoji from '../../../images/emoji-schh.png'
+import BgPicture from '../../../images/red-min.jpg';
 import { CustomCollapse } from '../CustomCollapse'
 import { AboutBlock } from '../AboutBlock/AboutBlock'
 
@@ -168,6 +170,16 @@ export const CatalogWrapper = () => {
                     <h1>Обо мне</h1>
                     <h2>@astrolog_demidova</h2>
                 </CatalogHeaderContainer>
+
+                <AboutContainer>
+                    <img className='red' src={BgPicture} alt="" />
+                </AboutContainer>
+
+                <CatalogHeaderContainer>
+                    <h1>Яна Демидова.</h1>
+                    <h2>Один из самых высокооплачиваемых астрологов России.</h2>
+                </CatalogHeaderContainer>
+
                 <AboutBlock />
 
                 <CustomMenuShop setContentType={setContentType} />

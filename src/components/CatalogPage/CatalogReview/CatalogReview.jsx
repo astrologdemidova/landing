@@ -13,10 +13,9 @@ import { Link } from 'gatsby'
 import { contentTypeConsultation, contentTypeMeditation, contentTypeRitual } from '../CatalogWrapper/CatalogWrapper'
 
 export const CatalogReview = ({entityType}) => {
-    console.log('###########', entityType)
     return (
         <CatalogReviewStyled>
-            <span><Link to='/shop'>Назад</Link></span>
+            <span><Link to='/'>Назад</Link></span>
             <CatalogHeaderContainer>
                 <h1>Магазин волшебства</h1>
                 <h2>от @astrolog_demidova</h2>

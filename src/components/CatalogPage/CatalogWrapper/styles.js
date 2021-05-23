@@ -110,6 +110,16 @@ export const CatalogSubHeaderContainer = styled.header`
     }
 `;
 
+export const AboutContainer = styled(CatalogSubHeaderContainer)`
+    background: none;
+    max-width: 200px;
+    padding: 0;
+    img {
+        display: block;
+        width: 100%;
+    }
+`;
+
 export const DescriptionContainer = styled(CatalogSubHeaderContainer)`
     background: none;
     padding: 24px 15px;

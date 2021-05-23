@@ -8,10 +8,10 @@ import {
 
 export const CustomCollapse = ({setContentType}) => {
     return (
-        <>
+        <a href='#anchor'>
             <ButtonMenu onClick={() => setContentType(contentTypeMenu)}>
                 свернуть
             </ButtonMenu>
-        </>
+        </a>
     )
 }
