@@ -127,8 +127,6 @@ export const PopupCardpayWrapper = styled.div`
     justify-content: center;
     align-items: center;
     form {
-        /* background: white; */
-        /* padding: 40px 20px; */
         label {
             display: inline-block;
             width: 100%;
@@ -146,15 +144,15 @@ export const PopupCardpayWrapper = styled.div`
         }
         div {
             padding-top: 10px;
-            padding-bottom: 30px;
+            padding-bottom: 20px;
         }
     }
     @media all and (max-width: 370px) {
         form {
             font-size: 12px;
             div {
-            padding-bottom: 20px;
-        }
+                padding-bottom: 13px;
+            }
         }
     }
 `;
