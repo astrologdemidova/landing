@@ -143,14 +143,14 @@ export const PopupCardpayWrapper = styled.div`
         }
         div {
             padding-top: 10px;
-            padding-bottom: 30px;
+            padding-bottom: 20px;
         }
     }
     @media all and (max-width: 370px) {
         form {
             font-size: 12px;
             div {
-            padding-bottom: 20px;
+            padding-bottom: 13px;
         }
         }
     }
