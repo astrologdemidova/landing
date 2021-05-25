@@ -106,12 +106,12 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
     const [linkpay, setLinkpay] = React.useState('');
 
     const [checkBoxValue, setCheckboxValue] = React.useState('2');
-    const [checkBoxSpecial, setCheckboxSpecial] = React.useState(true);
+    const [checkBoxSpecial, setCheckboxSpecial] = React.useState(false);
 
-    const [coastSpecial, setCoastSpecial] = React.useState(checkBoxSpecial ? String(Number(coast) + 498) : coast);
+    const [coastSpecial, setCoastSpecial] = React.useState(checkBoxSpecial === 'spec1' ? String(Number(coast) + 498) : coast);
 
     React.useEffect(() => {
-        setCoastSpecial(checkBoxSpecial ? String(Number(coast) + 498) : coast);
+        setCoastSpecial(checkBoxSpecial === 'spec1' ? String(Number(coast) + 498) : coast);
     }, [checkBoxSpecial, setCheckboxSpecial, coastSpecial, setCoastSpecial, coast]);
 
     React.useEffect(() => {
@@ -126,8 +126,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         name: period2 ? nameItem + ` длительность: ${checkBoxValue === '1' ? period : period2}` : nameItem,
                     },
                 ],
-                `${
-                    phone && email && checkBoxSpecial 
+                `${phone && email && checkBoxSpecial === 'spec1'
                     ? (id === '4567' ? linkContent + ' и https://disk.yandex.ru/d/RYNelX1eWwSPPg' : linkContent + ' и https://disk.yandex.ru/d/w_e1bBeYWZyeOw')
                     : linkContent
                 }`,
@@ -150,7 +149,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                             Длительность: {period}
                         </p>
                     }
-                    <CatalogCardCoast>{checkBoxSpecial && phone && email ? coastSpecial : coast} ₽</CatalogCardCoast>
+                    <CatalogCardCoast>{checkBoxSpecial === 'spec1' && phone && email ? coastSpecial : coast} ₽</CatalogCardCoast>
                     {installment && <p>*при оплате доступна рассрочка</p>}
 
                     {period2 &&
@@ -174,12 +173,33 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
 
                     {phone && email &&
                         <div>
-                            Специальное предложение!<br />
-                            <input type='checkbox' id='special' defaultChecked={checkBoxSpecial} onChange={() => setCheckboxSpecial(!checkBoxSpecial)} style={{ width: '18px', height: '18px' }} />
-                            <label htmlFor='special' style={{ display: 'inline-block', width: 'auto' }}>Вторая медитация со скидкой 50% (+498р)</label>
+                            🔥СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ🔥<br /><br />
+                            Только сейчас вторая медитация<br/><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 499р)<br />
+                            <div style={{paddingBottom: '10px', display: 'flex', alignItems: 'center'}}>
+                                <input
+                                    type='checkbox'
+                                    id='specialYes'
+                                    defaultChecked={false}
+                                    checked={checkBoxSpecial === 'spec1'}
+                                    onChange={() => setCheckboxSpecial('spec1')}
+                                    style={{ width: '18px', height: '18px', display: 'inline-block' }}
+                                />
+                                <label htmlFor='special' style={{ display: 'inline-block', width: 'auto' }}>Хочу!</label>
+                            </div>
+                            <div style={{paddingBottom: '10px', display: 'flex', alignItems: 'center'}}>
+                                <input
+                                    type='checkbox'
+                                    id='specialNo'
+                                    defaultChecked={false}
+                                    checked={checkBoxSpecial === 'spec2'}
+                                    onChange={() => setCheckboxSpecial('spec2')}
+                                    style={{ width: '18px', height: '18px', display: 'inline-block' }}
+                                />
+                                <label htmlFor='special' style={{ display: 'inline-block', width: 'auto' }}>Спасибо, мне это не нужно</label>
+                            </div>
                         </div>}
                     <div style={{ textAlign: 'center' }}>
-                        <CatalogCardLinkPay href={phone && email && linkpay} onClick={(e) => (!phone || !email) && e.preventDefault()} rel='noreferrer' target='_blank'>
+                        <CatalogCardLinkPay href={phone && email && linkpay} onClick={(e) => (!phone || !email || !checkBoxSpecial) && e.preventDefault()} rel='noreferrer' target='_blank'>
                             {buttonName}
                         </CatalogCardLinkPay>
                     </div>
