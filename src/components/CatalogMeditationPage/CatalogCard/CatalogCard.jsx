@@ -176,7 +176,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         <div>
                             Специальное предложение!<br />
                             <input type='checkbox' id='special' defaultChecked={checkBoxSpecial} onChange={() => setCheckboxSpecial(!checkBoxSpecial)} style={{ width: '18px', height: '18px' }} />
-                            <label htmlFor='special' style={{ display: 'inline-block', width: 'auto' }}>Вторая медитация со скидкой 50%</label>
+                            <label htmlFor='special' style={{ display: 'inline-block', width: 'auto' }}>Вторая медитация со скидкой 50% (+498р)</label>
                         </div>}
                     <div style={{ textAlign: 'center' }}>
                         <CatalogCardLinkPay href={phone && email && linkpay} onClick={(e) => (!phone || !email) && e.preventDefault()} rel='noreferrer' target='_blank'>
