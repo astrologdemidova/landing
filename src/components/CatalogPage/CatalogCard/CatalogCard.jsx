@@ -121,12 +121,12 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
     const [checkBoxValue, setCheckboxValue] = React.useState('2');
     const [checkBoxSpecial, setCheckboxSpecial] = React.useState(true);
 
-    const [coastSpecial, setCoastSpecial] = React.useState(checkBoxSpecial && id !== '1239' ? String(Number(coast.split(' ').join('')) + 498) : coast);
+    const [coastSpecial, setCoastSpecial] = React.useState(checkBoxSpecial && id !== '1239' ? String(Number(coast.split(' ').join('')) + 777) : coast);
 
     const consultationVIP90days = id === '1239' ? '500000&installments_disabled=228' : coast2;
 
     React.useEffect(() => {
-        setCoastSpecial(checkBoxSpecial ? String(Number(coast.split(' ').join('')) + 498) : coast);
+        setCoastSpecial(checkBoxSpecial ? String(Number(coast.split(' ').join('')) + 777) : coast);
     }, [checkBoxSpecial, setCheckboxSpecial, coastSpecial, setCoastSpecial, coast]);
 
     React.useEffect(() => {
@@ -192,7 +192,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         <div>
                             Специальное предложение!<br />
                             <input type='checkbox' id='special' defaultChecked={checkBoxSpecial} onChange={() => setCheckboxSpecial(!checkBoxSpecial)} style={{ width: '18px', height: '18px' }} />
-                            <label htmlFor='special' style={{ display: 'inline-block', width: 'auto' }}>Вторая медитация со скидкой 50%</label>
+                            <label htmlFor='special' style={{ display: 'inline-block', width: 'auto' }}>Легендарная медитация Изобилия со скидкой 50% (+777р)</label>
                         </div>}
                     <div style={{ textAlign: 'center' }}>
                         <CatalogCardLinkPay href={phone && email && linkpay} onClick={(e) => (!phone || !email) && e.preventDefault()} rel='noreferrer' target='_blank'>
