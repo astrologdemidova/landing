@@ -45,3 +45,18 @@ export const ReviewsBlockWrapper = styled.div`
         align-items: center;
     }
 `
+
+export const ArrowIconDown = styled.div`
+    margin: 0 0 3px 5px;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-left: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    transform: rotate(-45deg);
+`;
+
+export const ArrowIconUp = styled(ArrowIconDown)`
+    transform: rotate(135deg);
+    margin: 0 0 -1px 5px;
+`;

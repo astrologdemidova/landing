@@ -1,5 +1,5 @@
 import React from "react"
-import { ReviewsBlockWrapper } from './styles'
+import { ReviewsBlockWrapper, ArrowIconDown, ArrowIconUp } from './styles'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import review1 from '../../../images/catalog/fortuna.webp'
@@ -75,12 +75,21 @@ export const AboutBlock = () => {
 
             </ReviewsBlockWrapper>
 
-            <p>
-                Всем привет<span role="img" aria-label="Pensive emoji">🤍</span><br />
-                Астролог я не обычный: уже 4 года я эксперт по предназначению и повышению финансового уровня через астрологию и магию. Провела больше 1230 консультаций
-            </p>
-            {showText && getAboutText()}
-            <div style={{fontWeight: '600', cursor: 'pointer'}} onClick={() => setShowText(!showText)}>{showText ? 'Скрыть' : 'Узнать больше'}</div>
+            <div style={{maxWidth: '768px', width: '100%', margin: '0 auto'}}>
+                <p>
+                    Всем привет<span role="img" aria-label="Pensive emoji">🤍</span><br />
+                    Астролог я не обычный: уже 4 года я эксперт по предназначению и повышению финансового уровня через астрологию и магию. Провела больше 1230 консультаций
+                </p>
+                {showText && getAboutText()}
+
+                <div
+                    style={{ fontWeight: '600', cursor: 'pointer', paddingBottom: '30px' }}
+                    onClick={() => setShowText(!showText)}
+                >
+                    {showText ? (<>Скрыть<ArrowIconUp /></>) : (<>Узнать больше<ArrowIconDown /></>)}
+                </div>
+
+            </div>
         </>
     )
 }

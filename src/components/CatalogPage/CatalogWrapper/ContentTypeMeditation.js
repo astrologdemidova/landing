@@ -16,7 +16,7 @@ export const ArrayContentTypeMeditation = [
         ],
         // linkPay: 'https://payform.ru/ec8lia/',
         // linkPay: `Я поздравляю тебя с покупкой билета в новую изобильную жизнь! По ссылке ты можешь скачать медитацию https://github.com/astrologdemidova/landing/raw/main/runafile22/2hryIjhfk/Поток%20клиентов.pdf`,
-        linkPay: `Я поздравляю тебя с покупкой билета в новую изобильную жизнь! По ссылке ты можешь скачать медитацию https://disk.yandex.ru/d/w_e1bBeYWZyeOw`,
+        linkPay: `Поздравляю с покупкой билета в новую жизнь! Скачать медитацию https://disk.yandex.ru/d/w_e1bBeYWZyeOw`,
         buttonName: 'Увеличить денежный поток',
     },
     {
@@ -34,7 +34,7 @@ export const ArrayContentTypeMeditation = [
         ],
         // linkPay: 'https://payform.ru/ef8lid/',
         // linkPay: `Я поздравляю тебя с покупкой билета в новую изобильную жизнь! По ссылке ты можешь скачать медитацию https://github.com/astrologdemidova/landing/raw/main/runafile22/5Gkhgdfk/Чистка%20фин%20блоков%20.pdf`,
-        linkPay: `Я поздравляю тебя с покупкой билета в новую изобильную жизнь! По ссылке ты можешь скачать медитацию https://disk.yandex.ru/d/RYNelX1eWwSPPg`,
+        linkPay: `Поздравляю с покупкой билета в новую жизнь! Скачать медитацию https://disk.yandex.ru/d/RYNelX1eWwSPPg`,
         buttonName: 'Узнать предназначение',
     },
 ]

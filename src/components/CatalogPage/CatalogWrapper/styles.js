@@ -48,11 +48,11 @@ export const CatalogHeaderContainer = styled.header`
 
 export const CatalogHeaderContainerPhoto = styled(CatalogHeaderContainer)`
     padding-top: 0;
-    padding-bottom: 45px;
+    padding-bottom: 25px;
     h1 {
         padding-top: 0;
         margin-top: 0;
-        font-size: 24px;
+        font-size: 20px;
     }
     h2 {
         font-size: 15px;
@@ -128,7 +128,7 @@ export const AboutContainer = styled(CatalogSubHeaderContainer)`
     max-width: 280px;
     padding: 0;
     margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     img {
         display: block;
         width: 100%;

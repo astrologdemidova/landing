@@ -119,8 +119,15 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
     const [linkpay, setLinkpay] = React.useState('');
 
     const [checkBoxValue, setCheckboxValue] = React.useState('2');
+    const [checkBoxSpecial, setCheckboxSpecial] = React.useState(true);
+
+    const [coastSpecial, setCoastSpecial] = React.useState(checkBoxSpecial && id !== '1239' ? String(Number(coast.split(' ').join('')) + 498) : coast);
 
     const consultationVIP90days = id === '1239' ? '500000&installments_disabled=228' : coast2;
+
+    React.useEffect(() => {
+        setCoastSpecial(checkBoxSpecial ? String(Number(coast.split(' ').join('')) + 498) : coast);
+    }, [checkBoxSpecial, setCheckboxSpecial, coastSpecial, setCoastSpecial, coast]);
 
     React.useEffect(() => {
         const getLink = () => {
@@ -130,16 +137,19 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                 `${email}`,
                 [
                     {
-                        price: period2 ? (checkBoxValue === '1' ? coast : consultationVIP90days) : coast,
+                        price: period2 ? (checkBoxValue === '1' ? coast : consultationVIP90days) : coastSpecial,
                         name: period2 ? nameItem + ` длительность: ${checkBoxValue === '1' ? period : period2}` : nameItem,
                     },
                 ],
-                `${linkContent}`,
+                `${
+                    phone && email && checkBoxSpecial && id !== '1239'
+                    ? (id === '4567' ? linkContent + ' Бонус: https://disk.yandex.ru/d/RYNelX1eWwSPPg' : linkContent + ' Бонус: https://disk.yandex.ru/d/w_e1bBeYWZyeOw')
+                    : linkContent
+                }`,
             ));
-            // console.log(linkpay);
         };
         getLink();
-    }, [id, coast, coast2, period, period2, nameItem, linkpay, setLinkpay, phone, email, checkBoxValue, linkContent, consultationVIP90days]);
+    }, [id, coast, coast2, period, period2, nameItem, linkpay, setLinkpay, phone, email, checkBoxValue, linkContent, checkBoxSpecial, coastSpecial, setCoastSpecial, consultationVIP90days]);
 
     return (
         <PopupCardpayWrapper onClick={() => setShowPopup(false)}>
@@ -155,7 +165,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                             Длительность: {period}
                         </p>
                     }
-                    <CatalogCardCoast>{coast} ₽</CatalogCardCoast>
+                    <CatalogCardCoast>{checkBoxSpecial && phone && email && id !== '1239' ? coastSpecial : coast} ₽</CatalogCardCoast>
                     {installment && <p>*при оплате доступна рассрочка</p>}
 
                     {period2 &&
@@ -170,18 +180,26 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
 
                     {coastStrike && <CatalogCardCoastStrike>{coastStrike} ₽</CatalogCardCoastStrike>}
                     <div>
-                        <label name='phone' htmlFor='phoneClient'>Ваш телефон:</label>
+                        <label name='phone' htmlFor='phoneClient'>Ваш телефон*:</label>
                         <input name='phone' id='phoneClient' type='phone' value={phone} onChange={(e) => setPhone(e.target.value)} required />
                     </div>
                     <div>
-                        <label name='email' htmlFor='emailClient'>Ваш email:</label>
+                        <label name='email' htmlFor='emailClient'>Ваш email*:</label>
                         <input name='email' id='emailClient' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
                     </div>
+
+                    {phone && email && id !== '1239' &&
+                        <div>
+                            Специальное предложение!<br />
+                            <input type='checkbox' id='special' defaultChecked={checkBoxSpecial} onChange={() => setCheckboxSpecial(!checkBoxSpecial)} style={{ width: '18px', height: '18px' }} />
+                            <label htmlFor='special' style={{ display: 'inline-block', width: 'auto' }}>Вторая медитация со скидкой 50%</label>
+                        </div>}
                     <div style={{ textAlign: 'center' }}>
                         <CatalogCardLinkPay href={phone && email && linkpay} onClick={(e) => (!phone || !email) && e.preventDefault()} rel='noreferrer' target='_blank'>
                             {buttonName}
                         </CatalogCardLinkPay>
                     </div>
+                    <div style={{fontSize: '11px', padding: '0'}}>* - обязательные поля</div>
                 </form>
             </CatalogCardWrapper>
         </PopupCardpayWrapper>
