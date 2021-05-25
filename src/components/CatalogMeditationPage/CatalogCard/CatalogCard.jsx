@@ -108,16 +108,10 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
     const [checkBoxValue, setCheckboxValue] = React.useState('2');
     const [checkBoxSpecial, setCheckboxSpecial] = React.useState(true);
 
-    // const coastSpecial = checkBoxSpecial ? String(Number(coast) + 498) : coast;
-    // const coastSpecial = React.useCallback(
-    //     () => checkBoxSpecial ? String(Number(coast) + 498) : coast,
-    //     [checkBoxSpecial, coast],
-    //   );
     const [coastSpecial, setCoastSpecial] = React.useState(checkBoxSpecial ? String(Number(coast) + 498) : coast);
 
     React.useEffect(() => {
         setCoastSpecial(checkBoxSpecial ? String(Number(coast) + 498) : coast);
-        // console.log('!!!!!!!!!!!!', coastSpecial)
     }, [checkBoxSpecial, setCheckboxSpecial, coastSpecial, setCoastSpecial, coast]);
 
     React.useEffect(() => {

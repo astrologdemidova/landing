@@ -23,7 +23,7 @@ export const CatalogHeaderContainer = styled.header`
         color: #6a45ab;
         position: relative;
         z-index: 10;
-        font-size: 21px;
+        font-size: 18px;
         font-weight: 700;
         margin-bottom: 5px;
         @media all and (max-width: 374px) {
@@ -34,7 +34,7 @@ export const CatalogHeaderContainer = styled.header`
         position: relative;
         z-index: 10;
         color: #6a45ab;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 200;
         margin-top: 5px;
         /* font-family: 'Alex Brush', cursive; */
@@ -139,7 +139,7 @@ export const AboutContainer = styled(CatalogSubHeaderContainer)`
     max-width: 280px;
     padding: 0;
     margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     img {
         display: block;
         width: 100%;

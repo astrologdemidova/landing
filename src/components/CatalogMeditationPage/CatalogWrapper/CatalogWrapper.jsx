@@ -56,7 +56,7 @@ export const CatalogWrapper = () => {
         <>
             <CatalogWrapperStyled>
                 <CatalogHeaderContainer>
-                    <h1>Легендарные медитации от одного из самых высокооплачиваемых астрологов России - Яны Демидовой</h1>
+                    <h1>Легендарные медитации от одного из<br/> самых высокооплачиваемых<br/> астрологов России - Яны Демидовой</h1>
                     <h2>(@astrolog_demidova)</h2>
                     <img src={emoji} alt="" />
                 </CatalogHeaderContainer>
