@@ -7,6 +7,25 @@ import review2 from '../../images/reviews/IMG_2039.jpg'
 import review3 from '../../images/reviews/IMG_2044.jpg'
 import review4 from '../../images/reviews/IMG_2040.jpg'
 import review5 from '../../images/reviews/IMG_2042.jpg'
+import review6 from '../../images/reviews/IMG_8303.png'
+import review7 from '../../images/reviews/IMG_8305.png'
+import review8 from '../../images/reviews/IMG_8306.png'
+import review9 from '../../images/reviews/IMG_8307.png'
+import review10 from '../../images/reviews/IMG_8308.png'
+import review11 from '../../images/reviews/IMG_8309.png'
+import review12 from '../../images/reviews/IMG_8310.png'
+import review13 from '../../images/reviews/IMG_8311.png'
+import review14 from '../../images/reviews/IMG_8312.png'
+import review15 from '../../images/reviews/IMG_8313.png'
+import review16 from '../../images/reviews/IMG_8314.png'
+import review17 from '../../images/reviews/IMG_8315.png'
+import review18 from '../../images/reviews/IMG_8316.png'
+import review19 from '../../images/reviews/IMG_8317.png'
+import review20 from '../../images/reviews/IMG_8318.png'
+import review21 from '../../images/reviews/IMG_8319.png'
+import review22 from '../../images/reviews/IMG_8320.png'
+import review23 from '../../images/reviews/IMG_8321.png'
+import review24 from '../../images/reviews/IMG_8322.png'
 
 /*
 const getConfigurableProps = () => ({
@@ -57,6 +76,63 @@ export const ReviewsBlock = () => {
                 </div>
                 <div>
                     <img src={review5} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review6} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review7} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review8} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review9} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review10} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review11} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review12} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review13} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review14} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review15} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review16} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review17} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review18} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review19} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review20} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review21} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review22} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review23} alt="астрология" width='300px' />
+                </div>
+                <div>
+                    <img src={review24} alt="астрология" width='300px' />
                 </div>
             </Carousel>
         </ReviewsBlockWrapper>
