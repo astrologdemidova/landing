@@ -27,6 +27,16 @@ import review22 from '../../images/reviews/IMG_8320.png'
 import review23 from '../../images/reviews/IMG_8321.png'
 import review24 from '../../images/reviews/IMG_8322.png'
 
+import review25 from '../../images/reviews/TbXRAzLZLBY.jpg'
+
+import review26 from '../../images/reviews/4CI2KS_WO6o.jpg'
+import review27 from '../../images/reviews/7LavNkEeV2U.jpg'
+import review28 from '../../images/reviews/E_r5ym0Iik0.jpg'
+import review29 from '../../images/reviews/QMZeIXTd7_w.jpg'
+import review30 from '../../images/reviews/qpJAtRmCY4c.jpg'
+import review31 from '../../images/reviews/rEZYpzJh88A.jpg'
+import review32 from '../../images/reviews/tID9_CjDXYY.jpg'
+
 /*
 const getConfigurableProps = () => ({
     showArrows: boolean('showArrows', true, tooglesGroupId),
@@ -62,6 +72,32 @@ export const ReviewsBlock = () => {
         <ReviewsBlockWrapper>
             
             <Carousel {...carouselConfig}>
+                <div>
+                    <img src={review32} alt="astrolog" width='300px' />
+                </div>
+                <div>
+                    <img src={review31} alt="astrolog" width='300px' />
+                </div>
+                <div>
+                    <img src={review30} alt="astrolog" width='300px' />
+                </div>
+                <div>
+                    <img src={review29} alt="astrolog" width='300px' />
+                </div>
+                <div>
+                    <img src={review28} alt="astrolog" width='300px' />
+                </div>
+                <div>
+                    <img src={review27} alt="astrolog" width='300px' />
+                </div>
+                <div>
+                    <img src={review26} alt="astrolog" width='300px' />
+                </div>
+
+                <div>
+                    <img src={review25} alt="astrolog" width='300px' />
+                </div>
+
                 <div>
                     <img src={review1} alt="astrolog" width='300px' />
                 </div>
