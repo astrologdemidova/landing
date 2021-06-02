@@ -152,7 +152,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
 
     return (
         <PopupCardpayWrapper onClick={() => setShowPopup(false)}>
-            <CatalogCardWrapper>
+            <CatalogCardWrapper $isPopup>
                 <form onClick={(e) => e.stopPropagation()}>
                     <CatalogCardTitle>{nameItem}</CatalogCardTitle>
 
@@ -195,7 +195,8 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         // </div>
                         <div>
                             🔥СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ🔥<br /><br />
-                            Только сейчас вторая медитация<br /><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 777р)<br />
+                            {/* Только сейчас вторая медитация<br /><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 777р)<br /> */}
+                            Только сейчас медитация {id === '4567' ? '«ПРЕДНАЗНАЧЕНИЕ»' : '«ИЗОБИЛИЯ»'}<br/><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 777р)<br />
                             <div style={{ paddingBottom: '10px', display: 'flex', alignItems: 'center' }}>
                                 <input
                                     type='checkbox'

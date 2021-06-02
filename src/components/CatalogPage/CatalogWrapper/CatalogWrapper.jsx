@@ -149,11 +149,27 @@ export const CatalogWrapper = () => {
                         <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeConsultation ? contentTypeMenu : contentTypeConsultation)}>Консультации</CustomButton></a>
                     </MenuButtonWrapper>
 
+                    {contentType === contentTypeConsultation &&
+                        <ul style={{listStyle: 'none', padding: '0 40px'}}>
+                            <li>
+                                <b>*</b>После оплаты консультации я с вами свяжусь и мы подберем удобную дату и время для проведения онлайн-встречи.<br /><br />
+                                У меня всегда запись приблизившись на месяц вперёд, но если вам очень нужно быстрее - обсудим✨
+                            </li>
+                        </ul>
+                    }
+
                     {contentType === contentTypeConsultation && contentTypeHandler(contentType)}
 
                     <MenuButtonWrapper>
                         <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeRitual ? contentTypeMenu : contentTypeRitual)}>Ритуалы</CustomButton></a>
                     </MenuButtonWrapper>
+
+                    {contentType === contentTypeRitual &&
+                        <ul style={{listStyle: 'none', padding: '0 40px'}}>
+                            <li><b>*</b>Все ритуалы можно использовать много раз. Они остаются с вами на всю жизнь!<br/><br/></li>
+                            <li><b>*</b>Ритуалы для самостоятельного выполнения. Они легкие в исполнении, безопасные, при этом очень действенные</li>
+                        </ul>
+                    }
 
                     {contentType === contentTypeRitual && contentTypeHandler(contentType)}
 
@@ -177,7 +193,7 @@ export const CatalogWrapper = () => {
 
                 <CatalogHeaderContainerPhoto>
                     <h1>Яна Демидова.</h1>
-                    <h2>Один из самых высокооплачиваемых<br/>астрологов России.</h2>
+                    <h2>Один из самых высокооплачиваемых<br />астрологов России.</h2>
                 </CatalogHeaderContainerPhoto>
 
                 <AboutBlock />

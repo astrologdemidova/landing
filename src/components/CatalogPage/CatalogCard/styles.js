@@ -15,6 +15,9 @@ export const CatalogCardWrapper = styled.div`
     }
     @media all and (max-width: 991px) {
         max-width: 100%;
+        ${props => props.$isPopup && 'max-height: 600px;'}
+        ${props => props.$isPopup && 'overflow-y: auto;'}
+        ${props => props.$isPopup && 'padding-bottom: 100px;'}
     }
 `;
 
