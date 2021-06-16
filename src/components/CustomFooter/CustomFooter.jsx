@@ -28,6 +28,12 @@ export const CustomFooter = ({setShowPopup}) => {
             <FooterSeparite />
 
             <FooterText>
+                ИП Эдельфштейн Владимир Михайлович
+            </FooterText>
+        
+            <FooterSeparite />
+
+            <FooterText>
                 <FooterLink href='https://webreznov.ru/' rel="noreferrer" target='_blank'>
                     #webreznov__studio
                 </FooterLink>
