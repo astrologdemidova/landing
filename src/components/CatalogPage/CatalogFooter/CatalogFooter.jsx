@@ -38,6 +38,8 @@ export const CatalogFooter = ({isBlack}) => {
                 <CatalogFooterText $isBlack={isBlack}>г. Рязань</CatalogFooterText>
             </CatalogFooterWrapper>
 
+            <CatalogFooterText $isBlack={isBlack}>ИП Эдельштейн Владимир Михайлович</CatalogFooterText>
+            
             {!isBlack && <CatalogFooterText>
                 <CatalogFooterLinkWeb
                     href="https://webreznov.ru/"
