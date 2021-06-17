@@ -39,7 +39,7 @@ export const FortunaWheel = ({ setType, onClick }) => {
         return localStorage.getItem('fortunaAstrologDemidova')
     }
     const previousWinner = () => {
-        return localStorage.getItem('fortunaAstrologDemidovaIdWinner')
+        return localStorage.getItem('fortunaAstrologDemidovaIdWinner') || '004'
     }
 
     const [winSegment, setWinSegment] = useState('000');
@@ -59,7 +59,8 @@ export const FortunaWheel = ({ setType, onClick }) => {
             {winSegment === '000' ? 'wait' : <WheelComponent
                 segments={segments}
                 segColors={segColors}
-                winningSegment={checkWillGame() ? previousWinner() : winSegment}
+                // winningSegment={checkWillGame() ? previousWinner() : winSegment} // return for prod
+                winningSegment={winSegment}
                 onFinished={(winner) => onFinished(winner)}
                 primaryColor='gold'
                 contrastColor='black'
