@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import WheelComponent from "./WheelConstructor";
 import 'react-wheel-of-prizes/dist/index.css'
 import axios from "axios";
+import { CircleLoader } from 'react-spinners';
 // https://www.npmjs.com/package/react-wheel-of-prizes?activeTab=readme
 
 export const FortunaWheel = ({ setType, onClick }) => {
@@ -56,7 +57,7 @@ export const FortunaWheel = ({ setType, onClick }) => {
 
     return (
         <>
-            {winSegment === '000' ? 'wait' : <WheelComponent
+            {winSegment === '000' ? <CircleLoader color='#BF36D7' size='170' /> : <WheelComponent
                 segments={segments}
                 segColors={segColors}
                 // winningSegment={checkWillGame() ? previousWinner() : winSegment} // return for prod

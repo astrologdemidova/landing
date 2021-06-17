@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { CustomButton } from "../CustomButton/CustomButton";
+import { TextWrapper, FormWrapper, FormRow, SpaceBlock, FormInput } from './styles';
 
 const dataText = {
     '001': [
@@ -82,10 +84,11 @@ export const FortunaTextWinner = ({ typePrize }) => {
     const [emailInput, setEmailInput] = useState('');
     const [phoneInput, setPhoneInput] = useState('');
     const [nameInput, setNameInput] = useState('');
+    const [instInput, setInstInput] = useState('');
 
     const handlerSendMail = (e) => {
         e.preventDefault();
-        if (!emailInput || !nameInput || !phoneInput) return;
+        if (!emailInput || !nameInput || !phoneInput || !instInput) return;
         setIsDisabled(true);
         axios
             .post('http://localhost:8080/api/email/add-user-contact', null, {
@@ -93,12 +96,14 @@ export const FortunaTextWinner = ({ typePrize }) => {
                     name: nameInput,
                     email: emailInput,
                     phone: phoneInput,
+                    inst: instInput,
                 }
             })
             .then(function (response) {
                 setTitleForm(thanksResponse);
                 setEmailInput('');
                 setNameInput('');
+                setInstInput('')
                 setPhoneInput('');
             })
             .catch(function (error) {
@@ -109,58 +114,71 @@ export const FortunaTextWinner = ({ typePrize }) => {
 
     const getForm = () => {
         return (
-            <div style={{paddingBottom: '40px'}}>
+            <FormWrapper>
                 <form onSubmit={handlerSendMail} className="form" id="form">
                     <h2 className="form_title">{titleForm}</h2>
                     <div className="form_fields">
-                        <div>
-                            <input
+                        <FormRow>
+                            <label name='phone' htmlFor='phoneClient'>Ваше имя*:</label>
+                            <FormInput
                                 onChange={(e) => setNameInput(e.target.value)}
                                 value={nameInput}
                                 type="text"
                                 className="form_fields_input"
-                                placeholder="Ваше имя"
                                 required
                             />
-                        </div>
-                        <div>
-                            <input
+                        </FormRow>
+                        <FormRow>
+                            <label name='phone' htmlFor='phoneClient'>Ваш телефон*:</label>
+                            <FormInput
                                 onChange={(e) => setPhoneInput(e.target.value)}
                                 value={phoneInput}
                                 type="phone"
                                 className="form_fields_input"
-                                placeholder="Ваш телефон"
                                 required
                             />
-                        </div>
-                        <div>
-                            <input
+                        </FormRow>
+                        <FormRow>
+                            <label name='email' htmlFor='emailClient'>Ваш email*:</label>
+                            <FormInput
                                 onChange={(e) => setEmailInput(e.target.value)}
                                 value={emailInput}
                                 type="email"
                                 className="form_fields_input"
-                                placeholder="Ваш email"
                                 required
                             />
-                        </div>
-                        <div>
-                            <input
-                                type="submit"
-                                disabled={isDisabled}
-                                className="form_fields_btn"
-                                value="отправить"
+                        </FormRow>
+                        <FormRow>
+                            <label name='inst' htmlFor='emailClient'>Ваш instagram*:</label>
+                            <FormInput
+                                onChange={(e) => setInstInput(e.target.value)}
+                                value={instInput}
+                                type="text"
+                                className="form_fields_input"
+                                required
                             />
-                        </div>
+                        </FormRow>
+                        <FormRow>
+                            <CustomButton type="submit" disabled={isDisabled}>
+                                получить
+                            </CustomButton>
+                        </FormRow>
+                        <FormRow>
+                            <div style={{ fontSize: '11px', padding: '0' }}>* - обязательные поля</div>
+                        </FormRow>
                     </div>
                 </form>
-            </div>
+            </FormWrapper>
         )
     }
 
     return (
         <div style={{ margin: '0 10px' }}>
-            {typePrize?.id && dataText[typePrize.id].map((i, ind) => <p key={typePrize.id + ind}>{i}</p>)}
+            <TextWrapper>
+                {typePrize?.id && dataText[typePrize.id].map((i, ind) => <p key={typePrize.id + ind}>{i}</p>)}
+            </TextWrapper>
             {typePrize?.id && getForm()}
+            {!typePrize?.id && <SpaceBlock />}
         </div>
     )
 }
