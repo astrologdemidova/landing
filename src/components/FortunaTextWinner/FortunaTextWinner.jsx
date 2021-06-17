@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 
 const dataText = {
     '001': [
@@ -72,11 +73,94 @@ const dataText = {
 }
 
 export const FortunaTextWinner = ({ typePrize }) => {
-    // if (!typePrize) return null;
+    const [titleForm, setTitleForm] = useState('');
+    const thanksResponse = 'Спасибо, я скоро свяжусь с вами!';
+    const errorResponse = 'Произошла ошибка. Повторите отправку.';
+
+    const [isDisabled, setIsDisabled] = useState(false);
+
+    const [emailInput, setEmailInput] = useState('');
+    const [phoneInput, setPhoneInput] = useState('');
+    const [nameInput, setNameInput] = useState('');
+
+    const handlerSendMail = (e) => {
+        e.preventDefault();
+        if (!emailInput || !nameInput || !phoneInput) return;
+        setIsDisabled(true);
+        axios
+            .post('http://localhost:8080/api/email/add-user-contact', null, {
+                params: {
+                    name: nameInput,
+                    email: emailInput,
+                    phone: phoneInput,
+                }
+            })
+            .then(function (response) {
+                setTitleForm(thanksResponse);
+                setEmailInput('');
+                setNameInput('');
+                setPhoneInput('');
+            })
+            .catch(function (error) {
+                setTitleForm(errorResponse);
+                setIsDisabled(false);
+            });
+    };
+
+    const getForm = () => {
+        return (
+            <div style={{paddingBottom: '40px'}}>
+                <form onSubmit={handlerSendMail} className="form" id="form">
+                    <h2 className="form_title">{titleForm}</h2>
+                    <div className="form_fields">
+                        <div>
+                            <input
+                                onChange={(e) => setNameInput(e.target.value)}
+                                value={nameInput}
+                                type="text"
+                                className="form_fields_input"
+                                placeholder="Ваше имя"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <input
+                                onChange={(e) => setPhoneInput(e.target.value)}
+                                value={phoneInput}
+                                type="phone"
+                                className="form_fields_input"
+                                placeholder="Ваш телефон"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <input
+                                onChange={(e) => setEmailInput(e.target.value)}
+                                value={emailInput}
+                                type="email"
+                                className="form_fields_input"
+                                placeholder="Ваш email"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="submit"
+                                disabled={isDisabled}
+                                className="form_fields_btn"
+                                value="отправить"
+                            />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        )
+    }
 
     return (
-        <div style={{margin: '0 10px'}}>
+        <div style={{ margin: '0 10px' }}>
             {typePrize?.id && dataText[typePrize.id].map((i, ind) => <p key={typePrize.id + ind}>{i}</p>)}
+            {typePrize?.id && getForm()}
         </div>
     )
 }
