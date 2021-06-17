@@ -6,16 +6,16 @@ import 'react-wheel-of-prizes/dist/index.css'
 
 export const FortunaWheel = ({setType}) => {
     const segments = [
-        '120000 RUB',
-        '2000 RUB',
-        '19000 RUB',
-        '2000 RUB',
-        'IPhone 12',
-        '2000 RUB',
-        '6000 RUB',
-        '2000 RUB',
-        '6000 RUB',
-        '2000 RUB',
+        {isSuper: true, value:'120001 RUB'},
+        {isSuper: false, value:'2002 RUB'},
+        {isSuper: true, value:'19003 RUB'},
+        {isSuper: false, value:'2004 RUB'},
+        {isSuper: true, value:'IPhone 12'},
+        {isSuper: false, value:'2006 RUB'},
+        {isSuper: true, value:'6007 RUB'},
+        {isSuper: false, value:'2008 RUB'},
+        {isSuper: true, value:'6009 RUB'},
+        {isSuper: false, value:'2010 RUB'},
     ]
     const segColors = [
         '#eae56f',
