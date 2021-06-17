@@ -44,7 +44,7 @@ export const FortunaWheel = ({setType}) => {
                 contrastColor='black'
                 buttonText='Spin'
                 isOnlyOnce={false}
-                size={290}
+                size={150}
                 upDuration={100}
                 downDuration={1000}
             />
