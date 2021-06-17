@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import WheelComponent from 'react-wheel-of-prizes'
+// import WheelComponent from 'react-wheel-of-prizes'
+import WheelComponent from "./WheelConstructor";
 import 'react-wheel-of-prizes/dist/index.css'
 // https://www.npmjs.com/package/react-wheel-of-prizes?activeTab=readme
 
