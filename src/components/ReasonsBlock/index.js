@@ -1,1 +1,1 @@
-export * from './ReasonsBlock'
+export * from './ReasonsBlock';

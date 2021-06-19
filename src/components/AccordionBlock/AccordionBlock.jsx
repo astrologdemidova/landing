@@ -1,11 +1,6 @@
-import React, { useState } from "react"
-import { CustomMarker } from "../CustomMarker";
-import { 
-    AccordionWrapper,
-    CardWrapper,
-    CardHeader,
-    CardContent,
-} from './styles'
+import React, { useState } from 'react';
+import { CustomMarker } from '../CustomMarker';
+import { AccordionWrapper, CardWrapper, CardHeader, CardContent } from './styles';
 
 export const AccordionBlock = () => {
     const [activeTabs, setActiveTabs] = useState([]);
@@ -15,7 +10,7 @@ export const AccordionBlock = () => {
             description: [
                 'знакомлю вас со своей медиацией Изобилия',
                 'чистка финансового канала',
-                'освобождаем пространство для новых возможностей'
+                'освобождаем пространство для новых возможностей',
             ],
             isOpen: false,
         },
@@ -24,7 +19,7 @@ export const AccordionBlock = () => {
             description: [
                 'ставим цели на год',
                 'пишем план по достижению целей',
-                'привыкаем к большим деньгам'
+                'привыкаем к большим деньгам',
             ],
             isOpen: false,
         },
@@ -33,7 +28,7 @@ export const AccordionBlock = () => {
             description: [
                 'упражнение на миллион',
                 'мощнейший финансовый ритуал',
-                'знакомимся с главным секретом Изобилия'
+                'знакомимся с главным секретом Изобилия',
             ],
             isOpen: false,
         },
@@ -42,7 +37,7 @@ export const AccordionBlock = () => {
             description: [
                 'Избавляемся от негативных установок',
                 'Упражнение не для слабонервных: переходим на новый уровень дохода в реальности',
-                'Знакомство с очень благополучной и успешной версией вас самих'
+                'Знакомство с очень благополучной и успешной версией вас самих',
             ],
             isOpen: false,
         },
@@ -51,7 +46,7 @@ export const AccordionBlock = () => {
             description: [
                 'Повышаем уровень комфорта',
                 'Знакомимся со своей идеальной жизнью и намечаем путь к этой цели',
-                'перепрошиваем негативные установки в сознании'
+                'перепрошиваем негативные установки в сознании',
             ],
             isOpen: false,
         },
@@ -60,7 +55,7 @@ export const AccordionBlock = () => {
             description: [
                 'эфир «30 законов благополучия»',
                 'моя техника карты желаний',
-                'знакомимся с мечтой и делаем к ней шаг'
+                'знакомимся с мечтой и делаем к ней шаг',
             ],
             isOpen: false,
         },
@@ -69,27 +64,29 @@ export const AccordionBlock = () => {
             description: [
                 'знакомство с самим собой, своими талантами и потенциалом',
                 'прорабатываем своё окружение',
-                'розыгрыш моей консультации за 120к'
+                'розыгрыш моей консультации за 120к',
             ],
             isOpen: false,
         },
-    ])
+    ]);
 
     const clickHandler = (idItem) => {
         activeTabs.includes(idItem)
-        ? setActiveTabs(prevState => {
-            const newState = [...prevState];
-            const index = newState.indexOf(idItem);
-            newState.splice(index, 1);
-            return newState
-        })
-        : setActiveTabs(prevState => [...prevState, idItem])
-    }
+            ? setActiveTabs((prevState) => {
+                  const newState = [...prevState];
+                  const index = newState.indexOf(idItem);
+                  newState.splice(index, 1);
+                  return newState;
+              })
+            : setActiveTabs((prevState) => [...prevState, idItem]);
+    };
     return (
         <AccordionWrapper>
             {data.map((item, index) => (
                 <CardWrapper key={item.title}>
-                    <CardHeader onClick={() => clickHandler(index)} isOpen={activeTabs.includes(index)}>
+                    <CardHeader
+                        onClick={() => clickHandler(index)}
+                        isOpen={activeTabs.includes(index)}>
                         {item.title}
                         <span>
                             <div></div>
@@ -100,7 +97,7 @@ export const AccordionBlock = () => {
                         {item.description.map((str, ind) => (
                             <p key={ind}>
                                 {/* <span></span> */}
-                                <CustomMarker type='pink' />
+                                <CustomMarker type="pink" />
                                 {str}
                             </p>
                         ))}
@@ -108,5 +105,5 @@ export const AccordionBlock = () => {
                 </CardWrapper>
             ))}
         </AccordionWrapper>
-    )
-}
+    );
+};

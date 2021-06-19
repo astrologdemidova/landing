@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import helloBlockSky from "../../images/2020-09-30_101813.webp"
+import styled from 'styled-components';
+import helloBlockSky from '../../images/2020-09-30_101813.webp';
 
 export const HeadBlockStyled = styled.div`
     display: flex;
@@ -8,7 +8,7 @@ export const HeadBlockStyled = styled.div`
     @media all and (max-width: 991px) {
         min-height: 115vh;
     }
-`
+`;
 
 export const HeaderStyled = styled.header`
     display: inline-flex;
@@ -25,11 +25,11 @@ export const HeaderStyled = styled.header`
         margin-right: 40px;
         white-space: nowrap;
     }
-    
+
     @media all and (max-width: 991px) {
         display: none;
     }
-`
+`;
 
 export const HelloText = styled.div`
     position: relative;
@@ -70,13 +70,14 @@ export const HelloText = styled.div`
         color: #ffffff;
         font-size: 20px;
         font-weight: 500;
-        font-family: 'FuturaPT',Arial,sans-serif;
+        font-family: 'FuturaPT', Arial, sans-serif;
         line-height: 1.55;
         font-weight: 500;
         text-transform: uppercase;
     }
     @media all and (max-width: 991px) {
-        h1, h2 {
+        h1,
+        h2 {
             font-size: 34px;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -88,7 +89,8 @@ export const HelloText = styled.div`
     @media all and (max-width: 991px) {
         box-sizing: border-box;
         padding: 15px 15px 45px;
-        h1, h2 {
+        h1,
+        h2 {
             font-size: 34px;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -97,12 +99,13 @@ export const HelloText = styled.div`
             font-size: 17px;
         }
     }
-`
+`;
 
 export const HelloPicture = styled.div`
     max-width: 520px;
     width: 100%;
-    img, video {
+    img,
+    video {
         display: block;
         width: 100%;
     }
@@ -116,13 +119,14 @@ export const HelloPicture = styled.div`
         overflow: hidden;
         max-width: 991px;
         width: unset;
-        img, video {
+        img,
+        video {
             object-fit: cover;
             height: 100%;
             width: 100%;
         }
     }
-`
+`;
 
 export const BackgroundHelloBlock = styled.div`
     position: absolute;
@@ -140,7 +144,7 @@ export const BackgroundHelloBlock = styled.div`
     @media all and (max-width: 991px) {
         display: none;
     }
-`
+`;
 
 export const BackgroundHelloBlockResponsive = styled.div`
     display: none;
@@ -158,7 +162,6 @@ export const BackgroundHelloBlockResponsive = styled.div`
         background-attachment: scroll;
         background-size: cover;
         /* background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(8,19,101,1) 95%); */
-        background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(255,255,255,1) 99%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(255, 255, 255, 1) 99%);
     }
-`
-
+`;

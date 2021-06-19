@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 // size 18
 export const ResultWrapper = styled.div`
     text-align: center;
@@ -6,7 +6,7 @@ export const ResultWrapper = styled.div`
         box-sizing: border-box;
         padding: 15px;
     }
-`
+`;
 
 export const ResultList = styled.div`
     display: inline-block;
@@ -20,8 +20,8 @@ export const ResultList = styled.div`
             padding-left: 7px;
             padding-right: 7px;
             img {
-                    width: 45px;
-                }
+                width: 45px;
+            }
         }
     }
     @media all and (max-width: 768px) {
@@ -34,4 +34,4 @@ export const ResultList = styled.div`
             }
         }
     }
-`
+`;

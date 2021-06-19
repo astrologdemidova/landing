@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const GiftsWrapper = styled.div`
     position: relative;
@@ -7,7 +7,7 @@ export const GiftsWrapper = styled.div`
         box-sizing: border-box;
         padding: 15px;
     }
-`
+`;
 
 export const GiftsList = styled.div`
     display: inline-block;
@@ -31,12 +31,16 @@ export const GiftsList = styled.div`
             }
         }
     }
-`
+`;
 
 export const EmojiPicStyled = styled.img`
     position: absolute;
-    bottom: -30px;
-    right: 0;
+    bottom: -37px;
+    right: 20px;
     width: 100px;
     transform: rotate(20deg);
-`
+    @media all and (max-width: 420px) {
+        right: 46px;
+        z-index: -1;
+    }
+`;

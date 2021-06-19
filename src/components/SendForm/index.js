@@ -1,1 +1,1 @@
-export * from './SendForm'
+export * from './SendForm';

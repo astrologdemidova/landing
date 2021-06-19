@@ -1,9 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MarathonWrapper = styled.div`
     text-align: center;
-    
-`
+`;
 
 export const MarathonList = styled.div`
     display: inline-flex;
@@ -16,7 +15,7 @@ export const MarathonList = styled.div`
         box-sizing: border-box;
         padding: 15px;
     }
-`
+`;
 
 export const CardStyled = styled.div`
     position: relative;
@@ -27,7 +26,7 @@ export const CardStyled = styled.div`
     padding: 30px;
     margin: 20px;
     box-sizing: border-box;
-    /* background: ${props => props.revert ? '#f75995' : '#5238fa'}; */
+    /* background: ${(props) => (props.revert ? '#f75995' : '#5238fa')}; */
     background: #d63c8a;
     color: #ffffff;
     font-size: 15px;
@@ -44,9 +43,9 @@ export const CardStyled = styled.div`
         left: 13px;
         z-index: -1;
         border-radius: 30px;
-        background: ${props => props.revert ? '#5238fa' : '#f75995'};
+        background: ${(props) => (props.revert ? '#5238fa' : '#f75995')};
     } */
-`
+`;
 
 export const EmojiPicStyled = styled.img`
     position: absolute;
@@ -54,4 +53,12 @@ export const EmojiPicStyled = styled.img`
     right: -50px;
     width: 100px;
     transform: rotate(-5deg);
-`
+    @media all and (max-width: 420px) {
+        right: 16px;
+        z-index: -1;
+    }
+    @media all and (max-width: 370px) {
+        right: 46px;
+        z-index: -1;
+    }
+`;

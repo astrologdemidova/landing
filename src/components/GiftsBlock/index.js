@@ -1,1 +1,1 @@
-export * from './GiftsBlock'
+export * from './GiftsBlock';

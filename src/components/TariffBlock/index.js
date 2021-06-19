@@ -1,1 +1,1 @@
-export * from './TariffBlock'
+export * from './TariffBlock';

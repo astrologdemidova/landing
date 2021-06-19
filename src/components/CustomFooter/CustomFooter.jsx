@@ -1,18 +1,14 @@
-import * as React from "react"
-import { FooterStyled, FooterText, FooterLink, FooterSeparite, FooterLinkReact } from "./styles"
+import * as React from 'react';
+import { FooterStyled, FooterText, FooterLink, FooterSeparite, FooterLinkReact } from './styles';
 
-export const CustomFooter = ({setShowPopup}) => {
+export const CustomFooter = ({ setShowPopup }) => {
     return (
         <FooterStyled>
             <FooterSeparite />
+            <FooterText>Демидова Яна</FooterText>
+            <FooterText>г. Рязань</FooterText>
             <FooterText>
-                Демидова Яна
-            </FooterText>
-            <FooterText>
-                г. Рязань
-            </FooterText>
-            <FooterText>
-                <FooterLink href='mailto:astrologdemidova@mail.ru'>
+                <FooterLink href="mailto:astrologdemidova@mail.ru">
                     astrologdemidova@mail.ru
                 </FooterLink>
             </FooterText>
@@ -20,7 +16,7 @@ export const CustomFooter = ({setShowPopup}) => {
             <FooterSeparite />
 
             <FooterText>
-                <FooterLinkReact href='/policy' colorRed>
+                <FooterLinkReact href="/policy" colorRed>
                     Политика конфиденциальности
                 </FooterLinkReact>
             </FooterText>
@@ -28,16 +24,17 @@ export const CustomFooter = ({setShowPopup}) => {
             <FooterSeparite />
 
             <FooterText>
-                <FooterLink href='https://webreznov.ru/' rel="noreferrer" target='_blank'>
+                <FooterLink href="https://webreznov.ru/" rel="noreferrer" target="_blank">
                     #webreznov__studio
                 </FooterLink>
             </FooterText>
             <FooterText>
-                <FooterLink style={{color: '#1d0404'}} onClick={() => setShowPopup(prev => !prev)}>
+                <FooterLink
+                    style={{ color: '#1d0404' }}
+                    onClick={() => setShowPopup((prev) => !prev)}>
                     test
                 </FooterLink>
             </FooterText>
-
         </FooterStyled>
-    )
-}
+    );
+};

@@ -1,1 +1,1 @@
-export * from './HeadBlock'
+export * from './HeadBlock';

@@ -1,1 +1,1 @@
-export * from './ReviewsBlock'
+export * from './ReviewsBlock';

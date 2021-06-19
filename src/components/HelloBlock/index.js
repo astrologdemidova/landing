@@ -1,1 +1,1 @@
-export * from './HelloBlock'
+export * from './HelloBlock';

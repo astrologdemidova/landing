@@ -1,1 +1,1 @@
-export * from './MarathonBlock'
+export * from './MarathonBlock';

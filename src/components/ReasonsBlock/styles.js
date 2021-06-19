@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ReasonsWrapper = styled.div`
     text-align: center;
@@ -6,7 +6,7 @@ export const ReasonsWrapper = styled.div`
         box-sizing: border-box;
         padding: 15px;
     }
-`
+`;
 
 export const ReasonsList = styled.div`
     display: inline-block;
@@ -25,7 +25,7 @@ export const ReasonsList = styled.div`
             font-size: 15px;
         }
     }
-`
+`;
 
 export const EmojiPicStyled = styled.img`
     position: absolute;
@@ -33,4 +33,12 @@ export const EmojiPicStyled = styled.img`
     right: -50px;
     width: 100px;
     transform: rotate(20deg);
-`
+    @media all and (max-width: 420px) {
+        right: -38px;
+    }
+    @media all and (max-width: 370px) {
+        right: 0px;
+        bottom: 40px;
+        z-index: -1;
+    }
+`;
