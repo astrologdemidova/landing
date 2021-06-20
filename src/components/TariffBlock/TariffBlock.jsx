@@ -60,6 +60,7 @@ export const TariffBlock = () => {
             // link: 'https://payform.ru/u1aqID/', //13 333
             // link: 'https://payform.ru/7haqJC/', //14 444
             link: 'https://payform.ru/lsarGN/', //15 555
+            // link: 'https://payform.ru/omarIi/', //16 666
         },
         {
             id: '1113',
@@ -92,6 +93,7 @@ export const TariffBlock = () => {
             // link: 'https://payform.ru/toaqIt/', // 17 777
             // link: 'https://payform.ru/7haqJK/', // 18 888
             link: 'https://payform.ru/mdarH5/', // 19 999
+            // link: 'https://payform.ru/orarIn/', // 20 000
         },
         {
             id: '1114',
@@ -124,6 +126,7 @@ export const TariffBlock = () => {
             // link: 'https://payform.ru/7haqJ8/', // 133 333
             // link: 'https://payform.ru/7haqJM/', // 144 444
             link: 'https://payform.ru/mkarHc/', // 155 555
+            //link: 'https://payform.ru/p9arIC/', // 166 666
         },
     ];
 
