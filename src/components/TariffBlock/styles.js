@@ -15,7 +15,7 @@ export const CardStyled = styled.div`
     position: relative;
     max-width: 560px;
     width: 100%;
-    margin: 20px;
+    margin: 20px 20px 60px;
     padding: 20px;
     border: 1px solid #e0e6ed;
     border-radius: 12px;
