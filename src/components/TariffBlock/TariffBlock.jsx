@@ -94,7 +94,7 @@ export const TariffBlock = () => {
         {
             id: '1114',
             title: 'Magic VIP (ОБРАТНАЯ СВЯЗЬ ПО ДОМАШНИМ ЗАДАНИЯМ ОТ ЯНЫ)',
-            coast: '133 333 ₽',
+            coast: '144 444 ₽',
             strikePrice: '555 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
