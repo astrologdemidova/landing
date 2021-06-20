@@ -12,6 +12,7 @@ export const TariffBlockWrapper = styled.div`
 export const CardStyled = styled.div`
     // h4 - strikePrice
     // h2 - coast
+    position: relative;
     max-width: 560px;
     width: 100%;
     margin: 20px;
@@ -28,6 +29,9 @@ export const CardStyled = styled.div`
     h2 {
         font-size: 24px;
         text-align: right;
+        position: absolute;
+        bottom: -70px;
+        right: 20px;
     }
     h4 {
         margin: 0px 0 15px;
