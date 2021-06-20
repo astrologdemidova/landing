@@ -123,7 +123,7 @@ export const TariffBlock = () => {
             // link: 'https://payform.ru/8haoIh/', // 122 222
             // link: 'https://payform.ru/7haqJ8/', // 133 333
             // link: 'https://payform.ru/7haqJM/', // 144 444
-            ink: 'https://payform.ru/mkarHc/', // 155 555
+            link: 'https://payform.ru/mkarHc/', // 155 555
         },
     ];
 
