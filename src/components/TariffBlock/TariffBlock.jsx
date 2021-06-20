@@ -32,8 +32,8 @@ export const TariffBlock = () => {
         {
             id: '1112',
             title: 'Magic mini:',
-            coast: 'от 12 222 ₽',
-            strikePrice: '15 555 ₽',
+            coast: 'от 13 333 ₽',
+            strikePrice: '25 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
                 '▪️ 7 дней практик, устраняющих препятствия на пути к деньгам',
@@ -56,13 +56,15 @@ export const TariffBlock = () => {
             ],
             listDescriptionExclusive: [],
             // link: 'https://payform.ru/8t8g2F/', // 12.04 old 12 222 
-            link: 'https://payform.ru/8faoIf/', //12 222
+            // link: 'https://payform.ru/8faoIf/', //12 222
+            link: 'https://payform.ru/u1aqID/', //13 333
+            // link: 'https://payform.ru/7haqJC/', //14 444
         },
         {
             id: '1113',
             title: 'Magic',
-            coast: 'от 16 666 ₽',
-            strikePrice: '19 999 ₽',
+            coast: 'от 17 777 ₽',
+            strikePrice: '34 444 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
                 '▪️ 7 дней практик, устраняющих препятствия на пути к деньгам',
@@ -85,13 +87,15 @@ export const TariffBlock = () => {
             ],
             listDescriptionExclusive: [],
             // link: 'https://payform.ru/8w8g2I/', // 12.04 old 16 666
-            link: 'https://payform.ru/88aoI8/', // 16 666
+            // link: 'https://payform.ru/88aoI8/', // 16 666
+            link: 'https://payform.ru/toaqIt/', // 17 777
+            // link: 'https://payform.ru/7haqJK/', // 18 888
         },
         {
             id: '1114',
             title: 'Magic VIP (ОБРАТНАЯ СВЯЗЬ ПО ДОМАШНИМ ЗАДАНИЯМ ОТ ЯНЫ)',
-            coast: 'от 122 222 ₽',
-            strikePrice: '155 555 ₽',
+            coast: 'от 133 333 ₽',
+            strikePrice: '555 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
                 '▪️ 7 дней практик, устраняющих препятствия на пути к деньгам',
@@ -114,7 +118,9 @@ export const TariffBlock = () => {
                 '▪️ Обратная связь лично от меня',
             ],
             /// link: 'https://payform.ru/938g2M/', // 12.04 old 111 111
-            link: 'https://payform.ru/8haoIh/', // 122 222
+            // link: 'https://payform.ru/8haoIh/', // 122 222
+            link: 'https://payform.ru/7haqJ8/', // 133 333
+            // link: 'https://payform.ru/7haqJM/', // 144 444
         },
     ];
 
