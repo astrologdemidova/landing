@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ButtonMenu = styled.div`
     position: fixed;
@@ -14,7 +14,7 @@ export const ButtonMenu = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    
+
     div {
         width: 20px;
         height: 2px;
@@ -25,7 +25,7 @@ export const ButtonMenu = styled.div`
         top: 15px;
         right: 15px;
     }
-`
+`;
 
 export const MenuWrapperStyled = styled.div`
     position: fixed;
@@ -38,7 +38,7 @@ export const MenuWrapperStyled = styled.div`
     background: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: flex-end;
-`
+`;
 
 export const MenuStyled = styled.div`
     width: 100%;
@@ -73,7 +73,7 @@ export const MenuStyled = styled.div`
         text-decoration: none;
         color: #1d2147;
     }
-`
+`;
 
 export const CloseButton = styled.div`
     position: absolute;
@@ -83,4 +83,4 @@ export const CloseButton = styled.div`
     font-size: 50px;
     font-weight: 200;
     transform: rotate(45deg);
-`
+`;

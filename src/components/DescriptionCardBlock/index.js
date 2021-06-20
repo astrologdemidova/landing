@@ -1,1 +1,1 @@
-export * from './DescriptionCardBlock'
+export * from './DescriptionCardBlock';

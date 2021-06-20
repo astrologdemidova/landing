@@ -10,6 +10,9 @@ export const TariffBlockWrapper = styled.div`
     }
 `;
 export const CardStyled = styled.div`
+    // h4 - strikePrice
+    // h2 - coast
+    position: relative;
     max-width: 560px;
     width: 100%;
     margin: 20px;
@@ -24,13 +27,19 @@ export const CardStyled = styled.div`
         text-align: center;
     }
     h2 {
-        font-size: 28px;
+        font-size: 24px;
+        /* text-align: right;
+        position: absolute;
+        bottom: -70px;
+        right: 20px; */
     }
     h4 {
         margin: 0px 0 15px;
-        color: grey;
-        font-size: 26px;
+        /* color: grey; */
+        color: #f75995;
+        font-size: 32px;
         text-decoration: line-through;
+        /* text-align: right; */
     }
     div {
         padding-top: 30px;

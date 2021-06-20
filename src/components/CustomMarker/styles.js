@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CustomMarkerPinkStyled = styled.div`
     display: inline-block;
@@ -19,7 +19,7 @@ export const CustomMarkerPinkStyled = styled.div`
             box-shadow: 0px 0px 6px 3px rgba(253, 117, 180, 0.8);
         }
     }
-`
+`;
 
 export const CustomMarkerBlueStyled = styled.div`
     display: inline-block;
@@ -40,4 +40,4 @@ export const CustomMarkerBlueStyled = styled.div`
             box-shadow: 0px 0px 6px 3px rgba(77, 67, 244, 0.8);
         }
     }
-`
+`;

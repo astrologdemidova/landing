@@ -6,8 +6,8 @@ const Card = ({ item }) => {
     return (
         <CardStyled>
             <h3>{item.title}</h3>
-            <h2>{item.coast}</h2>
             <h4>{item.strikePrice}</h4>
+            <h2>{item.coast}</h2>
             {item.listDescriptionExclusive.map((el) => (
                 <TextExclusive>{el}</TextExclusive>
             ))}
@@ -32,7 +32,7 @@ export const TariffBlock = () => {
         {
             id: '1112',
             title: 'Magic mini:',
-            coast: 'от 13 333 ₽',
+            coast: '13 333 ₽',
             strikePrice: '25 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -63,7 +63,7 @@ export const TariffBlock = () => {
         {
             id: '1113',
             title: 'Magic',
-            coast: 'от 17 777 ₽',
+            coast: '17 777 ₽',
             strikePrice: '34 444 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -94,7 +94,7 @@ export const TariffBlock = () => {
         {
             id: '1114',
             title: 'Magic VIP (ОБРАТНАЯ СВЯЗЬ ПО ДОМАШНИМ ЗАДАНИЯМ ОТ ЯНЫ)',
-            coast: 'от 133 333 ₽',
+            coast: '133 333 ₽',
             strikePrice: '555 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',

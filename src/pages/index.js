@@ -17,9 +17,10 @@ import { ReviewsBlock } from '../components/ReviewsBlock';
 import { GiftsBlock } from '../components/GiftsBlock';
 import { TariffBlock } from '../components/TariffBlock';
 import { SendForm } from '../components/SendForm';
+import { AccordionQuestionBlock } from '../components/AccordionQuestionBlock';
+import { Rassrochka } from '../components/Rassrochka';
 import { Element } from 'react-scroll';
 import { Helmet } from 'react-helmet';
-import { AccordionQuestionBlock } from '../components/AccordionQuestionBlock';
 // markup
 const IndexPage = () => {
     const [showPopup, setShowPopup] = React.useState(false);
@@ -78,15 +79,23 @@ const IndexPage = () => {
             <Element name="tariff"></Element>
             <LineHeader bgColor="white">
                 до поднятия цен:&nbsp;
-                {/* <Moment date={moment('2021-04-12 18:30:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment> */}
+                <Moment date={moment('2021-06-20 21:30:00')} format={"hh:mm:ss"} durationFromNow interval={1000}></Moment>
             </LineHeader>
             <LineHeader bgColor="white">
                 ТАРИФЫ
                 <br />
-                <span style={{ color: '#f75995', fontSize: '26px' }}>Продажи закрыты</span>
+                <span style={{ color: '#f75995', fontSize: '26px' }}>Продажи открыты</span>
+            </LineHeader>
+
+            <LineHeader bgColor="white">
+                <span style={{ color: '#f75995', fontSize: '16px' }}>
+                    Я уверена на 100% в марафоне, потому гарантирую возврат средств, если не понравится
+                </span>
             </LineHeader>
 
             <TariffBlock />
+
+            <Rassrochka />
 
             <LineHeader bgColor="white">
                 Часто задаваемые вопросы

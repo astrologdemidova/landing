@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CardStyled = styled.div`
     max-width: 360px;
@@ -16,7 +16,7 @@ export const CardStyled = styled.div`
         padding: 30px;
         text-align: left;
     }
-`
+`;
 
 export const CardWrapper = styled.div`
     display: flex;
@@ -26,9 +26,9 @@ export const CardWrapper = styled.div`
         box-sizing: border-box;
         padding: 15px;
     }
-`
+`;
 
 export const CardSeparate = styled.div`
     width: 100%;
     text-align: center;
-`
+`;

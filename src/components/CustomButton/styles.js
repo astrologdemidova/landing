@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // #d44e81 shadow of buttons
 export const ButtonStyled = styled.button`
@@ -36,4 +36,4 @@ export const ButtonStyled = styled.button`
             box-shadow: 0px 0px 10px 10px rgba(162, 8, 147, 0.5);
         }
     }
-`
+`;
