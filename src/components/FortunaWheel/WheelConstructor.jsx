@@ -206,8 +206,7 @@ const WheelComponent = ({
         ctx.fillStyle = primaryColor || 'black'
         ctx.font = 'bold 0.8em ' + fontFamily
         currentSegment = segments[i]
-        // console.log('###', currentSegment.isSuper)
-        // isStarted && ctx.fillText(currentSegment, centerX + 10, centerY + size + 50)
+        // isStarted && ctx.fillText(currentSegment, centerX + 10, centerY + size + 50) //print prize under wheel
     }
     const clear = () => {
         const ctx = canvasContext
@@ -217,7 +216,7 @@ const WheelComponent = ({
         localStorage.setItem('fortunaAstrologDemidova', 'will')
     }
     return (
-        <div id='wheel'>
+        <div id='wheel' style={{textAlign: 'center'}}>
             <canvas
                 onClick={() => handleClick()}
                 id='canvas'

@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-// import WheelComponent from 'react-wheel-of-prizes'
 import WheelComponent from "./WheelConstructor";
 import 'react-wheel-of-prizes/dist/index.css'
 import axios from "axios";
@@ -33,7 +32,7 @@ export const FortunaWheel = ({ setType, onClick }) => {
     ]
     const onFinished = (winner) => {
         setType(winner);
-        console.log(winner);
+        // console.log(winner);
         localStorage.setItem('fortunaAstrologDemidovaIdWinner', winner.id);
     }
     const checkWillGame = () => {
@@ -46,10 +45,9 @@ export const FortunaWheel = ({ setType, onClick }) => {
     const [winSegment, setWinSegment] = useState('000');
 
     useEffect(() => {
+        // .get("http://localhost:3000/api/fortuna/get-wheel-item")
         axios
-            .get(
-                "https://astrolog-fortuna-server.herokuapp.com/api/fortuna/get-wheel-item"
-            )
+        .get("https://astrolog-fortuna-server.herokuapp.com/api/fortuna/get-wheel-item")
             .then((res) => {
                 setWinSegment(res.data);
             });
@@ -57,20 +55,26 @@ export const FortunaWheel = ({ setType, onClick }) => {
 
     return (
         <>
-            {winSegment === '000' ? <CircleLoader color='#BF36D7' size='170' /> : <WheelComponent
-                segments={segments}
-                segColors={segColors}
-                // winningSegment={checkWillGame() ? previousWinner() : winSegment} // return for prod
-                winningSegment={winSegment}
-                onFinished={(winner) => onFinished(winner)}
-                primaryColor='gold'
-                contrastColor='black'
-                buttonText='Spin'
-                isOnlyOnce={true}
-                size={150}
-                upDuration={100}
-                downDuration={2000}
-            />}
+            {winSegment === '000' ?
+                <div style={{ textAlign: 'center' }}>
+                    <span style={{ paddingRight: '121px' }}>
+                        <CircleLoader color='#BF36D7' size='170' />
+                    </span>
+                </div>
+                : <WheelComponent
+                    segments={segments}
+                    segColors={segColors}
+                    // winningSegment={checkWillGame() ? previousWinner() : winSegment} // return for prod
+                    winningSegment={winSegment}
+                    onFinished={(winner) => onFinished(winner)}
+                    primaryColor='gold'
+                    contrastColor='black'
+                    buttonText='Spin'
+                    isOnlyOnce={true}
+                    size={150}
+                    upDuration={100}
+                    downDuration={2000}
+                />}
         </>
     );
 };

@@ -55,6 +55,15 @@ export const FormInput = styled.input`
 export const TextWrapper = styled.div`
     max-width: 606px;
     width: 100%;
+
+    margin: 50px auto;
+    padding: 10px 20px 50px;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    background: white;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 10px rgba(162, 8, 147, 0.1);
+
     @media all and (max-width: 500px) {
         max-width: 370px;
     }
