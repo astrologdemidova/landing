@@ -22,7 +22,7 @@ export const Rassrochka = () => {
                     </p>
 
                     <div>
-                        <a href='#' target='_blank'>
+                        <a href='https://aktivcredit.ru/ak/izobilie/' target='_blank'>
                             <CustomButton>
                                 Заявка на рассрочку
                             </CustomButton>
