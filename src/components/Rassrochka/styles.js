@@ -6,6 +6,9 @@ export const Wrapper = styled.div`
     margin: 0 auto;
     max-width: 768px;
     width: 100%;
+    box-sizing: border-box;
+    padding-right: 20px;
+    padding-left: 20px;
     h4 {
         cursor: pointer;
         text-decoration: underline;
