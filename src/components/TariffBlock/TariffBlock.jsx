@@ -6,7 +6,8 @@ const Card = ({ item }) => {
     return (
         <CardStyled>
             <h3>{item.title}</h3>
-            
+            <h4>{item.strikePrice}</h4>
+            <h2>{item.coast}</h2>
             {item.listDescriptionExclusive.map((el) => (
                 <TextExclusive>{el}</TextExclusive>
             ))}
@@ -22,8 +23,6 @@ const Card = ({ item }) => {
                 </a>
                 <SpecText>* - возможна рассрочка на 3 мес.</SpecText>
             </div>
-            <h4>{item.strikePrice}</h4>
-            <h2>{item.coast}</h2>
         </CardStyled>
     );
 };

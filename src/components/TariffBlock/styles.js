@@ -15,7 +15,7 @@ export const CardStyled = styled.div`
     position: relative;
     max-width: 560px;
     width: 100%;
-    margin: 20px 20px 60px;
+    margin: 20px;
     padding: 20px;
     border: 1px solid #e0e6ed;
     border-radius: 12px;
@@ -28,10 +28,10 @@ export const CardStyled = styled.div`
     }
     h2 {
         font-size: 24px;
-        text-align: right;
+        /* text-align: right;
         position: absolute;
         bottom: -70px;
-        right: 20px;
+        right: 20px; */
     }
     h4 {
         margin: 0px 0 15px;
@@ -39,7 +39,7 @@ export const CardStyled = styled.div`
         color: #f75995;
         font-size: 32px;
         text-decoration: line-through;
-        text-align: right;
+        /* text-align: right; */
     }
     div {
         padding-top: 30px;
