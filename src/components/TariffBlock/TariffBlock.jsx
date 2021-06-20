@@ -32,7 +32,7 @@ export const TariffBlock = () => {
         {
             id: '1112',
             title: 'Magic mini:',
-            coast: '13 333 ₽',
+            coast: '14 444 ₽',
             strikePrice: '25 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -57,13 +57,13 @@ export const TariffBlock = () => {
             listDescriptionExclusive: [],
             // link: 'https://payform.ru/8t8g2F/', // 12.04 old 12 222 
             // link: 'https://payform.ru/8faoIf/', //12 222
-            link: 'https://payform.ru/u1aqID/', //13 333
-            // link: 'https://payform.ru/7haqJC/', //14 444
+            // link: 'https://payform.ru/u1aqID/', //13 333
+            link: 'https://payform.ru/7haqJC/', //14 444
         },
         {
             id: '1113',
             title: 'Magic',
-            coast: '17 777 ₽',
+            coast: '18 888 ₽',
             strikePrice: '34 444 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -88,8 +88,8 @@ export const TariffBlock = () => {
             listDescriptionExclusive: [],
             // link: 'https://payform.ru/8w8g2I/', // 12.04 old 16 666
             // link: 'https://payform.ru/88aoI8/', // 16 666
-            link: 'https://payform.ru/toaqIt/', // 17 777
-            // link: 'https://payform.ru/7haqJK/', // 18 888
+            // link: 'https://payform.ru/toaqIt/', // 17 777
+            link: 'https://payform.ru/7haqJK/', // 18 888
         },
         {
             id: '1114',
@@ -119,8 +119,8 @@ export const TariffBlock = () => {
             ],
             /// link: 'https://payform.ru/938g2M/', // 12.04 old 111 111
             // link: 'https://payform.ru/8haoIh/', // 122 222
-            link: 'https://payform.ru/7haqJ8/', // 133 333
-            // link: 'https://payform.ru/7haqJM/', // 144 444
+            // link: 'https://payform.ru/7haqJ8/', // 133 333
+            link: 'https://payform.ru/7haqJM/', // 144 444
         },
     ];
 
