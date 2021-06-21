@@ -28,11 +28,12 @@ const Card = ({ item }) => {
 };
 
 export const TariffBlock = () => {
+    const step = '1';
     const data = [
         {
             id: '1112',
             title: 'Magic mini:',
-            coast: '13 333 ₽',
+            coast: step === '1' ? '13 333 ₽' : step === '2' ? '14 444 ₽' : '15 555 ₽',
             strikePrice: '25 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -55,14 +56,15 @@ export const TariffBlock = () => {
                 '▪️ Обратная связь лично от меня',
             ],
             listDescriptionExclusive: [],
-            link: 'https://payform.ru/7iat4z/', //13 333 ! изменилась ссылка на чат телеги
+            link: step === '1' ? 'https://payform.ru/7iat4z/' : step === '2' ? 'https://payform.ru/7iat4H/' : 'https://payform.ru/60askK/',
+            // link: 'https://payform.ru/7iat4z/', //13 333 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/7iat4H/', //14 444 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/60askK/', //15 555 ! изменилась ссылка на чат телеги
         },
         {
             id: '1113',
             title: 'Magic',
-            coast: '17 777 ₽',
+            coast: step === '1' ? '17 777 ₽' : step === '2' ? '18 888 ₽' : '19 999 ₽',
             strikePrice: '34 444 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -85,14 +87,15 @@ export const TariffBlock = () => {
                 '▪️ Обратная связь лично от меня',
             ],
             listDescriptionExclusive: [],
-            link: 'https://payform.ru/7iat51/', // 17 777 ! изменилась ссылка на чат телеги
+            link: step === '1' ? 'https://payform.ru/7iat51/' : step === '2' ? 'https://payform.ru/7iat4T/' : 'https://payform.ru/6vaslf/',
+            // link: 'https://payform.ru/7iat51/', // 17 777 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/7iat4T/', // 18 888 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/6vaslf/', // 19 999 ! изменилась ссылка на чат телеги
         },
         {
             id: '1114',
             title: 'Magic VIP (ОБРАТНАЯ СВЯЗЬ ПО ДОМАШНИМ ЗАДАНИЯМ ОТ ЯНЫ)',
-            coast: '133 333 ₽',
+            coast: step === '1' ? '133 333 ₽' : step === '2' ? '144 444 ₽' : '155 555 ₽',
             strikePrice: '555 555 ₽',
             listDescriptionOpen: [
                 '▪️ медитация изобилия',
@@ -115,7 +118,8 @@ export const TariffBlock = () => {
                 '▪️ Ужин со мной в Москве',
                 '▪️ Обратная связь лично от меня',
             ],
-            link: 'https://payform.ru/7iat5a/', // 133 333 ! изменилась ссылка на чат телеги
+            link: step === '1' ? 'https://payform.ru/7iat5a/' : step === '2' ? 'https://payform.ru/7iat5i/' : 'https://payform.ru/80aslO/',
+            // link: 'https://payform.ru/7iat5a/', // 133 333 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/7iat5i/', // 144 444 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/80aslO/', // 155 555 ! изменилась ссылка на чат телеги
         },
