@@ -59,7 +59,7 @@ export const TariffBlock = () => {
             // link: 'https://payform.ru/8faoIf/', //12 222
             // link: 'https://payform.ru/u1aqID/', //13 333
             // link: 'https://payform.ru/7haqJC/', //14 444
-            link: 'https://payform.ru/lsarGN/', //15 555
+            link: 'https://payform.ru/60askK/', //15 555 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/omarIi/', //16 666
         },
         {
@@ -92,7 +92,7 @@ export const TariffBlock = () => {
             // link: 'https://payform.ru/88aoI8/', // 16 666
             // link: 'https://payform.ru/toaqIt/', // 17 777
             // link: 'https://payform.ru/7haqJK/', // 18 888
-            link: 'https://payform.ru/mdarH5/', // 19 999
+            link: 'https://payform.ru/6vaslf/', // 19 999 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/orarIn/', // 20 000
         },
         {
@@ -125,7 +125,7 @@ export const TariffBlock = () => {
             // link: 'https://payform.ru/8haoIh/', // 122 222
             // link: 'https://payform.ru/7haqJ8/', // 133 333
             // link: 'https://payform.ru/7haqJM/', // 144 444
-            link: 'https://payform.ru/mkarHc/', // 155 555
+            link: 'https://payform.ru/80aslO/', // 155 555 ! изменилась ссылка на чат телеги
             //link: 'https://payform.ru/p9arIC/', // 166 666
         },
     ];
