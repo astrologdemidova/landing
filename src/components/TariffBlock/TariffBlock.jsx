@@ -28,7 +28,7 @@ const Card = ({ item }) => {
 };
 
 export const TariffBlock = () => {
-    const step = '1'; //change it 1 - 2 - 3
+    const step = '2'; //change it 1 - 2 - 3
     const data = [
         {
             id: '1112',
