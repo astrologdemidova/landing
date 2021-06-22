@@ -28,7 +28,10 @@ const Card = ({ item }) => {
 };
 
 export const TariffBlock = () => {
-    const step = '1'; //change it 1 - 2 - 3
+    let dateCurrent = Date.now();
+    let date2 = new Date("2021-06-22T21:34:00.998+0300");
+    
+    const step = dateCurrent < date2 ? '1' : '2'; // change it 1-2-3
     const data = [
         {
             id: '1112',
