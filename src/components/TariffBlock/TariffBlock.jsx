@@ -31,7 +31,8 @@ export const TariffBlock = () => {
     let dateCurrent = Date.now();
     let date2 = new Date("2021-06-22T22:34:00.998+0300");
     
-    const step = dateCurrent < date2 ? '1' : '2'; // change it 1-2-3
+    //const step = dateCurrent < date2 ? '1' : '2'; // change it 1-2-3
+    const step = '2';
     const data = [
         {
             id: '1112',
