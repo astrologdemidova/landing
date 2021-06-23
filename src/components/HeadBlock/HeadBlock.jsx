@@ -33,7 +33,7 @@ export const HeadBlock = () => {
                         </Link>
                     </HeaderStyled>
                     <h1>«Изобилие»</h1>
-                    <h2>Старт 24 июня</h2>
+                    <h2>Старт 28 июня</h2>
                     <ul>
                         <li>
                             <CustomMarker type="pink" />
