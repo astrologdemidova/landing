@@ -27,9 +27,7 @@ export const CustomFooter = ({setShowPopup}) => {
 
             <FooterSeparite />
 
-            <FooterText>
-                ИП Эдельфштейн Владимир Михайлович
-            </FooterText>
+            <FooterText>ооо «егер»</FooterText>
             
             <FooterSeparite />
             
