@@ -92,7 +92,8 @@ export const TariffBlock = () => {
                 '▪️ Обратная связь лично от меня',
             ],
             listDescriptionExclusive: [],
-            link: step === '1' ? 'https://payform.ru/7iat51/' : step === '2' ? 'https://payform.ru/7iat4T/' : 'https://payform.ru/6vaslf/',
+            link: step === '1' ? 'https://payform.ru/ojaxr5/' : step === '2' ? 'https://payform.ru/7iat4T/' : 'https://payform.ru/6vaslf/',
+            // link: 'https://payform.ru/ojaxr5/', // 17 777 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/7iat51/', // 17 777 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/7iat4T/', // 18 888 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/6vaslf/', // 19 999 ! изменилась ссылка на чат телеги
