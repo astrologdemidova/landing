@@ -93,7 +93,7 @@ export const TariffBlock = () => {
             ],
             listDescriptionExclusive: [],
             link: step === '1' ? 'https://payform.ru/ojaxr5/' : step === '2' ? 'https://payform.ru/7iat4T/' : 'https://payform.ru/6vaslf/',
-            // link: 'https://payform.ru/ojaxr5/', // 17 777 ! изменилась ссылка на чат телеги
+            // link: 'https://payform.ru/ojaxr5/', // 17 777 ! изменилась ссылка на чат телеги 28.06
             // link: 'https://payform.ru/7iat51/', // 17 777 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/7iat4T/', // 18 888 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/6vaslf/', // 19 999 ! изменилась ссылка на чат телеги
@@ -124,7 +124,8 @@ export const TariffBlock = () => {
                 '▪️ Ужин со мной в Москве',
                 '▪️ Обратная связь лично от меня',
             ],
-            link: step === '1' ? 'https://payform.ru/7iat5a/' : step === '2' ? 'https://payform.ru/7iat5i/' : 'https://payform.ru/80aslO/',
+            link: step === '1' ? 'https://payform.ru/otaxrf/' : step === '2' ? 'https://payform.ru/7iat5i/' : 'https://payform.ru/80aslO/',
+            // link: 'https://payform.ru/otaxrf/', // 133 333 ! изменилась ссылка на чат телеги 28.06
             // link: 'https://payform.ru/7iat5a/', // 133 333 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/7iat5i/', // 144 444 ! изменилась ссылка на чат телеги
             // link: 'https://payform.ru/80aslO/', // 155 555 ! изменилась ссылка на чат телеги
