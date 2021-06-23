@@ -38,7 +38,7 @@ export const CatalogFooter = ({isBlack}) => {
                 <CatalogFooterText $isBlack={isBlack}>г. Рязань</CatalogFooterText>
             </CatalogFooterWrapper>
 
-            <CatalogFooterText $isBlack={isBlack}>ИП Эдельштейн Владимир Михайлович</CatalogFooterText>
+            <CatalogFooterText $isBlack={isBlack}>ооо «егер»</CatalogFooterText>
             
             {!isBlack && <CatalogFooterText>
                 <CatalogFooterLinkWeb
