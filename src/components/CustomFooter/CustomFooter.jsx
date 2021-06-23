@@ -35,6 +35,7 @@ export const CustomFooter = ({ setShowPopup }) => {
                     test
                 </FooterLink>
             </FooterText>
+            <FooterText>ооо «егер»</FooterText>
         </FooterStyled>
     );
 };
