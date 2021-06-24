@@ -28,7 +28,7 @@ const WheelComponent = ({
     let spinStart = 0
     let frames = 0
     const centerX = 155
-    const centerY = 155
+    const centerY = 170
     useEffect(() => {
         wheelInit()
         setTimeout(() => {
@@ -51,6 +51,10 @@ const WheelComponent = ({
         }
         canvas.addEventListener('click', spin, false)
         canvasContext = canvas.getContext('2d')
+        // canvasContext.save()
+        // canvasContext.beginPath()
+        // canvasContext.moveTo(centerX, centerY)
+        // canvasContext.rotate((Math.PI / 180) * 90)
     }
     const spin = () => {
         isStarted = true
@@ -117,31 +121,58 @@ const WheelComponent = ({
         const ctx = canvasContext
         const value = segments[key].value
         const valueTop = segments[key].topHeader
+        const valueBottom = segments[key].topHeader2
+        const isBoldFont = segments[key].isBoldFont
+
+        var gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, size + 80);
+        gradient.addColorStop(0, segColors[key]);
+        gradient.addColorStop(0.4, segColors[key]);
+        gradient.addColorStop(0.9, 'grey');
+
         ctx.save()
         ctx.beginPath()
         ctx.moveTo(centerX, centerY)
-        ctx.arc(centerX, centerY, size, lastAngle, angle, false)
+        ctx.arc(centerX, centerY, size, (lastAngle + (Math.PI / 180) * 252), (angle + (Math.PI / 180) * 252), false)
         ctx.lineTo(centerX, centerY)
         ctx.closePath()
-        ctx.fillStyle = segColors[key]
+        // ctx.fillStyle = segColors[key]
+        ctx.fillStyle = gradient
         ctx.fill()
         ctx.stroke()
         ctx.save()
+
         // text of middle sector
         ctx.translate(centerX, centerY)
-        ctx.rotate((lastAngle + angle) / 2)
+        ctx.rotate(((lastAngle + angle) / 2) + (Math.PI / 180) * 252)
         ctx.fillStyle = contrastColor || 'white'
-        ctx.font = 'bold 0.8em' + fontFamily
-        ctx.fillText(value.substr(0, 21), size / 2 + 10, 0)
+        ctx.font = `${isBoldFont ? 'bold 15px' : '13px'} ` + fontFamily
+        ctx.fillText(value.substr(0, 21), size / 2 + 20, 0)
         ctx.restore()
         // text of top sector
-        ctx.save()
-        ctx.translate(centerX, centerY)
-        ctx.rotate(((lastAngle + angle) / 2) + (Math.PI / 180) * 90)
-        ctx.translate((-centerX / 2) - 5, ((-centerY) + 20))
-        ctx.fillStyle = 'grey'
-        ctx.fillText(valueTop.substr(0, 21), size / 2 + 10, 0)
-        ctx.restore()
+        // ctx.save()
+        // ctx.translate(centerX, centerY)
+        // ctx.rotate(((lastAngle + angle) / 2) + (Math.PI / 180) * 90)
+        // ctx.translate((-centerX / 2) - 5, ((-centerY) + 20))
+        // ctx.fillStyle = 'grey'
+        // ctx.fillText(valueTop.substr(0, 21), size / 2 + 10, 0)
+        // ctx.restore()
+
+        // text 2 lines
+        // ctx.save()
+        // ctx.translate(centerX, centerY)
+        // ctx.rotate(((lastAngle + angle) / 2) + (Math.PI / 180) * 90)
+        // ctx.translate((-centerX / 2) + 15, ((-centerY) + 20))
+        // ctx.fillStyle = 'grey'
+        // ctx.fillText(valueTop.substr(0, 21), size / 2 - 10, 0)
+        // ctx.restore()
+
+        // ctx.save()
+        // ctx.translate(centerX, centerY)
+        // ctx.rotate(((lastAngle + angle) / 2) + (Math.PI / 180) * 90)
+        // ctx.translate((-centerX / 2) + 15, ((-centerY) + 35))
+        // ctx.fillStyle = 'grey'
+        // ctx.fillText(valueBottom.substr(0, 21), size / 2 - 10, 0)
+        // ctx.restore()
     }
 
     const drawWheel = () => {
@@ -149,6 +180,12 @@ const WheelComponent = ({
         let lastAngle = angleCurrent
         const len = segments.length
         const PI2 = Math.PI * 2
+
+        var gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 30);
+        gradient.addColorStop(0, 'gold');
+        gradient.addColorStop(0.2, 'white');
+        gradient.addColorStop(0.9, 'gold');
+
         ctx.lineWidth = 2
         ctx.strokeStyle = primaryColor || 'black'
         ctx.textBaseline = 'middle'
@@ -163,16 +200,19 @@ const WheelComponent = ({
         // Draw a center circle
         ctx.beginPath()
         ctx.arc(centerX, centerY, 30, 0, PI2, false)
+        // ctx.shadowColor = 'black';
+        // ctx.shadowBlur = 8;
         ctx.closePath()
-        ctx.fillStyle = primaryColor || 'black'
+        // ctx.fillStyle = primaryColor || 'black'
+        ctx.fillStyle = gradient || 'black'
         ctx.lineWidth = 3
         ctx.strokeStyle = contrastColor || 'white'
         ctx.fill()
         ctx.font = 'bold 1em ' + fontFamily
         ctx.fillStyle = contrastColor || 'white'
         ctx.textAlign = 'center'
-        ctx.fillText(buttonText || 'Spin', centerX, centerY + 3)
-        ctx.stroke()
+        // ctx.fillText(buttonText || 'Spin', centerX, centerY + 3)
+        // ctx.stroke()
 
         // Draw outer circle
         ctx.beginPath()
@@ -190,12 +230,15 @@ const WheelComponent = ({
         ctx.strokeStyle = contrastColor || 'white'
         ctx.fileStyle = contrastColor || 'white'
         ctx.beginPath()
-        ctx.moveTo(centerX + 10, centerY - 30)
-        ctx.lineTo(centerX - 10, centerY - 30)
-        ctx.lineTo(centerX, centerY - 50)
+        // ctx.moveTo(centerX + 10, centerY - 30)
+        // ctx.lineTo(centerX - 10, centerY - 30)
+        // ctx.lineTo(centerX, centerY - 50)
+        ctx.moveTo(centerX - 10, centerY - size - 10)
+        ctx.lineTo(centerX + 10, centerY - size - 10)
+        ctx.lineTo(centerX, centerY - size + 20)
         ctx.closePath()
         ctx.fill()
-        const change = angleCurrent + Math.PI / 2
+        const change = (angleCurrent + (Math.PI / 180) * 252) + Math.PI / 2
         let i =
             segments.length -
             Math.floor((change / (Math.PI * 2)) * segments.length) -
@@ -204,7 +247,7 @@ const WheelComponent = ({
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
         ctx.fillStyle = primaryColor || 'black'
-        ctx.font = 'bold 0.8em ' + fontFamily
+        ctx.font = 'bold 0.5em ' + fontFamily
         currentSegment = segments[i]
         // isStarted && ctx.fillText(currentSegment, centerX + 10, centerY + size + 50) //print prize under wheel
     }
@@ -216,12 +259,12 @@ const WheelComponent = ({
         localStorage.setItem('fortunaAstrologDemidova', 'will')
     }
     return (
-        <div id='wheel' style={{textAlign: 'center'}}>
+        <div id='wheel' style={{ textAlign: 'center' }}>
             <canvas
                 onClick={() => handleClick()}
                 id='canvas'
                 width='310'
-                height='310'
+                height='330'
                 style={{
                     pointerEvents: isFinished && isOnlyOnce ? 'none' : 'auto'
                 }}

@@ -7,16 +7,16 @@ import { CircleLoader } from 'react-spinners';
 
 export const FortunaWheel = ({ setType, onClick }) => {
     const segments = [
-        { id: '001', isSuper: true, value: '120000 RUB', topHeader: 'Моя консультация' },
-        { id: '002', isSuper: false, value: '2000 RUB', topHeader: 'Инструкция "Камни жизни"' },
-        { id: '003', isSuper: true, value: '19000 RUB', topHeader: 'Украшение \n"Королева кубков"' },
-        { id: '004', isSuper: false, value: '2000 RUB', topHeader: 'Инструкция "Знаки Вселенной"' },
-        { id: '005', isSuper: true, value: 'IPhone 12', topHeader: '' },
-        { id: '006', isSuper: false, value: '2000 RUB', topHeader: 'Инструкция "Денежная сфера"' },
-        { id: '007', isSuper: true, value: '6000 RUB', topHeader: 'Бутылочка с кристаллом кварца' },
-        { id: '008', isSuper: false, value: '2000 RUB', topHeader: 'Инструкция "Идеальный партнёр"' },
-        { id: '009', isSuper: true, value: '60000 RUB', topHeader: 'Моя консультация' },
-        { id: '010', isSuper: false, value: '2000 RUB', topHeader: '"Чеки изобилия" на год' },
+        { id: '001', isSuper: true, value: '120000 RUB', isBoldFont: true, topHeader: 'Моя', topHeader2:'консультация' },
+        { id: '002', isSuper: false, value: '2000 RUB', isBoldFont: false, topHeader: 'Инструкция', topHeader2: '"Камни жизни"' },
+        { id: '003', isSuper: true, value: '19000 RUB', isBoldFont: false, topHeader: 'Украшение', topHeader2: '"Королева кубков"' },
+        { id: '004', isSuper: false, value: '2000 RUB', isBoldFont: false, topHeader: 'Инструкция', topHeader2:'"Знаки Вселенной"' },
+        { id: '005', isSuper: true, value: 'IPhone 12', isBoldFont: true, topHeader: '', topHeader2:'' },
+        { id: '006', isSuper: false, value: '2000 RUB', isBoldFont: false, topHeader: 'Инструкция', topHeader2:'"Денежная сфера"' },
+        { id: '007', isSuper: true, value: '6000 RUB', isBoldFont: false, topHeader: 'Бутылочка с', topHeader2:'кристаллом кварца' },
+        { id: '008', isSuper: false, value: '2000 RUB', isBoldFont: false, topHeader: 'Инструкция', topHeader2:'"Идеальный партнёр"' },
+        { id: '009', isSuper: true, value: '60000 RUB', isBoldFont: true, topHeader: 'Моя', topHeader2:'консультация' },
+        { id: '010', isSuper: false, value: '2000 RUB', isBoldFont: false, topHeader: '"Чеки изобилия"', topHeader2:'на год' },
     ]
     const segColors = [
         '#eae56f',

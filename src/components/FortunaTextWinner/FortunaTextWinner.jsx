@@ -8,7 +8,7 @@ const dataText = {
         'Ураааа! Поздравляю, вы выиграли ГЛАВНЫЙ ПРИЗ:',
         'консультацию за 400 000 рублей от одного из самых высокооплачиваемых астрологов России 😱👏🔥',
         'Вы! Выиграли ! ГЛАВНЫЙ ПРИЗ! Можете себе представить это? Не кто-то , а именно вы!',
-        'Шооок!?', 
+        'Шооок!?',
         '',
         'P.S. Я свяжусь с вами и мы обсудим детали.',
         'Либо, если не терпится (и я вас в этом понимаю) - можете написать мне в Инстаграм : ссылка',
@@ -102,6 +102,14 @@ const dataText = {
 }
 
 export const FortunaTextWinner = ({ typePrize }) => {
+    const superPrize = [
+        '001',
+        '003',
+        '005',
+        '007',
+        '009',
+        '010',
+    ]
     const [titleForm, setTitleForm] = useState('');
     const thanksResponse = 'Спасибо, я скоро свяжусь с вами!';
     const errorResponse = 'Произошла ошибка. Повторите отправку.';
@@ -116,11 +124,11 @@ export const FortunaTextWinner = ({ typePrize }) => {
 
     const handlerSendMail = (e) => {
         e.preventDefault();
-        if (!emailInput || !nameInput || !phoneInput || !instInput) return;
+        if (!emailInput || !phoneInput) return;
         setIsDisabled(true);
         // .post('http://localhost:3000/api/email/add-user-contact', null, {
         axios
-        .post('https://astrolog-fortuna-server.herokuapp.com/api/email/add-user-contact', null, {
+            .post('https://astrolog-fortuna-server.herokuapp.com/api/email/add-user-contact', null, {
                 params: {
                     name: nameInput,
                     email: emailInput,
@@ -145,12 +153,13 @@ export const FortunaTextWinner = ({ typePrize }) => {
     };
 
     const getForm = () => {
+
         return (
             <FormWrapper>
                 <form onSubmit={handlerSendMail} className="form" id="form">
                     <h2 className="form_title">{titleForm}</h2>
                     <div className="form_fields">
-                        <FormRow>
+                        {superPrize.includes(typePrize?.id) && <FormRow>
                             <label name='phone' htmlFor='phoneClient'>Ваше имя*:</label>
                             <FormInput
                                 onChange={(e) => setNameInput(e.target.value)}
@@ -159,7 +168,7 @@ export const FortunaTextWinner = ({ typePrize }) => {
                                 className="form_fields_input"
                                 required
                             />
-                        </FormRow>
+                        </FormRow>}
                         <FormRow>
                             <label name='phone' htmlFor='phoneClient'>Ваш телефон*:</label>
                             <FormInput
@@ -180,7 +189,7 @@ export const FortunaTextWinner = ({ typePrize }) => {
                                 required
                             />
                         </FormRow>
-                        <FormRow>
+                        {superPrize.includes(typePrize?.id) && <FormRow>
                             <label name='inst' htmlFor='emailClient'>Ваш instagram*:</label>
                             <FormInput
                                 onChange={(e) => setInstInput(e.target.value)}
@@ -189,8 +198,8 @@ export const FortunaTextWinner = ({ typePrize }) => {
                                 className="form_fields_input"
                                 required
                             />
-                        </FormRow>
-                        <FormRow>
+                        </FormRow>}
+                        {superPrize.includes(typePrize?.id) && <FormRow>
                             <label name='inst' htmlFor='emailClient'>Ваш адрес для доставки:</label>
                             <FormInput
                                 onChange={(e) => setAdressInput(e.target.value)}
@@ -198,7 +207,7 @@ export const FortunaTextWinner = ({ typePrize }) => {
                                 type="text"
                                 className="form_fields_input"
                             />
-                        </FormRow>
+                        </FormRow>}
                         <FormRow>
                             <CustomButton type="submit" disabled={isDisabled}>
                                 получить
@@ -216,7 +225,7 @@ export const FortunaTextWinner = ({ typePrize }) => {
     return (
         <div style={{ margin: '0 10px' }}>
             {typePrize?.id && <TextWrapper>
-                {dataText[typePrize.id].map((i, ind) => <p key={typePrize.id + ind} style={{minHeight: '10px'}}>{i}</p>)}
+                {dataText[typePrize.id].map((i, ind) => <p key={typePrize.id + ind} style={{ minHeight: '10px' }}>{i}</p>)}
             </TextWrapper>}
             {typePrize?.id && getForm()}
             {!typePrize?.id && <SpaceBlock />}
