@@ -5,7 +5,7 @@ export const getPaylink = (order_id, customer_phone, customer_email, products, p
   let productsArr = `products[0][price]=${products[0].price.split(' ').join('')}&products[0][quantity]=1&products[0][name]=Обучающие материалы: ${products[0].name}&`;
   let customerExtra = `customer_extra=Полная оплата курса&`;
   let paidContent = `paid_content=${paid_content}&`;
-  let urlSuccess = `urlSuccess=https://develop.astrologdemidova.ru/fortuna?email=${customer_email}&phone=${customer_phone}`;
+  let urlSuccess = `urlSuccess=https://develop.astrologdemidova.ru/fortuna?email=${customer_email}&phone=${customer_phone}&`;
   let dO = `do=pay`
 
   let discountValue = 'discount_value=49&'
