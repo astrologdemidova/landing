@@ -109,12 +109,36 @@ const WheelComponent = ({
         clear()
         drawWheel()
         drawNeedle()
+        // drawShadowBottom()
     }
 
     const draw = () => {
         clear()
         drawWheel()
         drawNeedle()
+    }
+
+    const drawShadowBottom = () => {
+        const ctx = canvasContext
+        ctx.save()
+        ctx.beginPath()
+
+        ctx.moveTo(centerX, centerY + size)
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "black";
+
+        ctx.fillRect(
+            centerX - (size / 3),
+            centerY + size + 30,
+            (centerX - (size / 3)),
+            5
+            );
+
+        ctx.closePath()
+        ctx.restore()
     }
 
     const drawSegment = (key, lastAngle, angle) => {
@@ -137,6 +161,9 @@ const WheelComponent = ({
         ctx.closePath()
         // ctx.fillStyle = segColors[key]
         ctx.fillStyle = gradient
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.shadowBlur = 0;
         ctx.fill()
         ctx.stroke()
         ctx.save()
@@ -200,17 +227,17 @@ const WheelComponent = ({
         // Draw a center circle
         ctx.beginPath()
         ctx.arc(centerX, centerY, 30, 0, PI2, false)
-        // ctx.shadowColor = 'black';
-        // ctx.shadowBlur = 8;
         ctx.closePath()
-        // ctx.fillStyle = primaryColor || 'black'
         ctx.fillStyle = gradient || 'black'
+        ctx.shadowOffsetX = 1;
+        ctx.shadowOffsetY = 1;
+        ctx.shadowBlur = 5;
         ctx.lineWidth = 3
         ctx.strokeStyle = contrastColor || 'white'
         ctx.fill()
-        ctx.font = 'bold 1em ' + fontFamily
-        ctx.fillStyle = contrastColor || 'white'
-        ctx.textAlign = 'center'
+        // ctx.font = 'bold 1em ' + fontFamily
+        // ctx.fillStyle = contrastColor || 'white'
+        // ctx.textAlign = 'center'
         // ctx.fillText(buttonText || 'Spin', centerX, centerY + 3)
         // ctx.stroke()
 
@@ -221,33 +248,45 @@ const WheelComponent = ({
 
         ctx.lineWidth = 6
         ctx.strokeStyle = primaryColor || 'black'
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.shadowBlur = 0;
         ctx.stroke()
     }
 
     const drawNeedle = () => {
-        const ctx = canvasContext
-        ctx.lineWidth = 1
-        ctx.strokeStyle = contrastColor || 'white'
-        ctx.fileStyle = contrastColor || 'white'
-        ctx.beginPath()
+        const ctxPointer = canvasContext
+        const gradientPointer = ctxPointer.createLinearGradient(centerX - 10, centerY - size - 10, centerX, centerY - size + 20);
+        gradientPointer.addColorStop(0, "white");
+        gradientPointer.addColorStop(.9, "gold");
+
+        ctxPointer.lineWidth = 3
+        // ctx.strokeStyle = gradientPointer || 'white'
+        // Shadow
+        ctxPointer.shadowColor = 'grey';
+        ctxPointer.shadowOffsetX = 1;
+        ctxPointer.shadowOffsetY = 1;
+        ctxPointer.shadowBlur = 5;
+        ctxPointer.fillStyle = gradientPointer || 'white'
+        // ctxPointer.clip()
+        ctxPointer.beginPath()
         // ctx.moveTo(centerX + 10, centerY - 30)
         // ctx.lineTo(centerX - 10, centerY - 30)
         // ctx.lineTo(centerX, centerY - 50)
-        ctx.moveTo(centerX - 10, centerY - size - 10)
-        ctx.lineTo(centerX + 10, centerY - size - 10)
-        ctx.lineTo(centerX, centerY - size + 20)
-        ctx.closePath()
-        ctx.fill()
+        ctxPointer.moveTo(centerX - 10, centerY - size - 10)
+        ctxPointer.lineTo(centerX + 10, centerY - size - 10)
+        ctxPointer.lineTo(centerX, centerY - size + 20)
+        ctxPointer.closePath()
+        ctxPointer.fill()
+        
+
+        //prize text
         const change = (angleCurrent + (Math.PI / 180) * 252) + Math.PI / 2
         let i =
             segments.length -
             Math.floor((change / (Math.PI * 2)) * segments.length) -
             1
         if (i < 0) i = i + segments.length
-        ctx.textAlign = 'center'
-        ctx.textBaseline = 'middle'
-        ctx.fillStyle = primaryColor || 'black'
-        ctx.font = 'bold 0.5em ' + fontFamily
         currentSegment = segments[i]
         // isStarted && ctx.fillText(currentSegment, centerX + 10, centerY + size + 50) //print prize under wheel
     }
@@ -264,11 +303,13 @@ const WheelComponent = ({
                 onClick={() => handleClick()}
                 id='canvas'
                 width='310'
-                height='330'
+                height='390'
                 style={{
                     pointerEvents: isFinished && isOnlyOnce ? 'none' : 'auto'
                 }}
-            />
+            >
+                Ваш брузер неподдерживает данную технологию, пожалуйста смените браузер.
+            </canvas>
         </div>
     )
 }
