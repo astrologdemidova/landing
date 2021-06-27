@@ -109,7 +109,7 @@ const WheelComponent = ({
         clear()
         drawWheel()
         drawNeedle()
-        // drawShadowBottom()
+        drawShadowBottom()
     }
 
     const draw = () => {
@@ -135,7 +135,7 @@ const WheelComponent = ({
             centerY + size + 30,
             (centerX - (size / 3)),
             5
-            );
+        );
 
         ctx.closePath()
         ctx.restore()
@@ -165,7 +165,7 @@ const WheelComponent = ({
         ctx.shadowOffsetY = 0;
         ctx.shadowBlur = 0;
         ctx.fill()
-        ctx.stroke()
+        // ctx.stroke()
         ctx.save()
 
         // text of middle sector
@@ -213,8 +213,8 @@ const WheelComponent = ({
         gradient.addColorStop(0.2, 'white');
         gradient.addColorStop(0.9, 'gold');
 
-        ctx.lineWidth = 2
-        ctx.strokeStyle = primaryColor || 'black'
+        // ctx.lineWidth = 0
+        // ctx.strokeStyle = 'black'
         ctx.textBaseline = 'middle'
         ctx.textAlign = 'center'
         ctx.font = '0.8em ' + fontFamily
@@ -225,6 +225,7 @@ const WheelComponent = ({
         }
 
         // Draw a center circle
+        ctx.save()
         ctx.beginPath()
         ctx.arc(centerX, centerY, 30, 0, PI2, false)
         ctx.closePath()
@@ -233,8 +234,9 @@ const WheelComponent = ({
         ctx.shadowOffsetY = 1;
         ctx.shadowBlur = 5;
         ctx.lineWidth = 3
-        ctx.strokeStyle = contrastColor || 'white'
+        // ctx.strokeStyle = contrastColor || 'white'
         ctx.fill()
+
         // ctx.font = 'bold 1em ' + fontFamily
         // ctx.fillStyle = contrastColor || 'white'
         // ctx.textAlign = 'center'
@@ -242,23 +244,43 @@ const WheelComponent = ({
         // ctx.stroke()
 
         // Draw outer circle
+        ctx.restore()
         ctx.beginPath()
         ctx.arc(centerX, centerY, size, 0, PI2, false)
         ctx.closePath()
 
-        ctx.lineWidth = 6
-        ctx.strokeStyle = primaryColor || 'black'
+        const gradientOuter = ctx.createLinearGradient(
+            size / 3,
+            size,
+            size / 0.7,
+            size
+        );
+        // centerX + size,
+        // centerY + size,
+        // centerX - size,
+        // centerY - size
+        gradientOuter.addColorStop(.1, "gold");
+        gradientOuter.addColorStop(.3, "white");
+        gradientOuter.addColorStop(.75, "#ffc107");
+        gradientOuter.addColorStop(.88, "white");
+        gradientOuter.addColorStop(.99, "#ffc107");
+
+        ctx.lineWidth = 10;
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
         ctx.shadowBlur = 0;
-        ctx.stroke()
+        ctx.strokeStyle = gradientOuter;
+        ctx.stroke();
+        // ctx.fillStyle = gradientOuter;
+        // ctx.fill();
     }
 
     const drawNeedle = () => {
         const ctxPointer = canvasContext
         const gradientPointer = ctxPointer.createLinearGradient(centerX - 10, centerY - size - 10, centerX, centerY - size + 20);
-        gradientPointer.addColorStop(0, "white");
-        gradientPointer.addColorStop(.9, "gold");
+        gradientPointer.addColorStop(.1, "gold");
+        gradientPointer.addColorStop(.5, "white");
+        gradientPointer.addColorStop(.8, "gold");
 
         ctxPointer.lineWidth = 3
         // ctx.strokeStyle = gradientPointer || 'white'
@@ -269,16 +291,32 @@ const WheelComponent = ({
         ctxPointer.shadowBlur = 5;
         ctxPointer.fillStyle = gradientPointer || 'white'
         // ctxPointer.clip()
+
+        ctxPointer.beginPath();
+        // ctxPointer.moveTo(centerX - 10, centerY - size - 10);
+        // ctxPointer.quadraticCurveTo(centerX, centerY - size - 30, centerX + 10, centerY - size - 10)
+        ctxPointer.arc(
+            centerX,
+            centerY - size,
+            11,
+            (Math.PI * 175) / 180,
+            (Math.PI * 360) / 180,
+            false
+        );
+        ctxPointer.lineTo(centerX, centerY - size + 20)
+        ctxPointer.closePath();
+        ctxPointer.fill();
+
         ctxPointer.beginPath()
         // ctx.moveTo(centerX + 10, centerY - 30)
         // ctx.lineTo(centerX - 10, centerY - 30)
         // ctx.lineTo(centerX, centerY - 50)
-        ctxPointer.moveTo(centerX - 10, centerY - size - 10)
-        ctxPointer.lineTo(centerX + 10, centerY - size - 10)
-        ctxPointer.lineTo(centerX, centerY - size + 20)
+        // ctxPointer.moveTo(centerX - 10, centerY - size - 10)
+        // ctxPointer.lineTo(centerX + 10, centerY - size - 10)
+        // ctxPointer.lineTo(centerX, centerY - size + 20)
         ctxPointer.closePath()
         ctxPointer.fill()
-        
+
 
         //prize text
         const change = (angleCurrent + (Math.PI / 180) * 252) + Math.PI / 2

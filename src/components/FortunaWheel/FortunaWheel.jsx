@@ -4,7 +4,7 @@ import 'react-wheel-of-prizes/dist/index.css'
 import axios from "axios";
 import { CircleLoader } from 'react-spinners';
 // https://www.npmjs.com/package/react-wheel-of-prizes?activeTab=readme
-
+//radial-gradient(circle, rgba(66,86,193,1) 1%, rgba(3,0,41,1) 80%, rgba(3,0,41,1) 100%)
 export const FortunaWheel = ({ setType, onClick }) => {
     const segments = [
         { id: '001', isSuper: true, value: '120000 RUB', isBoldFont: true, topHeader: 'Моя', topHeader2:'консультация' },
@@ -73,7 +73,7 @@ export const FortunaWheel = ({ setType, onClick }) => {
                     isOnlyOnce={true}
                     size={150}
                     upDuration={100}
-                    downDuration={2000}
+                    downDuration={3000}
                 />}
         </>
     );
