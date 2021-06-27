@@ -30,7 +30,7 @@ export const CatalogFooter = () => {
                 <CatalogFooterText>г. Рязань</CatalogFooterText>
             </CatalogFooterWrapper>
 
-            <CatalogFooterText $isBlack={isBlack}>ооо «егер»</CatalogFooterText>
+            <CatalogFooterText>ооо «егер»</CatalogFooterText>
 
             <CatalogFooterText>
                 <CatalogFooterLinkWeb
