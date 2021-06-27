@@ -12,7 +12,8 @@ const WheelComponent = ({
     size = 290,
     upDuration = 100,
     downDuration = 1000,
-    fontFamily = 'proxima-nova'
+    fontFamily = 'proxima-nova',
+    setIsStart
 }) => {
     let currentSegment = ''
     let isStarted = false
@@ -109,7 +110,7 @@ const WheelComponent = ({
         clear()
         drawWheel()
         drawNeedle()
-        drawShadowBottom()
+        // drawShadowBottom()
     }
 
     const draw = () => {
@@ -333,6 +334,7 @@ const WheelComponent = ({
         ctx.clearRect(0, 0, 310, 310)
     }
     const handleClick = () => {
+        setIsStart(false)
         localStorage.setItem('fortunaAstrologDemidova', 'will')
     }
     return (
