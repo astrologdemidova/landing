@@ -82,7 +82,7 @@ export const FortunaWheel = ({ setType, onClick }) => {
                         textAlign: 'center',
                         color: '#ffffff'
                     }}>
-                        Нажми на колесо и учавствуй в розыгрыше!
+                        Нажми на колесо и участвуй в розыгрыше!
                     </p>}
                 </>
             }
