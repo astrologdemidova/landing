@@ -30,8 +30,6 @@ const Fortuna = () => {
                     <FortunaWheel setType={setType} />
                     <FortunaTextWinner typePrize={typePrize} />
                 </div>
-                
-              
                 <CatalogFooter />
             </div>
         </>
