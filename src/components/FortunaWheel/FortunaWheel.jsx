@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import WheelComponent from "./WheelConstructor";
-import 'react-wheel-of-prizes/dist/index.css'
+// import 'react-wheel-of-prizes/dist/index.css'
 import axios from "axios";
 import { CircleLoader } from 'react-spinners';
 // https://www.npmjs.com/package/react-wheel-of-prizes?activeTab=readme
@@ -80,9 +80,12 @@ export const FortunaWheel = ({ setType, onClick }) => {
                     />
                     {isStart && <p style={{
                         textAlign: 'center',
-                        color: '#ffffff'
+                        color: '#ffffff',
+                        fontSize: '21px',
+                        fontStyle: 'italic',
+                        fontWeight: 'bold'
                     }}>
-                        Нажми на колесо и участвуй в розыгрыше!
+                        Нажми на колесо и учавствуй в розыгрыше!
                     </p>}
                 </>
             }

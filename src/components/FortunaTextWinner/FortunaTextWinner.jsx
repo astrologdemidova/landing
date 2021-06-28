@@ -102,6 +102,11 @@ const dataText = {
 }
 
 export const FortunaTextWinner = ({ typePrize }) => {
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var cust_email = url.searchParams.get("cust_email") || '';
+    var cust_phone = url.searchParams.get("cust_phone") || '';
+
     const superPrize = [
         '001',
         '003',
@@ -116,8 +121,8 @@ export const FortunaTextWinner = ({ typePrize }) => {
 
     const [isDisabled, setIsDisabled] = useState(false);
 
-    const [emailInput, setEmailInput] = useState('');
-    const [phoneInput, setPhoneInput] = useState('');
+    const [emailInput, setEmailInput] = useState(cust_email);
+    const [phoneInput, setPhoneInput] = useState(cust_phone);
     const [nameInput, setNameInput] = useState('');
     const [instInput, setInstInput] = useState('');
     const [adressInput, setAdressInput] = useState('');
@@ -125,6 +130,8 @@ export const FortunaTextWinner = ({ typePrize }) => {
     const handlerSendMail = (e) => {
         e.preventDefault();
         if (!emailInput || !phoneInput) return;
+
+
         setIsDisabled(true);
         // .post('http://localhost:3000/api/email/add-user-contact', null, {
         axios
@@ -153,6 +160,7 @@ export const FortunaTextWinner = ({ typePrize }) => {
     };
 
     const getForm = () => {
+
 
         return (
             <FormWrapper>
