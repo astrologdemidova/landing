@@ -211,8 +211,8 @@ const WheelComponent = ({
 
         var gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 30);
         gradient.addColorStop(0, 'gold');
-        gradient.addColorStop(0.2, 'white');
-        gradient.addColorStop(0.9, 'gold');
+        gradient.addColorStop(0.1, 'white');
+        gradient.addColorStop(0.5, 'gold');
 
         // ctx.lineWidth = 0
         // ctx.strokeStyle = 'black'
@@ -228,7 +228,7 @@ const WheelComponent = ({
         // Draw a center circle
         ctx.save()
         ctx.beginPath()
-        ctx.arc(centerX, centerY, 30, 0, PI2, false)
+        ctx.arc(centerX, centerY, 20, 0, PI2, false)
         ctx.closePath()
         ctx.fillStyle = gradient || 'black'
         ctx.shadowOffsetX = 1;
