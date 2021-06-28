@@ -102,7 +102,10 @@ const dataText = {
 }
 
 export const FortunaTextWinner = ({ typePrize }) => {
-    var url_string = window.location.href;
+    var url_string = {};
+    if (typeof window !== `undefined`) {
+        var url_string = window.location.href;
+    }
     var url = new URL(url_string);
     var cust_email = url.searchParams.get("cust_email") || '';
     var cust_phone = url.searchParams.get("cust_phone") || '';
