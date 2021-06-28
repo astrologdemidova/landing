@@ -66,8 +66,8 @@ export const FortunaWheel = ({ setType, onClick }) => {
                     <WheelComponent
                         segments={segments}
                         segColors={segColors}
-                        // winningSegment={checkWillGame() ? previousWinner() : winSegment} // return for prod
-                        winningSegment={winSegment}
+                        winningSegment={checkWillGame() ? previousWinner() : winSegment} // toggle ON
+                        // winningSegment={winSegment} // toggle OFF
                         onFinished={(winner) => onFinished(winner)}
                         primaryColor='gold'
                         contrastColor='black'
