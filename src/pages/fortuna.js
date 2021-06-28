@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Helmet } from "react-helmet";
 import { FortunaTextWinner } from '../components/FortunaTextWinner';
+import "../common-style/style.css"
 import { FortunaWheel } from '../components/FortunaWheel';
 import { CatalogFooter } from '../components/CatalogPage/CatalogFooter';
 
