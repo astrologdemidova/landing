@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import WheelComponent from "./WheelConstructor";
-import 'react-wheel-of-prizes/dist/index.css'
+//import 'react-wheel-of-prizes/dist/index.css'
 import axios from "axios";
 import { CircleLoader } from 'react-spinners';
 // https://www.npmjs.com/package/react-wheel-of-prizes?activeTab=readme
