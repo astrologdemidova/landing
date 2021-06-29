@@ -1,6 +1,5 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import axios from "axios";
 import { contentTypeMeditation, contentTypeRitual, contentTypeConsultation } from '../CatalogWrapper/CatalogWrapper';
 import {
     CatalogCardCoast,
@@ -152,27 +151,6 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
         getLink();
     }, [id, coast, coast2, period, period2, nameItem, linkpay, setLinkpay, phone, email, checkBoxValue, linkContent, checkBoxSpecial, coastSpecial, setCoastSpecial, consultationVIP90days]);
 
-    const handlerSendMail = (payLinkAssign) => {
-        if (!phone || !email || (!checkBoxSpecial && id !== '1239')) return;
-        if (phone && email) axios
-            .post('https://astrolog-fortuna-server.herokuapp.com/api/email/check-user-contact', null, {
-                params: {
-                    email: email,
-                    phone: phone,
-                }
-            })
-            .then(function (response) {
-                document.location.assign(payLinkAssign);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-        return Object.assign(document.createElement('a'), {
-            target: '_blank',
-            href: payLinkAssign,
-          }).click();
-    };
-
     return (
         <PopupCardpayWrapper onClick={() => setShowPopup(false)}>
             <CatalogCardWrapper $isPopup>
@@ -193,7 +171,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                     {period2 &&
                         <p>
                             <input type='checkbox' checked={checkBoxValue === '2'} onChange={() => setCheckboxValue('2')} />
-                            Длительность: {period2}
+                        Длительность: {period2}
                         </p>
                     }
                     {coast2 && <CatalogCardCoast>{coast2} ₽</CatalogCardCoast>}
@@ -219,7 +197,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         <div>
                             🔥СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ🔥<br /><br />
                             {/* Только сейчас вторая медитация<br /><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 777р)<br /> */}
-                            Только сейчас медитация {id === '4567' ? '«ПРЕДНАЗНАЧЕНИЕ»' : '«ИЗОБИЛИЯ»'}<br /><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 777р)<br />
+                            Только сейчас медитация {id === '4567' ? '«ПРЕДНАЗНАЧЕНИЕ»' : '«ИЗОБИЛИЯ»'}<br/><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 777р)<br />
                             <div style={{ paddingBottom: '10px', display: 'flex', alignItems: 'center' }}>
                                 <input
                                     type='checkbox'
@@ -245,7 +223,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         </div>
                     }
                     <div style={{ textAlign: 'center' }}>
-                        <CatalogCardLinkPay onClick={() => handlerSendMail(linkpay)} rel='noreferrer' target='_blank'>
+                        <CatalogCardLinkPay href={phone && email && linkpay} onClick={(e) => (!phone || !email || (!checkBoxSpecial && id !== '1239')) && e.preventDefault()} rel='noreferrer' target='_blank'>
                             {buttonName}
                         </CatalogCardLinkPay>
                     </div>
