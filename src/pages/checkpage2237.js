@@ -28,7 +28,8 @@ const Checkpage2237 = () => {
                 <div style={{
                     width: '100%',
                     padding: '50px 0 100px',
-                    background: 'radial-gradient(circle, rgba(88,92,115,1) 10%, rgba(3,0,41,0.99) 80%, rgba(3,0,41,1) 100%)'
+                    background: 'radial-gradient(circle, rgba(88,92,115,1) 10%, rgba(3,0,41,0.99) 80%, rgba(3,0,41,1) 100%)',
+                    color: 'white'
                 }}>
                     <table>
                         <tr>
