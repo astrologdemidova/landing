@@ -31,6 +31,7 @@ const Checkpage2237 = () => {
                     background: 'radial-gradient(circle, rgba(88,92,115,1) 10%, rgba(3,0,41,0.99) 80%, rgba(3,0,41,1) 100%)',
                     color: 'white'
                 }}>
+                    <h2>Всего записей: ${data.length}</h2>
                     <table>
                         <tr>
                             <th style={{padding: '7px 11px'}}>#</th>
