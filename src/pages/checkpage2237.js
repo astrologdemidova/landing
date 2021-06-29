@@ -5,8 +5,9 @@ import axios from "axios";
 import { CatalogFooter } from '../components/CatalogPage/CatalogFooter';
 
 const Checkpage2237 = () => {
+    const [pass, setPass] = React.useState('');
     const [data, setData] = React.useState([]);
-
+    
     React.useEffect(() => {
         axios
             .get("https://astrolog-fortuna-server.herokuapp.com/api/email/read-user-contact")
@@ -32,7 +33,8 @@ const Checkpage2237 = () => {
                     color: 'white'
                 }}>
                     <h2>Всего записей: ${data.length}</h2>
-                    <table>
+                       <input value={pass} onChange={(e) => setPass(e.target.value)} />
+                    {pass === '5891' && <table>
                         <tr>
                             <th style={{padding: '7px 11px'}}>#</th>
                             <th style={{padding: '7px 11px'}}>Дата</th>
@@ -52,7 +54,7 @@ const Checkpage2237 = () => {
                                 </tr>
                             ))
                         }
-                    </table>
+                    </table>}
                 </div>
                 <CatalogFooter />
             </div>
