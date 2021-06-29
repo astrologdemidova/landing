@@ -6,7 +6,7 @@ import { CatalogFooter } from '../components/CatalogPage/CatalogFooter';
 const Checkpage2237 = () => {
     const [data, setData] = React.useState([]);
 
-    useEffect(() => {
+    React.useEffect(() => {
         axios
             .get("https://astrolog-fortuna-server.herokuapp.com/api/email/read-user-contact")
             .then((res) => {
@@ -40,7 +40,7 @@ const Checkpage2237 = () => {
                         {
                             data.map((item) => (
                                 <tr key={item.id}>
-                                    <td>{item.createDate}</td>
+                                    <td>{Date(item.createDate)}</td>
                                     <td>{item.email}</td>
                                     <td>{item.phone}</td>
                                     <td>{item.idPrize}</td>
