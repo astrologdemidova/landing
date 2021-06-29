@@ -5,7 +5,7 @@ import "../common-style/style.css"
 import { FortunaWheel } from '../components/FortunaWheel';
 import { CatalogFooter } from '../components/CatalogPage/CatalogFooter';
 
-const Fortuna = () => {
+const Fo34rtu435na1244jhfjjhfk = () => {
     const [typePrize, setType] = React.useState();
 
     return (
@@ -36,4 +36,4 @@ const Fortuna = () => {
     )
 }
 
-export default Fortuna;
+export default Fo34rtu435na1244jhfjjhfk;
