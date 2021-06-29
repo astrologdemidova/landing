@@ -46,6 +46,7 @@ export const CatalogWrapper = () => {
                 key={item.id}
                 id={item.id}
                 imgSrc={item.imgSrc}
+                videoSrc={item.videoSrc}
                 nameItem={item.nameItem}
                 nameItemSub={item.nameItemSub}
                 coast={item.coast}

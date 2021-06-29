@@ -17,7 +17,7 @@ import {
 } from './styles';
 import { getPaylink } from './utils/utils';
 
-export const CatalogCard = ({ id, imgSrc, nameItem, nameItemSub, coast, coast2, coastStrike, description, faq, installment, installment2, period, period2, linkPay, buttonName = 'Заказать', contentType }) => {
+export const CatalogCard = ({ id, imgSrc, videoSrc, nameItem, nameItemSub, coast, coast2, coastStrike, description, faq, installment, installment2, period, period2, linkPay, buttonName = 'Заказать', contentType }) => {
     const [showPopup, setShowPopup] = React.useState(false);
     const [show, setShow] = React.useState(false);
 
@@ -76,6 +76,7 @@ export const CatalogCard = ({ id, imgSrc, nameItem, nameItemSub, coast, coast2, 
             <CatalogCardShow onClick={clickHandler}>{show ? 'Скрыть' : 'Подробнее'}</CatalogCardShow>
 
             {imgSrc && mapToImgVideo(imgSrc)}
+            {videoSrc && mapToImgVideo(videoSrc)}
 
             <div style={{ textAlign: 'center', paddingBottom: '40px' }}>
                 <Link to={getReviewUrl(contentType)}>

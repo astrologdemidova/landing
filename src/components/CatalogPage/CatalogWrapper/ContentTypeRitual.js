@@ -6,6 +6,8 @@ import Item5 from '../../../images/catalog/5.png'
 import Item6 from '../../../images/catalog/6.png'
 import Item7 from '../../../images/catalog/7.png'
 import Item8 from '../../../images/catalog/fortuna.webp'
+import Item9 from '../../../images/catalog/IMG_3862.png'
+import Item10 from '../../../images/catalog/IMG_2123(1).gif'
 
 export const ArrayContentTypeRitual = [
     {
@@ -63,7 +65,8 @@ export const ArrayContentTypeRitual = [
     {
         id: '6788',
         // imgSrc: `<iframe src="https://vk.com/video_ext.php?oid=93171616&id=456239315&hash=dfcfbe8990f4cacc" scrolling="no" frameborder="0" allowfullscreen></iframe>`,
-        imgSrc: null,
+        imgSrc: Item9,
+        videoSrc: Item10,
         nameItem: '«ДЕНЕЖНЫЙ КОШЕЛЁК»',
         nameItemSub:
             'Руническая программа на быстрые деньги/стабильный доход',
