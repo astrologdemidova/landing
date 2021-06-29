@@ -33,6 +33,7 @@ const Checkpage2237 = () => {
                 }}>
                     <table>
                         <tr>
+                            <th>#</th>
                             <th>Дата</th>
                             <th>email</th>
                             <th>Телефон</th>
@@ -40,8 +41,9 @@ const Checkpage2237 = () => {
                         </tr>
 
                         {
-                            data.map((item) => (
+                            data.map((item, ind) => (
                                 <tr key={item.id}>
+                                    <td>{ind}</td>
                                     <td>{Date(item.createDate)}</td>
                                     <td>{item.email}</td>
                                     <td>{item.phone}</td>
