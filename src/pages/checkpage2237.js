@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Helmet } from "react-helmet";
 import "../common-style/style.css"
+import axios from "axios";
 import { CatalogFooter } from '../components/CatalogPage/CatalogFooter';
 
 const Checkpage2237 = () => {
