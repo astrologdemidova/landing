@@ -121,7 +121,7 @@ export const FortunaTextWinner = ({ typePrize }) => {
         '010',
     ]
     const [titleForm, setTitleForm] = useState('');
-    const thanksResponse = 'Спасибо, я скоро свяжусь с вами!';
+    const thanksResponse = 'Спасибо, я скоро свяжусь с вами! P.S. Обязательно проверьте СПАМ! Возможно, Ваше письмо там.';
     const errorResponse = 'Произошла ошибка. Повторите отправку.';
 
     const [isDisabled, setIsDisabled] = useState(false);
