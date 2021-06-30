@@ -137,11 +137,11 @@ export const AboutContainer = styled(CatalogSubHeaderContainer)`
 
 export const DescriptionContainer = styled(CatalogSubHeaderContainer)`
     background: none!important;
-    padding: 24px 15px;
+    padding: 24px 15px!important;
     ul {
         li {
-            font-weight: 400;
-            padding-bottom: 20px;
+            font-weight: 400!important;
+            padding-bottom: 20px!important;
         }
     }
 `;
