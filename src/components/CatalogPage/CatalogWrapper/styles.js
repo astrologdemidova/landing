@@ -136,7 +136,7 @@ export const AboutContainer = styled(CatalogSubHeaderContainer)`
 `;
 
 export const DescriptionContainer = styled(CatalogSubHeaderContainer)`
-    background: none;
+    background: none!important;
     padding: 24px 15px;
     ul {
         li {
