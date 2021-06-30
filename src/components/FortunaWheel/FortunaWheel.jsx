@@ -85,7 +85,7 @@ export const FortunaWheel = ({ setType, onClick }) => {
                         fontStyle: 'italic',
                         fontWeight: 'bold'
                     }}>
-                        Нажми на колесо и учавствуй в розыгрыше!
+                        Нажми на колесо и участвуй в розыгрыше!
                     </p>}
                 </>
             }
