@@ -413,7 +413,7 @@ const WheelComponent = ({
     }
     const handleClick = () => {
         setIsStart(false)
-        localStorage.setItem('fortunaAstrologDemidova', 'will')
+        typeof window !== `undefined` && localStorage.setItem('fortunaAstrologDemidova', 'will')
     }
     return (
         <div id='wheel' style={{ textAlign: 'center' }}>

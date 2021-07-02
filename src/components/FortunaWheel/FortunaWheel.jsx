@@ -36,14 +36,14 @@ export const FortunaWheel = ({ setType, onClick, playPermission, setPlayPermissi
 
     const onFinished = (winner) => {
         setType(winner);
-        localStorage.setItem('fortunaAstrologDemidovaIdWinner', winner.id);
+        typeof window !== `undefined` && localStorage.setItem('fortunaAstrologDemidovaIdWinner', winner.id);
         setPlayPermission(false)
     }
     const checkWillGame = () => {
-        return localStorage.getItem('fortunaAstrologDemidova')
+        return typeof window !== `undefined` && localStorage.getItem('fortunaAstrologDemidova')
     }
     const previousWinner = () => {
-        const IdWinner = localStorage.getItem('fortunaAstrologDemidovaIdWinner');
+        const IdWinner = typeof window !== `undefined` && localStorage.getItem('fortunaAstrologDemidovaIdWinner');
 
         if (playPermission) return winSegment;
 
@@ -61,7 +61,7 @@ export const FortunaWheel = ({ setType, onClick, playPermission, setPlayPermissi
     }
 
     let che = url?.searchParams?.get("che") || '';
-    const checkValid = localStorage.getItem('fortunaAstrologDemidovaCheckValid');
+    const checkValid = typeof window !== `undefined` && localStorage.getItem('fortunaAstrologDemidovaCheckValid');
 
     useEffect(() => {
         axios
@@ -72,11 +72,11 @@ export const FortunaWheel = ({ setType, onClick, playPermission, setPlayPermissi
     }, []);
 
     useEffect(() => {
-        const prevPrize = localStorage.getItem('fortunaAstrologDemidovaIdWinner');
+        const prevPrize = typeof window !== `undefined` && localStorage.getItem('fortunaAstrologDemidovaIdWinner');
         if (checkValid !== che) {
             setPlayPermission(true)
-            localStorage.setItem('fortunaAstrologDemidovaCheckValid', che);
-            localStorage.setItem('fortunaAstrologDemidovaIdWinner', '000');//!!!
+            typeof window !== `undefined` && localStorage.setItem('fortunaAstrologDemidovaCheckValid', che);
+            typeof window !== `undefined` && localStorage.setItem('fortunaAstrologDemidovaIdWinner', '000');//!!!
         } else if (prevPrize !== '000' && checkValid === che) {
             setType(segments.filter(item => item.id === `${prevPrize}`)[0])
         }
