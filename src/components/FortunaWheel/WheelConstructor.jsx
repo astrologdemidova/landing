@@ -13,7 +13,7 @@ const WheelComponent = ({
     upDuration = 100,
     downDuration = 1000,
     fontFamily = 'proxima-nova',
-    setIsStart
+    setIsStart,
 }) => {
     let currentSegment = ''
     let isStarted = false
@@ -61,8 +61,11 @@ const WheelComponent = ({
         isStarted = true
         if (timerHandle === 0) {
             spinStart = new Date().getTime()
-            // maxSpeed = Math.PI / ((segments.length*2) + Math.random())
-            maxSpeed = Math.PI / segments.length
+            // test ? // maxSpeed = Math.PI / ((segments.length*18) + Math.random())
+
+            // maxSpeed = Math.PI / segments.length
+            maxSpeed = Math.PI / (4 * segments.length)
+
             frames = 0
             timerHandle = setInterval(onTimerTick, timerDelay)
         }
@@ -78,7 +81,8 @@ const WheelComponent = ({
             angleDelta = maxSpeed * Math.sin((progress * Math.PI) / 2)
         } else {
             if (winningSegment) {
-                if (currentSegment.id === winningSegment && frames > segments.length) {
+                // if (currentSegment.id === winningSegment && frames > segments.length) {
+                if (currentSegment.id === winningSegment && frames > 12 * segments.length) {
                     progress = duration / upTime
                     angleDelta =
                         maxSpeed * Math.sin((progress * Math.PI) / 2 + Math.PI / 2)
@@ -110,7 +114,7 @@ const WheelComponent = ({
         clear()
         drawWheel()
         drawNeedle()
-        // drawShadowBottom()
+        drawShadowBottom()
     }
 
     const draw = () => {
@@ -124,22 +128,75 @@ const WheelComponent = ({
         ctx.save()
         ctx.beginPath()
 
-        ctx.moveTo(centerX, centerY + size)
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = "black";
+        // ctx.moveTo(centerX, centerY + size)
+        // ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+        // ctx.shadowOffsetX = 0;
+        // ctx.shadowOffsetY = 0;
+        // ctx.shadowBlur = 10;
+        // ctx.shadowColor = "black";
 
-        ctx.fillRect(
-            centerX - (size / 3),
-            centerY + size + 30,
-            (centerX - (size / 3)),
-            5
+        // ctx.ellipse(centerX, centerY + size + 40, 50, 10, 0, 0, Math.PI*2);
+
+        // ctx.fill();
+
+        //*****test
+        var radgrad = ctx.createRadialGradient(
+            centerX,
+            centerY + size + 40,
+            0,
+            centerX,
+            centerY + size + 40,
+            50
         );
+        radgrad.addColorStop(0, 'rgba(255, 255, 255, 0.3)');
+        radgrad.addColorStop(0.1, 'rgba(255, 255, 255, 0.3)');
+        radgrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+        ctx.fillStyle = radgrad;
+        ctx.ellipse(
+            centerX,
+            centerY + size + 40,
+            50,
+            10,
+            0,
+            0,
+            Math.PI * 2
+        );
+        // ctx.fillRect(
+        //     centerX - 50,
+        //     centerY + size,
+        //     250,
+        //     250
+        // );
+        ctx.fill();
+        //end test
 
         ctx.closePath()
         ctx.restore()
+    }
+
+    const strikeText = (idSector, lastAngle, angle) => {
+        const ctx = canvasContext
+        if (idSector === 2) {  // 003 id
+            ctx.save()
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            // ctx.arc(
+            //     centerX,
+            //     centerY,
+            //     size,
+            //     (lastAngle + (Math.PI / 180) * 269),
+            //     (angle + (Math.PI / 180) * 234),
+            //     false
+            // )
+            ctx.lineTo(centerX + 180, centerY + 180)
+            ctx.lineWidth = 15;
+            // ctx.fillStyle = 'black'
+            // ctx.fill()
+            ctx.stroke();
+            ctx.closePath()
+            ctx.restore()
+        }
     }
 
     const drawSegment = (key, lastAngle, angle) => {
@@ -174,8 +231,29 @@ const WheelComponent = ({
         ctx.rotate(((lastAngle + angle) / 2) + (Math.PI / 180) * 252)
         ctx.fillStyle = contrastColor || 'white'
         ctx.font = `${isBoldFont ? 'bold 15px' : '13px'} ` + fontFamily
+
         ctx.fillText(value.substr(0, 21), size / 2 + 20, 0)
+
+        // if (key === 2) {
+        //     ctx.rotate(((lastAngle + angle) / 2) + (Math.PI / 180) * 252)
+        //     ctx.fillRect(size / 2 , 0, width, 2);
+        // }
         ctx.restore()
+
+        const strikePrize = [2] // 003 = 2
+        if (strikePrize.includes(key)) {
+            ctx.save()
+            ctx.translate(centerX, centerY)
+            ctx.rotate(((lastAngle + angle) / 2) + (Math.PI / 180) * 251)
+            let { width } = ctx.measureText(value.substr(0, 21));
+
+            ctx.fillStyle = 'black'
+            ctx.fillRect((size - 40) / 2, 0, width + 20, 2);
+            ctx.restore()
+        }
+        // strikeText(key, lastAngle, angle);
+
+
         // text of top sector
         // ctx.save()
         // ctx.translate(centerX, centerY)
