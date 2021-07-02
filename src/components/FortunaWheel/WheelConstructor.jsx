@@ -240,7 +240,7 @@ const WheelComponent = ({
         // }
         ctx.restore()
 
-        const strikePrize = [2, 6, 9] // 003=2 007=6 009=8
+        const strikePrize = [2, 6, 8] // 003=2 007=6 009=8
         if (strikePrize.includes(key)) {
             ctx.save()
             ctx.translate(centerX, centerY)
