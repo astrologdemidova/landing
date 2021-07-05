@@ -9,6 +9,7 @@ export const getPaylink = (order_id, customer_phone, customer_email, products, p
   let customerExtra = `customer_extra=Полная оплата курса&`;
   let paidContent = `paid_content=${paid_content}&`;
   let urlSuccess = `urlSuccess=https://shop.astrologdemidova.ru/fortuna?che=${checkWin}&cust_email=${customer_email}&cust_phone=${customer_phone}&`;
+  let urlSuccessOff = `urlSuccess=https://shop.astrologdemidova.ru/&`;
   let dO = `do=pay`
 
   let link = 'https://demidova.payform.ru/?' +
@@ -18,7 +19,7 @@ export const getPaylink = (order_id, customer_phone, customer_email, products, p
     productsArr +
     customerExtra +
     paidContent +
-    urlSuccess +
+    urlSuccessOff +
     dO;
   return link;
 }
