@@ -45,4 +45,4 @@ const FortunaOff = () => {
     )
 }
 
-export default Fortuna;
+export default FortunaOff;
