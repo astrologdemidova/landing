@@ -5,7 +5,7 @@ import "../common-style/style.css"
 import { FortunaWheel } from '../components/FortunaWheel';
 import { CatalogFooter } from '../components/CatalogPage/CatalogFooter';
 
-const Fortuna = () => {
+const FortunaOff = () => {
     const [typePrize, setType] = useState();
     const [playPermission, setPlayPermission] = useState(false);
 
