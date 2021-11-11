@@ -58,15 +58,15 @@ export const CatalogCard = ({ id, imgSrc, videoSrc, nameItem, nameItemSub, coast
             {nameItemSub && <CatalogCardSubTitle>{nameItemSub}</CatalogCardSubTitle>}
 
             {period && <p>Длительность: {period}</p>}
-            <CatalogCardCoast>{coast} ₽</CatalogCardCoast>
+            <CatalogCardCoast>{coast}</CatalogCardCoast>
             {installment && <p>*при оплате доступна рассрочка</p>}
 
             {period2 && <p>Длительность: {period2}</p>}
-            {coast2 && <CatalogCardCoast>{coast2} ₽</CatalogCardCoast>}
+            {coast2 && <CatalogCardCoast>{coast2}</CatalogCardCoast>}
             {installment2 && id !== '1239' && <p>*при оплате доступна рассрочка</p>}
             {id === '1239' && <p className='installment'>* при оплате доступна рассрочка до 500 000, при внесении первого платежа от 499 999</p>}
 
-            {coastStrike && <CatalogCardCoastStrike>{coastStrike} ₽</CatalogCardCoastStrike>}
+            {coastStrike && <CatalogCardCoastStrike>{coastStrike}</CatalogCardCoastStrike>}
 
             {!show && <CatalogCardDescription>{description.map((item, ind) => ind % 2 === 0 ? <li key={item}>{item}</li> : null)}</CatalogCardDescription>}
 
@@ -187,7 +187,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                             Длительность: {period}
                         </p>
                     }
-                    <CatalogCardCoast>{checkBoxSpecial === 'spec1' && phone && email && id !== '1239' ? coastSpecial : coast} ₽</CatalogCardCoast>
+                    <CatalogCardCoast>{checkBoxSpecial === 'spec1' && phone && email && id !== '1239' ? coastSpecial : coast}</CatalogCardCoast>
                     {installment && <p>*при оплате доступна рассрочка</p>}
 
                     {period2 &&
@@ -196,11 +196,11 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                             Длительность: {period2}
                         </p>
                     }
-                    {coast2 && <CatalogCardCoast>{coast2} ₽</CatalogCardCoast>}
+                    {coast2 && <CatalogCardCoast>{coast2}</CatalogCardCoast>}
                     {installment2 && id !== '1239' && <p>*при оплате доступна рассрочка</p>}
                     {id === '1239' && <p className='installment'>* при оплате доступна рассрочка до 500 000, при внесении первого платежа от 499 999</p>}
 
-                    {coastStrike && <CatalogCardCoastStrike>{coastStrike} ₽</CatalogCardCoastStrike>}
+                    {coastStrike && <CatalogCardCoastStrike>{coastStrike}</CatalogCardCoastStrike>}
                     <div>
                         <label name='phone' htmlFor='phoneClient'>Ваш телефон*:</label>
                         <input name='phone' id='phoneClient' type='phone' value={phone} onChange={(e) => setPhone(e.target.value)} required />
@@ -219,7 +219,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         <div>
                             🔥СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ🔥<br /><br />
                             {/* Только сейчас вторая медитация<br /><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 777р)<br /> */}
-                            Только сейчас медитация {id === '4567' ? '«ПРЕДНАЗНАЧЕНИЕ»' : '«ИЗОБИЛИЯ»'}<br /><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 777р)<br />
+                            Только сейчас медитация {id === '4567' ? '«ПРЕДНАЗНАЧЕНИЕ»' : '«ИЗОБИЛИЯ»'}<br /><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 777)<br />
                             <div style={{ paddingBottom: '10px', display: 'flex', alignItems: 'center' }}>
                                 <input
                                     type='checkbox'
