@@ -32,6 +32,10 @@ export const contentTypeConsultation = 'CONTENT_TYPE_CONSULTATION'
 // export const contentTypeStones = 'CONTENT_TYPE_STONES'
 
 export const CatalogWrapper = () => {
+    const toggleContentTypeMeditation = true; // true - disable, false - enable
+    const toggleContentTypeConsultation = false; // true - disable, false - enable
+    const toggleContentTypeRitual = true; // true - disable, false - enable
+
     const [contentType, setContentType] = React.useState(contentTypeMenu)
     const data = new Map([
         [contentTypeRitual, ArrayContentTypeRitual],
@@ -134,7 +138,15 @@ export const CatalogWrapper = () => {
                         <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeMeditation ? contentTypeMenu : contentTypeMeditation)}>Медитации</CustomButton></a>
                     </MenuButtonWrapper>
 
-                    {contentType === contentTypeMeditation &&
+                    {contentType === contentTypeMeditation && toggleContentTypeMeditation &&
+                        <DescriptionContainer>
+                            <ul>
+                                <li>Упс! К сожалению вы не успели! Медитаций и ритуалов сейчас нет в продаже. Следите за новостями в сториз , чтобы увидеть , когда они появятся 🤍</li>
+                            </ul>
+                        </DescriptionContainer>
+                    }
+
+                    {contentType === contentTypeMeditation && !toggleContentTypeMeditation &&
                         <DescriptionContainer>
                             <ul>
                                 <li>МОИ МЕДИТАЦИИ НЕ ПРО ДУХОВНОСТЬ. ЭТО ЦЕЛЕНАПРАВЛЕННАЯ РАБОТА С ПОДСОЗНАНИЕМ.</li>
@@ -144,13 +156,21 @@ export const CatalogWrapper = () => {
                         </DescriptionContainer>
                     }
 
-                    {contentType === contentTypeMeditation && contentTypeHandler(contentType)}
+                    {contentType === contentTypeMeditation && !toggleContentTypeMeditation && contentTypeHandler(contentType)}
 
                     <MenuButtonWrapper>
                         <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeConsultation ? contentTypeMenu : contentTypeConsultation)}>Консультации</CustomButton></a>
                     </MenuButtonWrapper>
 
-                    {contentType === contentTypeConsultation &&
+                    {contentType === contentTypeConsultation && toggleContentTypeConsultation &&
+                        <DescriptionContainer>
+                            <ul>
+                                <li>Упс! К сожалению вы не успели! Медитаций и ритуалов сейчас нет в продаже. Следите за новостями в сториз , чтобы увидеть , когда они появятся 🤍</li>
+                            </ul>
+                        </DescriptionContainer>
+                    }
+
+                    {contentType === contentTypeConsultation && !toggleContentTypeConsultation &&
                         <ul style={{listStyle: 'none', padding: '0 40px'}}>
                             <li>
                                 <b>*</b>После оплаты консультации я с вами свяжусь и мы подберем удобную дату и время для проведения онлайн-встречи.<br /><br />
@@ -159,20 +179,28 @@ export const CatalogWrapper = () => {
                         </ul>
                     }
 
-                    {contentType === contentTypeConsultation && contentTypeHandler(contentType)}
+                    {contentType === contentTypeConsultation && !toggleContentTypeConsultation && contentTypeHandler(contentType)}
 
                     <MenuButtonWrapper>
                         <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeRitual ? contentTypeMenu : contentTypeRitual)}>Ритуалы</CustomButton></a>
                     </MenuButtonWrapper>
 
-                    {contentType === contentTypeRitual &&
+                    {contentType === contentTypeRitual && toggleContentTypeRitual &&
+                        <DescriptionContainer>
+                            <ul>
+                                <li>Упс! К сожалению вы не успели! Медитаций и ритуалов сейчас нет в продаже. Следите за новостями в сториз , чтобы увидеть , когда они появятся 🤍</li>
+                            </ul>
+                        </DescriptionContainer>
+                    }
+
+                    {contentType === contentTypeRitual && !toggleContentTypeRitual &&
                         <ul style={{listStyle: 'none', padding: '0 40px'}}>
                             <li><b>*</b>Все ритуалы можно использовать много раз. Они остаются с вами на всю жизнь!<br/><br/></li>
                             <li><b>*</b>Ритуалы для самостоятельного выполнения. Они легкие в исполнении, безопасные, при этом очень действенные</li>
                         </ul>
                     }
 
-                    {contentType === contentTypeRitual && contentTypeHandler(contentType)}
+                    {contentType === contentTypeRitual && !toggleContentTypeRitual && contentTypeHandler(contentType)}
 
                     {/* <MenuButtonWrapper>
                         <a href='#anchor'><CustomButton onClick={() => setContentType(contentType === contentTypeStones ? contentTypeMenu : contentTypeStones)}>Камни</CustomButton></a>
