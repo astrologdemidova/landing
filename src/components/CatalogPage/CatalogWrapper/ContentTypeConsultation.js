@@ -40,7 +40,7 @@ export const ArrayContentTypeConsultation = [
         // linkPay: 'https://payform.ru/ea8li8/',
         linkPay: `Я поздравляю тебя с покупкой билета в новую изобильную жизнь! Скоро я свяжусь с тобой.`,
         buttonName: 'Улучшить жизнь',
-        toggleLimit: false, //true - button pay will disabled, false - button pay will enabled, false - is default value for all
+        toggleLimit: true, //true - button pay will disabled, false - button pay will enabled, false - is default value for all
     },
     {
         id: '1235',
