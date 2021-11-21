@@ -1,29 +1,26 @@
-import * as React from 'react'
-import { ArrayContentTypeRitual } from './ContentTypeRitual'
-import { ArrayContentTypeConsultation } from './ContentTypeConsultation'
-// import { ArrayContentTypeStones } from './ContentTypeStones'
-import { ArrayContentTypeMeditation } from './ContentTypeMeditation'
-import { CatalogCard } from '../CatalogCard'
-import { CatalogFooter } from '../CatalogFooter'
-import { CustomMenuShop } from '../CustomMenuShop'
-import { CustomButton } from '../../CustomButton'
+import * as React from 'react';
+import { ArrayContentTypeRitual } from './ContentTypeRitual';
+import { ArrayContentTypeConsultation } from './ContentTypeConsultation';
+// import { ArrayContentTypeStones } from './ContentTypeStones';
+import { ArrayContentTypeMeditation } from './ContentTypeMeditation';
+import { CatalogCard } from '../CatalogCard';
+import { CatalogFooter } from '../CatalogFooter';
+import { CustomMenuShop } from '../CustomMenuShop';
+import { CustomButton } from '../../CustomButton';
 import {
     CatalogHeaderContainer,
-    CatalogSubHeaderContainer,
     DescriptionContainer,
     CatalogContainer,
     CatalogWrapperStyled,
-    WhiteBackground,
-    ListBlack,
-    ListSeparate,
     MenuButtonWrapper,
     AboutContainer,
     CatalogHeaderContainerPhoto
-} from './styles'
-import emoji from '../../../images/emoji-schh.png'
+} from './styles';
+import emoji from '../../../images/emoji-schh.png';
 import BgPicture from '../../../images/red-min.jpg';
-import { CustomCollapse } from '../CustomCollapse'
-import { AboutBlock } from '../AboutBlock/AboutBlock'
+import { CustomCollapse } from '../CustomCollapse';
+import { AboutBlock } from '../AboutBlock/AboutBlock';
+import { SubHeader } from './components/SubHeader';
 
 export const contentTypeMenu = 'CONTENT_TYPE_MENU'
 export const contentTypeRitual = 'CONTENT_TYPE_RUNY'
@@ -77,58 +74,10 @@ export const CatalogWrapper = () => {
                     <h2>от @astrolog_demidova</h2>
                     <img src={emoji} alt="" />
                 </CatalogHeaderContainer>
-                <CatalogSubHeaderContainer>
-                    <ul>
-                        <li>Как бы это грустно не было - скажу сразу :</li>
-                        <ListBlack><span>волшебства и магии не существует!</span></ListBlack>
-                        <ListSeparate />
-                        <li>
-                            Все это есть, но не потому что «волшебство», а потому
-                    </li>
-                        <li>
-                            что <span>квантовая физика и нейрофизиология</span>
-                        (наука,
-                    </li>
-                        <li>изучающая работу мозга).</li>
-                        <ListSeparate />
-                        <li>
-                            Именно эти <span>науки объясняют почему работает</span>{' '}
-                        сила
-                    </li>
-                        <li>мысли и сила слова, почему исполняются загаданные</li>
-                        <li>желания и как работает магия</li>
-                        <ListSeparate />
-                        <li>
-                            Вы <span>можете убедиться</span> в этом, начав смотреть
-                        опыты
-                    </li>
-                        <li>квантовых физиков (например «эффект наблюдателя»)</li>
-                        <li>или прочитав бестселлер Джо Диспенза : «Сила</li>
-                        <li>подсознания».</li>
-                        <ListSeparate />
-                        <li>
-                            Так вы поймёте почему «все это»{' '}
-                            <span>действительно</span>
-                        </li>
-                        <li>
-                            <span>работает</span> и тогда у вас не останется и тени
-                        сомнения в
-                    </li>
-                        <li>том, какая мощь заложена в «волшебных» товарах,</li>
-                        <li>
-                            которые я так долго собирала и создавала по крупицам
-                    </li>
-                        <ListSeparate />
-                    </ul>
-                    <h4>
-                        С любовью, Яна<span>❤</span>
-                    </h4>
-                    <WhiteBackground />
-                </CatalogSubHeaderContainer>
 
-                {/* {contentType === contentTypeMenu && (
-                
-            )} */}
+                <SubHeader />
+
+                {/* {contentType === contentTypeMenu && ()} */}
 
                 <CatalogContainer>
 
@@ -171,7 +120,7 @@ export const CatalogWrapper = () => {
                     }
 
                     {contentType === contentTypeConsultation && !toggleContentTypeConsultation &&
-                        <ul style={{listStyle: 'none', padding: '0 40px'}}>
+                        <ul style={{ listStyle: 'none', padding: '0 40px' }}>
                             <li>
                                 <b>*</b>После оплаты консультации я с вами свяжусь и мы подберем удобную дату и время для проведения онлайн-встречи.<br /><br />
                                 У меня всегда запись приблизившись на месяц вперёд, но если вам очень нужно быстрее - обсудим✨
@@ -194,8 +143,8 @@ export const CatalogWrapper = () => {
                     }
 
                     {contentType === contentTypeRitual && !toggleContentTypeRitual &&
-                        <ul style={{listStyle: 'none', padding: '0 40px'}}>
-                            <li><b>*</b>Все ритуалы можно использовать много раз. Они остаются с вами на всю жизнь!<br/><br/></li>
+                        <ul style={{ listStyle: 'none', padding: '0 40px' }}>
+                            <li><b>*</b>Все ритуалы можно использовать много раз. Они остаются с вами на всю жизнь!<br /><br /></li>
                             <li><b>*</b>Ритуалы для самостоятельного выполнения. Они легкие в исполнении, безопасные, при этом очень действенные</li>
                         </ul>
                     }
