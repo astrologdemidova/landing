@@ -62,6 +62,7 @@ export const CatalogWrapper = () => {
                 period={item.period}
                 period2={item.period2}
                 contentType={contentType}
+                toggleLimit={item.toggleLimit}
             />
         ))
     }
