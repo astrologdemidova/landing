@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import { contentTypeMeditation, contentTypeRitual, contentTypeConsultation } from '../../CatalogWrapper';
 
 const checkWin = nanoid();
 export const getPaylink = (order_id, customer_phone, customer_email, products, paid_content) => {
@@ -51,3 +52,16 @@ export const getPaylink = (order_id, customer_phone, customer_email, products, p
   return link;
 }
 */
+
+export const getReviewUrl = (entity) => {
+  switch (entity) {
+      case contentTypeMeditation:
+          return '/reviews/meditations';
+      case contentTypeRitual:
+          return '/reviews/rituals';
+      case contentTypeConsultation:
+          return '/reviews/consultations';
+      default:
+          return '/shop';
+  }
+};

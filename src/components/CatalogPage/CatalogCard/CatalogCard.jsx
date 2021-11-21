@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import axios from "axios";
-import { contentTypeMeditation, contentTypeRitual, contentTypeConsultation } from '../CatalogWrapper/CatalogWrapper';
 import {
     CatalogCardCoast,
     CatalogCardCoastStrike,
@@ -16,7 +15,7 @@ import {
     ImgCard,
     PopupCardpayWrapper,
 } from './styles';
-import { getPaylink } from './utils/utils';
+import { getPaylink, getReviewUrl } from './utils/utils';
 
 export const CatalogCard = ({ id, imgSrc, videoSrc, nameItem, nameItemSub, coast, coast2, coastStrike, description, faq, installment, installment2, period, period2, linkPay, buttonName = 'Заказать', contentType }) => {
     const [showPopup, setShowPopup] = React.useState(false);
@@ -35,19 +34,6 @@ export const CatalogCard = ({ id, imgSrc, videoSrc, nameItem, nameItemSub, coast
     const mapToImgVideo = (source) => {
         if (source.includes('<iframe')) return <div style={{ textAlign: 'center', paddingBottom: '40px' }} dangerouslySetInnerHTML={{ __html: source }}></div>
         return <ImgCard src={source} alt='astrolog demidova price' />
-    };
-
-    const getReviewUrl = (entity) => {
-        switch (entity) {
-            case contentTypeMeditation:
-                return '/reviews/meditations';
-            case contentTypeRitual:
-                return '/reviews/rituals';
-            case contentTypeConsultation:
-                return '/reviews/consultations';
-            default:
-                return '/shop';
-        }
     };
 
     return (
