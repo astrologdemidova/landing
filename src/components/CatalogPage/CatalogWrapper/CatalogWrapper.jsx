@@ -30,7 +30,7 @@ export const contentTypeConsultation = 'CONTENT_TYPE_CONSULTATION'
 
 export const CatalogWrapper = () => {
     const toggleContentTypeMeditation = true; // true - disable, false - enable
-    const toggleContentTypeConsultation = false; // true - disable, false - enable
+    const toggleContentTypeConsultation = true; // true - disable, false - enable
     const toggleContentTypeRitual = true; // true - disable, false - enable
 
     const [contentType, setContentType] = React.useState(contentTypeMenu)
