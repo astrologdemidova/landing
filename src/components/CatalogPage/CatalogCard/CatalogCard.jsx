@@ -103,6 +103,7 @@ export const CatalogCard = ({ id, imgSrc, videoSrc, nameItem, nameItemSub, coast
 const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, linkContent, setShowPopup, nameItemSub, period, period2, installment, installment2 }) => {
     const [phone, setPhone] = React.useState('');
     const [email, setEmail] = React.useState('');
+    const [inst, setInst] = React.useState('');
 
     const [linkpay, setLinkpay] = React.useState('');
 
@@ -119,8 +120,8 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
 
     React.useEffect(() => {
         const getLink = () => {
-            if (phone && email) setLinkpay(getPaylink(
-                `${id}`,
+            if (phone && email && inst) setLinkpay(getPaylink(
+                `${inst}`, // `${id}`, - тут был номер заказа
                 `${phone}`,
                 `${email}`,
                 [
@@ -139,12 +140,13 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
     }, [id, coast, coast2, period, period2, nameItem, linkpay, setLinkpay, phone, email, checkBoxValue, linkContent, checkBoxSpecial, coastSpecial, setCoastSpecial, consultationVIP90days]);
 
     const handlerSendMail = (payLinkAssign) => {
-        if (!phone || !email || (!checkBoxSpecial && id !== '1239')) return;
-        if (phone && email) axios
+        if (!phone || !email || !inst || (!checkBoxSpecial && id !== '1239')) return;
+        if (phone && email && inst) axios
             .post('https://astrolog-fortuna-server.herokuapp.com/api/email/check-user-contact', null, {
                 params: {
                     email: email,
                     phone: phone,
+                    inst: inst,
                 }
             })
             .then(function (response) {
@@ -173,7 +175,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                             Длительность: {period}
                         </p>
                     }
-                    <CatalogCardCoast>{checkBoxSpecial === 'spec1' && phone && email && id !== '1239' ? coastSpecial : coast}</CatalogCardCoast>
+                    <CatalogCardCoast>{checkBoxSpecial === 'spec1' && phone && inst && email && id !== '1239' ? coastSpecial : coast}</CatalogCardCoast>
                     {installment && <p>*при оплате доступна рассрочка</p>}
 
                     {period2 &&
@@ -195,8 +197,12 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         <label name='email' htmlFor='emailClient'>Ваш email*:</label>
                         <input name='email' id='emailClient' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
                     </div>
+                    <div>
+                        <label name='inst' htmlFor='instClient'>Ваш instagram*:</label>
+                        <input name='inst' id='instClient' type='text' value={inst} onChange={(e) => setInst(e.target.value)} required />
+                    </div>
 
-                    {phone && email && id !== '1239' &&
+                    {phone && email && inst && id !== '1239' &&
                         // <div>
                         //     Специальное предложение!<br />
                         //     <input type='checkbox' id='special' defaultChecked={checkBoxSpecial} onChange={() => setCheckboxSpecial(!checkBoxSpecial)} style={{ width: '18px', height: '18px' }} />
