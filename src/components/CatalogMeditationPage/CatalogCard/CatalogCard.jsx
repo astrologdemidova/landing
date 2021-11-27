@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
+import axios from "axios";
 import {
     CatalogCardCoast,
     CatalogCardCoastStrike,
@@ -102,6 +103,7 @@ export const CatalogCard = ({ id, imgSrc, nameItem, nameItemSub, coast, coast2, 
 const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, linkContent, setShowPopup, nameItemSub, period, period2, installment, installment2 }) => {
     const [phone, setPhone] = React.useState('');
     const [email, setEmail] = React.useState('');
+    const [inst, setInst] = React.useState('');
 
     const [linkpay, setLinkpay] = React.useState('');
 
@@ -116,8 +118,8 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
 
     React.useEffect(() => {
         const getLink = () => {
-            if (phone && email) setLinkpay(getPaylink(
-                `${id}`,
+            if (phone && email && inst) setLinkpay(getPaylink(
+                `${inst}`,
                 `${phone}`,
                 `${email}`,
                 [
@@ -134,6 +136,28 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
         };
         getLink();
     }, [id, coast, coast2, period, period2, nameItem, linkpay, setLinkpay, phone, email, checkBoxValue, linkContent, checkBoxSpecial, coastSpecial, setCoastSpecial]);
+
+    const handlerSendMail = (payLinkAssign) => {
+        if (!phone || !email || !inst || (!checkBoxSpecial && id !== '1239')) return;
+        if (phone && email && inst) axios
+            .post('https://astrolog-fortuna-server.herokuapp.com/api/email/check-user-contact', null, {
+                params: {
+                    email: email,
+                    phone: phone,
+                    inst: inst,
+                }
+            })
+            .then(function (response) {
+                document.location.assign(payLinkAssign);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        return Object.assign(document.createElement('a'), {
+            target: '_blank',
+            href: payLinkAssign,
+          }).click();
+    };
 
     return (
         <PopupCardpayWrapper onClick={() => setShowPopup(false)}>
@@ -170,8 +194,12 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                         <label name='email' htmlFor='emailClient'>Ваш email:</label>
                         <input name='email' id='emailClient' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
                     </div>
+                    <div>
+                        <label name='inst' htmlFor='instClient'>Ваш instagram:</label>
+                        <input name='inst' id='instClient' type='text' value={inst} onChange={(e) => setInst(e.target.value)} required />
+                    </div>
 
-                    {phone && email &&
+                    {phone && email && inst && 
                         <div>
                             🔥СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ🔥<br /><br />
                             Только сейчас медитация {id === '4567' ? '«ПРЕДНАЗНАЧЕНИЕ»' : '«ИЗОБИЛИЯ»'}<br/><span style={{ color: '#e60670' }}>со скидкой 50%</span> (за 499р)<br />
@@ -199,7 +227,7 @@ const PopupCardpay = ({ id, coast, coast2, coastStrike, nameItem, buttonName, li
                             </div>
                         </div>}
                     <div style={{ textAlign: 'center' }}>
-                        <CatalogCardLinkPay href={phone && email && linkpay} onClick={(e) => (!phone || !email || !checkBoxSpecial) && e.preventDefault()} rel='noreferrer' target='_blank'>
+                        <CatalogCardLinkPay onClick={() => handlerSendMail(linkpay)} rel='noreferrer' target='_blank'>
                             {buttonName}
                         </CatalogCardLinkPay>
                     </div>
